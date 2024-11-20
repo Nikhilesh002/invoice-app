@@ -1,6 +1,6 @@
 import { GoogleAIFileManager } from "@google/generative-ai/server";
 import { GoogleGenerativeAI } from "@google/generative-ai";
-
+import fs from "fs";
 
 export const getData=async(filePath:string,fileName:string,mimeType:string)=>{
 
@@ -31,6 +31,8 @@ export const getData=async(filePath:string,fileName:string,mimeType:string)=>{
       },
     ]);
     // console.log(result.response.text());
+
+    fs.unlinkSync(filePath);
 
     return formatData(result.response.text());
 
