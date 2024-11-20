@@ -2,7 +2,7 @@ import { GoogleAIFileManager } from "@google/generative-ai/server";
 import { GoogleGenerativeAI } from "@google/generative-ai";
 
 
-export const imageHandler=async(filePath:string,fileName:string,mimeType:string)=>{
+export const getData=async(filePath:string,fileName:string,mimeType:string)=>{
 
   try{
     const fileManager = new GoogleAIFileManager(process.env.API_KEY ?? "");
@@ -18,8 +18,6 @@ export const imageHandler=async(filePath:string,fileName:string,mimeType:string)
     console.log(
       `Uploaded file ${uploadResult.file.displayName} as: ${uploadResult.file.uri}`,
     );
-
-    console.log(uploadResult);
     
     const genAI = new GoogleGenerativeAI(process.env.API_KEY ?? "");
     const model = genAI.getGenerativeModel({ model: "gemini-1.5-flash-8b" });
@@ -32,7 +30,7 @@ export const imageHandler=async(filePath:string,fileName:string,mimeType:string)
         },
       },
     ]);
-    console.log(result.response.text());
+    // console.log(result.response.text());
 
     return formatData(result.response.text());
 

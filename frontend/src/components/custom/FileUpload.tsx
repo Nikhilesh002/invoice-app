@@ -1,11 +1,12 @@
-import React from 'react'
+import React, { useState } from 'react'
 import { Button } from '../ui/button'
 import axios from 'axios';
 import { useToast } from '@/hooks/use-toast';
 
 function FileUpload() {
 
-  const [file, setFile] = React.useState<File | null>(null);
+  const [file, setFile] = useState<File | null>(null);
+  const [data,setData] = useState<any>(null);
 
   const { toast } = useToast()
 
@@ -31,12 +32,13 @@ function FileUpload() {
 
       const formData = new FormData();
       formData.append("fileUpload", file);
-      // const res = await axios.post(`${import.meta.env.BACKEND_URL}/api/file/get-data`, formData,{
-      //   headers: {
-      //     "Content-Type": "multipart/form-data",
-      //   }
-      // });
+      const res = await axios.post(`http://localhost:3217/api/file/get-data`, formData,{
+        headers: {
+          "Content-Type": "multipart/form-data",
+        }
+      });
       // console.log(res);
+      setData(res.data.data);
     }
     else{
       toast({
@@ -56,6 +58,7 @@ function FileUpload() {
           <Button type='submit'>Upload file</Button>
         </form>
       </div>
+      {data ? <pre>{JSON.stringify(data, null, 2)}</pre> : null}
     </div>
   )
 }

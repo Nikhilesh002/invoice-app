@@ -1,4 +1,3 @@
-import React from 'react'
 import FileUpload from './components/custom/FileUpload'
 import { Toaster } from './components/ui/toaster'
 
@@ -11,4 +10,4 @@ function App() {
   )
 }
 
-export default App
+export default App;
