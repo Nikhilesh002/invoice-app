@@ -5,7 +5,7 @@ import { XLSXtoCSV } from "../utils/fileFormatConverter/XLSXtoCSV";
 import { data } from '../utils/sample_data';
 
 
-export const getImageData = async (req:Request, res:Response) => {
+export const getFileData = async (req:Request, res:Response) => {
   try {
 
     if(!req.file){
@@ -25,7 +25,7 @@ export const getImageData = async (req:Request, res:Response) => {
       fileInfo.fileName = fileInfo.fileName.replace(".xlsx",".csv");
       fileInfo.mimetype = "text/csv";
     }
-    else if((!fileInfo.mimetype.includes("pdf")) && (!fileInfo.mimetype.includes("image"))){
+    else if((!fileInfo.mimetype.includes("pdf")) && (!fileInfo.mimetype.includes("image")) && (!fileInfo.mimetype.includes("csv"))){
       fs.unlinkSync(fileInfo.filePath);
       return res.status(400).json({success:false,message:"Invalid file format"});
     }
