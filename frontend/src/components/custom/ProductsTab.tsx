@@ -70,7 +70,7 @@ const ProductsTab: React.FC<ProductsTabProps> = ({
 
   const handleSave = async () => {
     try {
-      console.log(editedProducts)
+      
       // Redux update for each product
       dispatch(updateProducts({
         fileId: fileId, 

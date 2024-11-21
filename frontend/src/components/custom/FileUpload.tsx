@@ -49,10 +49,7 @@ function FileUpload() {
           "Content-Type": "multipart/form-data",
         }
       });
-      // const res = await axios.get('http://localhost:3217/api/file/test')
-
-      console.log(res.data)
-
+      
       toast({
         title: "File Uploaded Successfully",
         description: `Processed ${res.data.length} bills from the file`,

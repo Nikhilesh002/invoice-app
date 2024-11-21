@@ -34,7 +34,6 @@ const CustomerTab: React.FC<CustomerTabProps> = ({
 
   const handleSave = async () => {
     try {
-      console.log(editedCustomer)
       // Redux update
       dispatch(updateCustomer({
         fileId: fileId, 
