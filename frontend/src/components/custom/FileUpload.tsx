@@ -44,21 +44,21 @@ function FileUpload() {
       const formData = new FormData();
       formData.append("fileUpload", file);
 
-      // const res = await axios.post('http://localhost:3217/api/file/test', formData, {
-      //   headers: {
-      //     "Content-Type": "multipart/form-data",
-      //   }
-      // });
-      const res = await axios.get('http://localhost:3217/api/file/test')
+      const res = await axios.post('http://localhost:3217/api/file/get-ai-data', formData, {
+        headers: {
+          "Content-Type": "multipart/form-data",
+        }
+      });
+      // const res = await axios.get('http://localhost:3217/api/file/test')
 
-      // console.log(res.data)
+      console.log(res.data)
 
       toast({
         title: "File Uploaded Successfully",
-        description: `Processed ${res.data.data.length} bills`
+        description: `Processed ${res.data.data.length} bills from the file`,
       });
 
-      dispatch(addFile(res.data.data));
+      dispatch(addFile(res.data));
 
       // Reset file input
       setFile(null);

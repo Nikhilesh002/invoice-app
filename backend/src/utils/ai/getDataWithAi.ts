@@ -3,7 +3,7 @@ import { GoogleGenerativeAI } from "@google/generative-ai";
 import fs from "fs";
 import { replaceWithDefaults } from "../formatData/replaceWithDefaults";
 
-export const getData=async(fileInfo:{filePath:string,fileName:string,mimetype:string})=>{
+export const getDataWithAi=async(fileInfo:{filePath:string,fileName:string,mimetype:string})=>{
 
   const {filePath,fileName,mimetype} = fileInfo;
 
@@ -52,6 +52,6 @@ export const getData=async(fileInfo:{filePath:string,fileName:string,mimetype:st
 
 
 const formatData=(data:string)=>{
-  const jsonObj = JSON.parse(data.split("json:")[1].split("```")[0]);
+  const jsonObj = JSON.parse(data.split("json")[1].split("```")[0]);
   return replaceWithDefaults(jsonObj);
 }

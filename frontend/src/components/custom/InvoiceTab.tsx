@@ -9,8 +9,8 @@ import axios from 'axios';
 interface InvoiceTabProps {
   invoice: Invoice ;
   isEditing: boolean;
-  fileId?: string;
-  billId?: string;
+  fileId: string;
+  billId: string;
 }
 
 const InvoiceTab: React.FC<InvoiceTabProps> = ({ 
@@ -38,8 +38,8 @@ const InvoiceTab: React.FC<InvoiceTabProps> = ({
 
       // Redux update
       dispatch(updateInvoice({
-        fileId: fileId!, 
-        billId: billId!, 
+        fileId: fileId, 
+        billId: billId, 
         invoice: editedInvoice
       }));
     } catch (error) {

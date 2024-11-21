@@ -38,9 +38,9 @@ const BillDetailsPage: React.FC = () => {
 
       <Tabs value={activeTab} onValueChange={setActiveTab} className="w-full">
         <TabsList className="grid w-full grid-cols-3">
-          <TabsTrigger value="invoice">Invoice</TabsTrigger>
-          <TabsTrigger value="products">Products</TabsTrigger>
-          <TabsTrigger value="customer">Customer</TabsTrigger>
+          <TabsTrigger value="invoice">Invoice Details</TabsTrigger>
+          <TabsTrigger value="products">Products Details</TabsTrigger>
+          <TabsTrigger value="customer">Customer Details</TabsTrigger>
         </TabsList>
         
         <TabsContent value="invoice">

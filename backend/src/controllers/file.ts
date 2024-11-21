@@ -1,11 +1,11 @@
 import * as fs from 'fs';
 import { Request, Response } from "express";
-import { getData } from "../utils/ai/getData";
+import { getDataWithAi } from "../utils/ai/getDataWithAi";
 import { XLSXtoCSV } from "../utils/fileFormatConverter/XLSXtoCSV";
 import { data } from '../utils/sample_data';
 import { UserfileModel } from '../models/userfile';
 import { BillModel } from '../models/bill';
-import { replaceWithDefaults } from '../utils/formatData/replaceWithDefaults';
+// import { replaceWithDefaults } from '../utils/formatData/replaceWithDefaults';
 
 
 export const getFileData = async (req:Request, res:Response) => {
@@ -33,15 +33,19 @@ export const getFileData = async (req:Request, res:Response) => {
       return res.status(400).json({success:false,message:"Invalid file format"});
     }
 
-    const resp = await getData(fileInfo);
+    const resp = await getDataWithAi(fileInfo);
+
+    const newBill:any = await BillModel.create(resp);
 
     const newUserfile = new UserfileModel({
       name: fileInfo.fileName,
-      bills: resp
+      bills: [newBill[0]._id],
     });
     await newUserfile.save();
+    console.log(newUserfile);
 
-    return res.status(200).json({success:true,data:resp});
+
+    return res.status(200).json(resp);
     
   } catch (error) {
     console.log(error);
