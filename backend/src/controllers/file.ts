@@ -40,6 +40,14 @@ export const getFileData = async (req:Request, res:Response) => {
 };
 
 
+export const getFiles = async (req:Request, res:Response) => {
+  try {
+    res.json({data:data});
+  } catch (error) {
+    console.log(error);
+  }
+}
+
 
 export const test = async (req:Request, res:Response) => {
   try {

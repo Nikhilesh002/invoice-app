@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { useDispatch } from 'react-redux';
 import { updateProduct } from '@/redux/slices/fileSlice';
-import { Products } from '@/redux/slices/fileSlice';
+import { Products } from '@/types';
 import { Input } from '../ui/input';
 import { Button } from '../ui/button';
 import axios from 'axios';

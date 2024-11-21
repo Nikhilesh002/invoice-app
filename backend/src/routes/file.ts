@@ -1,5 +1,5 @@
 import express from 'express'
-import { test, getFileData } from '../controllers/file';
+import { test, getFileData, getFiles } from '../controllers/file';
 import multer from 'multer';
 
 const fileRouter=express.Router();
@@ -18,6 +18,7 @@ const upload = multer({ storage: storage })
 
 
 fileRouter.get('/test',test)
-fileRouter.post('/get-data',upload.single('fileUpload'),getFileData)
+fileRouter.post('/get-ai-data',upload.single('fileUpload'),getFileData)
+fileRouter.get('/',getFiles)
 
 export default fileRouter;
