@@ -3,6 +3,8 @@ import { Request, Response } from "express";
 import { getData } from "../utils/ai/getData";
 import { XLSXtoCSV } from "../utils/fileFormatConverter/XLSXtoCSV";
 import { data } from '../utils/sample_data';
+import { UserfileModel } from '../models/userfile';
+import { replaceWithDefaults } from '../utils/formatData/replaceWithDefaults';
 
 
 export const getFileData = async (req:Request, res:Response) => {
@@ -32,6 +34,12 @@ export const getFileData = async (req:Request, res:Response) => {
 
     const resp = await getData(fileInfo);
 
+    const newUserfile = new UserfileModel({
+      name: fileInfo.fileName,
+      bills: resp
+    });
+    await newUserfile.save();
+
     return res.status(200).json({success:true,data:resp});
     
   } catch (error) {
@@ -42,7 +50,8 @@ export const getFileData = async (req:Request, res:Response) => {
 
 export const getFiles = async (req:Request, res:Response) => {
   try {
-    res.json({data:data});
+    const cleanedObj = replaceWithDefaults(data[0]);
+    res.json([{bills:cleanedObj,name:"Sample-data",id:"asdfg"}]);
   } catch (error) {
     console.log(error);
   }

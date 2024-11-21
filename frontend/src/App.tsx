@@ -1,13 +1,13 @@
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import { Provider } from 'react-redux';
-import { store } from './redux/store';
+import { store } from '@/redux/store';
 import Navigation from '@/components/custom/Navigation';
 import HomePage from '@/components/custom/HomePage';
 import YourFiles from '@/pages/YourFiles';
 import FileBillsPage from '@/pages/FileBillsPage';
 import BillDetailsPage from '@/pages/BillDetails';
-import { Toaster } from './components/ui/toaster';
-import FileUpload from './components/custom/FileUpload';
+import { Toaster } from '@/components/ui/toaster';
+import FileUpload from '@/components/custom/FileUpload';
 
 function App() {
   

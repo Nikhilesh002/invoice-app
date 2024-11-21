@@ -7,7 +7,7 @@ import { Button } from '../ui/button';
 import axios from 'axios';
 
 interface InvoiceTabProps {
-  invoice: Invoice | null;
+  invoice: Invoice ;
   isEditing: boolean;
   fileId?: string;
   billId?: string;
@@ -20,17 +20,7 @@ const InvoiceTab: React.FC<InvoiceTabProps> = ({
   billId 
 }) => {
   const dispatch = useDispatch();
-  const [editedInvoice, setEditedInvoice] = useState<Invoice>(invoice || {
-    serial_number: null,
-    customer_name: null,
-    products: null,
-    shop_name: null,
-    shop_gstin: null,
-    quantity: null,
-    tax: null,
-    total_amount: null,
-    date: null
-  });
+  const [editedInvoice, setEditedInvoice] = useState<Invoice>(invoice);
 
   const handleInputChange = (key: keyof Invoice, value: string) => {
     setEditedInvoice(prev => ({
@@ -69,6 +59,7 @@ const InvoiceTab: React.FC<InvoiceTabProps> = ({
               <label className="block mb-2 capitalize">
                 {key.replace(/_/g, ' ')}
               </label>
+              {/* if i get input as date, then I am getting error a snot assignable to string, number */}
               <Input
                 value={editedInvoice[key as keyof Invoice] || ''}
                 onChange={(e) => handleInputChange(key as keyof Invoice, e.target.value)}

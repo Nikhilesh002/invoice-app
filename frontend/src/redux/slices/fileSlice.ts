@@ -20,6 +20,7 @@ const fileSlice = createSlice({
   initialState,
   reducers: {
     storeFiles: (state, action: PayloadAction<UserFile[]>) => {
+      console.log(action.payload)
       state.files = action.payload;
     },
     deleteFiles:(state,action:PayloadAction<string[]>)=>{

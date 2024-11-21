@@ -1,6 +1,7 @@
 import { GoogleAIFileManager } from "@google/generative-ai/server";
 import { GoogleGenerativeAI } from "@google/generative-ai";
 import fs from "fs";
+import { replaceWithDefaults } from "../formatData/replaceWithDefaults";
 
 export const getData=async(fileInfo:{filePath:string,fileName:string,mimetype:string})=>{
 
@@ -24,7 +25,7 @@ export const getData=async(fileInfo:{filePath:string,fileName:string,mimetype:st
     const genAI = new GoogleGenerativeAI(process.env.API_KEY ?? "");
     const model = genAI.getGenerativeModel({ model: "gemini-1.5-flash" });
     const result = await model.generateContent([
-      `Analyze the entire invoice file and extract whole invoice information and return all transactions, put not-found values as null and group transactions with same invoice number or transaction number and structured as JSON like [{"invoice":{"serial_number":"<value>","customer_name":"<value>","products":["<value>"],"shop_name":"<value>","shop_gstin":"<value>","quantity":"<value>","tax":"<value>","total_amount":"<value>","date":"<value>"},"products":[{"name":"<value>","quantity":"<value>","unit_price":"<value>","discount":"<value>","price_after_discount":"<value>","price_with_tax":"<value>","gst":"<value>"}],"customer":{"customer_name":"<value>","customer_company":"<value>","phone_number":"<value>","customer_gstin":"<value>","total_purchase_amount":"<value>","email_address":"<value>","shipping_address":"<value>"}}]`,
+      `${process.env.MY_PROMPT ?? "Analyze this image and extract data"}`,
       {
         fileData: {
           fileUri: uploadResult.file.uri,
@@ -51,5 +52,6 @@ export const getData=async(fileInfo:{filePath:string,fileName:string,mimetype:st
 
 
 const formatData=(data:string)=>{
-  return JSON.parse(data.split("json")[1].split("```")[0]);
+  const jsonObj = JSON.parse(data.split("json:")[1].split("```")[0]);
+  return replaceWithDefaults(jsonObj);
 }

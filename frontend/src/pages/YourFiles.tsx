@@ -1,10 +1,11 @@
 import React, { useEffect } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 import { useNavigate } from 'react-router-dom';
-import { setCurrentFile } from '@/redux/slices/fileSlice';
+import { setCurrentFile, storeFiles } from '@/redux/slices/fileSlice';
 import { Card, CardTitle, CardDescription, CardContent } from '@/components/ui/card';
 import { RootState } from '@/redux/store';
-import { RefetchFiles } from '@/components/custom/RefetchFiles';
+import axios from 'axios';
+import { UserFile } from '@/types';
 
 const YourFiles: React.FC = () => {
   const dispatch = useDispatch();
@@ -12,7 +13,16 @@ const YourFiles: React.FC = () => {
   const reduxFiles = useSelector((state: RootState) => state.files.files);
 
   useEffect(() => {
-    RefetchFiles();
+    const fetchFiles = async () => {
+      try {
+        const response = await axios.get<UserFile[]>('http://localhost:3217/api/file');
+        console.log(response.data)
+        dispatch(storeFiles(response.data));
+      } catch (error) {
+        console.error(error);
+      }
+    };
+    fetchFiles();
   }, []);
 
   const handleFileClick = (file: any) => {
