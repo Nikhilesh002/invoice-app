@@ -17,7 +17,7 @@ const storage = multer.diskStorage({
 const upload = multer({ storage: storage })
 
 
-fileRouter.get('/',test)
+fileRouter.get('/test',test)
 fileRouter.post('/get-data',upload.single('fileUpload'),getImageData)
 
 export default fileRouter;
