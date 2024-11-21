@@ -3,19 +3,14 @@ import express, { Errback, Express, NextFunction, Request, Response, urlencoded 
 import router from "./routes/index"
 import cors from "cors";
 import cookieParser from "cookie-parser";
+import mongoose from "mongoose";
+import { connectDb } from "./utils/db";
 // import mongoose from "mongoose";
 // import path from "path";
 
 dotenv.config();
 
-// mongoose
-//   .connect(process.env.MONGO_URI||'')
-//   .then(() => {
-//     console.log("connected to mongoose");
-//   })
-//   .catch((err) => {
-//     console.log(err);
-//   });
+connectDb()
 
 const app: Express = express();
 app.use(express.json());

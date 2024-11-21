@@ -4,6 +4,7 @@ import { getData } from "../utils/ai/getData";
 import { XLSXtoCSV } from "../utils/fileFormatConverter/XLSXtoCSV";
 import { data } from '../utils/sample_data';
 import { UserfileModel } from '../models/userfile';
+import { BillModel } from '../models/bill';
 import { replaceWithDefaults } from '../utils/formatData/replaceWithDefaults';
 
 
@@ -48,10 +49,35 @@ export const getFileData = async (req:Request, res:Response) => {
 };
 
 
+// export const getFiles = async (req:Request, res:Response) => {
+//   try {
+//     const cleanedObj = replaceWithDefaults(data[0]);
+    
+//     const newBill1:any = await BillModel.create(replaceWithDefaults(data[0]));
+//     const newBill2:any = await BillModel.create(replaceWithDefaults(data[1]));
+
+//     console.log(newBill1[0])
+
+//     const newUserfile = new UserfileModel({
+//       name: "Sample-data",
+//       bills: [newBill1[0]._id, newBill2[0]._id],
+//     });
+//     await newUserfile.save();
+//     console.log(newUserfile);
+    
+//     res.json([{bills:cleanedObj,name:"Sample-data",id:"asdfg"}]);
+//   } catch (error) {
+//     console.log(error);
+//   }
+// }
+
 export const getFiles = async (req:Request, res:Response) => {
   try {
-    const cleanedObj = replaceWithDefaults(data[0]);
-    res.json([{bills:cleanedObj,name:"Sample-data",id:"asdfg"}]);
+
+    await BillModel.countDocuments()
+    const userfiles = await UserfileModel.find({}).populate("bills").exec();
+    
+    res.json(userfiles);
   } catch (error) {
     console.log(error);
   }

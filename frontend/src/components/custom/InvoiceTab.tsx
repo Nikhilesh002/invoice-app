@@ -59,7 +59,7 @@ const InvoiceTab: React.FC<InvoiceTabProps> = ({
               <label className="block mb-2 capitalize">
                 {key.replace(/_/g, ' ')}
               </label>
-              {/* if i get input as date, then I am getting error a snot assignable to string, number */}
+              {/* TODO if i get input as date, then I am getting error a snot assignable to string, number */}
               <Input
                 value={editedInvoice[key as keyof Invoice] || ''}
                 onChange={(e) => handleInputChange(key as keyof Invoice, e.target.value)}

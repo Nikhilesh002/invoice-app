@@ -51,7 +51,7 @@ function FileUpload() {
       // });
       const res = await axios.get('http://localhost:3217/api/file/test')
 
-      console.log(res.data)
+      // console.log(res.data)
 
       toast({
         title: "File Uploaded Successfully",

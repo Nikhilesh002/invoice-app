@@ -25,7 +25,7 @@ export const data=[
           "discount": null,
           "price_after_discount": "4761.90",
           "price_with_tax": "5000.00",
-          "gst": "238.10"
+          "tax": "238.10"
         },
         {
           "name": "TREAT BKS CASE 80PKT",
@@ -34,7 +34,7 @@ export const data=[
           "discount": null,
           "price_after_discount": "26785.71",
           "price_with_tax": "30000.00",
-          "gst": "3214.29"
+          "tax": "3214.29"
         },
         {
           "name": "NUTRI CHOICE BKS CASE",
@@ -43,7 +43,7 @@ export const data=[
           "discount": null,
           "price_after_discount": "16666.67",
           "price_with_tax": "17500.00",
-          "gst": "833.33"
+          "tax": "833.33"
         },
         {
           "name": "MILK BIKIS CLASSIC CASE 120PK",
@@ -52,7 +52,7 @@ export const data=[
           "discount": null,
           "price_after_discount": "16190.48",
           "price_with_tax": "17000.00",
-          "gst": "809.52"
+          "tax": "809.52"
         }
       ],
       "customer": {
@@ -91,7 +91,7 @@ export const data=[
           "discount": null,
           "price_after_discount": null,
           "price_with_tax": "79990.00",
-          "gst": "18"
+          "tax": "18"
         },
         {
           "name": "iPHONE 16 Cover",
@@ -100,7 +100,7 @@ export const data=[
           "discount": null,
           "price_after_discount": null,
           "price_with_tax": "4599.00",
-          "gst": "18"
+          "tax": "18"
         },
         {
           "name": "Beats PRO X",
@@ -109,7 +109,7 @@ export const data=[
           "discount": null,
           "price_after_discount": null,
           "price_with_tax": "24999.00",
-          "gst": "18"
+          "tax": "18"
         }
       ],
       "customer": {
@@ -144,7 +144,7 @@ export const data=[
           "discount": null,
           "price_after_discount": null,
           "price_with_tax": "10000.00",
-          "gst": "0"
+          "tax": "0"
         }
       ],
       "customer": {
@@ -179,7 +179,7 @@ export const data=[
           "discount": null,
           "price_after_discount": null,
           "price_with_tax": "88.98",
-          "gst": "0"
+          "tax": "0"
         }
       ],
       "customer": {
@@ -214,7 +214,7 @@ export const data=[
           "discount": null,
           "price_after_discount": null,
           "price_with_tax": "88.98",
-          "gst": "0"
+          "tax": "0"
         }
       ],
       "customer": {
@@ -249,7 +249,7 @@ export const data=[
           "discount": null,
           "price_after_discount": null,
           "price_with_tax": "0.07",
-          "gst": "0"
+          "tax": "0"
         }
       ],
       "customer": {
@@ -284,7 +284,7 @@ export const data=[
           "discount": null,
           "price_after_discount": null,
           "price_with_tax": "88.98",
-          "gst": "0"
+          "tax": "0"
         }
       ],
       "customer": {
@@ -320,7 +320,7 @@ export const data=[
           "discount": null,
           "price_after_discount": null,
           "price_with_tax": "105.00",
-          "gst": "18"
+          "tax": "18"
         },
         {
           "name": "plain glass",
@@ -329,7 +329,7 @@ export const data=[
           "discount": null,
           "price_after_discount": null,
           "price_with_tax": "0.00",
-          "gst": "18"
+          "tax": "18"
         }
       ],
       "customer": {
@@ -364,7 +364,7 @@ export const data=[
           "discount": null,
           "price_after_discount": null,
           "price_with_tax": "500.00",
-          "gst": "0"
+          "tax": "0"
         }
       ],
       "customer": {
@@ -399,7 +399,7 @@ export const data=[
           "discount": null,
           "price_after_discount": null,
           "price_with_tax": "105.00",
-          "gst": "18"
+          "tax": "18"
         }
       ],
       "customer": {
@@ -434,7 +434,7 @@ export const data=[
           "discount": null,
           "price_after_discount": null,
           "price_with_tax": "11.50",
-          "gst": "18"
+          "tax": "18"
         }
       ],
       "customer": {
@@ -469,7 +469,7 @@ export const data=[
           "discount": null,
           "price_after_discount": null,
           "price_with_tax": "708.00",
-          "gst": "18"
+          "tax": "18"
         }
       ],
       "customer": {
@@ -504,7 +504,7 @@ export const data=[
           "discount": null,
           "price_after_discount": null,
           "price_with_tax": "590.00",
-          "gst": "18"
+          "tax": "18"
         }
       ],
       "customer": {

@@ -31,7 +31,7 @@ const FileBillsPage: React.FC = () => {
       <div className="grid grid-cols-3 gap-6">
         {currentFile.bills.map((bill, index) => (
           <Card 
-            key={bill.id || index} 
+            key={index} 
             onClick={() => handleClick(bill)}
             className="cursor-pointer hover:shadow-lg transition-shadow"
           >

@@ -8,10 +8,10 @@ import axios from 'axios';
 import { Trash2, Plus } from 'lucide-react';
 
 interface ProductsTabProps {
-  products: Products[] | null;
+  products: Products[];
   isEditing: boolean;
-  fileId?: string;
-  billId?: string;
+  fileId: string;
+  billId: string;
 }
 
 const ProductsTab: React.FC<ProductsTabProps> = ({ 
@@ -24,13 +24,13 @@ const ProductsTab: React.FC<ProductsTabProps> = ({
   const [editedProducts, setEditedProducts] = useState<Products[]>(
     products?.length ? [...products] : 
     [{ 
-      name: null, 
-      quantity: null, 
-      unit_price: null, 
-      discount: null, 
-      price_after_discount: null, 
-      price_with_tax: null, 
-      gst: null 
+      name: "", 
+      quantity: 0, 
+      unit_price: 0, 
+      discount: 0, 
+      price_after_discount: 0, 
+      price_with_tax: 0, 
+      tax: 0 
     }]
   );
 
@@ -47,13 +47,13 @@ const ProductsTab: React.FC<ProductsTabProps> = ({
     setEditedProducts([
       ...editedProducts,
       { 
-        name: null, 
-        quantity: null, 
-        unit_price: null, 
-        discount: null, 
-        price_after_discount: null, 
-        price_with_tax: null, 
-        gst: null 
+        name: "", 
+        quantity: 0, 
+        unit_price: 0, 
+        discount: 0, 
+        price_after_discount: 0, 
+        price_with_tax: 0, 
+        tax: 0 
       }
     ]);
   };
@@ -73,8 +73,8 @@ const ProductsTab: React.FC<ProductsTabProps> = ({
       // Redux update for each product
       editedProducts.forEach((product, index) => {
         dispatch(updateProduct({
-          fileId: fileId!, 
-          billId: billId!, 
+          fileId, 
+          billId, 
           productIndex: index,
           product: product
         }));
