@@ -1,4 +1,4 @@
-import { Bill, UserFile } from '@/types';
+import { Bill, Customer, Invoice, Products, UserFile } from '@/types';
 import { createSlice, PayloadAction } from '@reduxjs/toolkit';
 
 
@@ -19,6 +19,12 @@ const fileSlice = createSlice({
   name: 'userfiles',
   initialState,
   reducers: {
+    storeFiles: (state, action: PayloadAction<UserFile[]>) => {
+      state.files = action.payload;
+    },
+    deleteFiles:(state,action:PayloadAction<string[]>)=>{
+      state.files = state.files.filter(file=>!action.payload.includes(file.id || ''));
+    },
     addFile: (state, action: PayloadAction<UserFile>) => {
       state.files.push(action.payload);
     },
@@ -37,46 +43,48 @@ const fileSlice = createSlice({
         }
       }
     },
-    updateInvoiceDetails: (state, action: PayloadAction<{fileId: string, billId: string, invoiceDetails: Invoice}>) => {
+    updateInvoice: (state, action: PayloadAction<{fileId: string, billId: string, invoice: Invoice}>) => {
       const fileIndex = state.files.findIndex(file => file.id === action.payload.fileId);
       if (fileIndex !== -1) {
         const billIndex = state.files[fileIndex].bills.findIndex(bill => bill.id === action.payload.billId);
         if (billIndex !== -1) {
-          state.files[fileIndex].bills[billIndex].invoice = action.payload.invoiceDetails;
+          state.files[fileIndex].bills[billIndex].invoice = action.payload.invoice;
         }
       }
     },
-    updateProductDetails: (state, action: PayloadAction<{fileId: string, billId: string, productIndex: number, productDetails: Products}>) => {
+    updateProduct: (state, action: PayloadAction<{fileId: string, billId: string, productIndex: number, product: Products}>) => {
       const fileIndex = state.files.findIndex(file => file.id === action.payload.fileId);
       if (fileIndex !== -1) {
         const billIndex = state.files[fileIndex].bills.findIndex(bill => bill.id === action.payload.billId);
         if (billIndex !== -1) {
           if (state.files[fileIndex].bills[billIndex].products) {
-            state.files[fileIndex].bills[billIndex].products![action.payload.productIndex] = action.payload.productDetails;
+            state.files[fileIndex].bills[billIndex].products![action.payload.productIndex] = action.payload.product;
           }
         }
       }
     },
-    updateCustomerDetails: (state, action: PayloadAction<{fileId: string, billId: string, customerDetails: Customer}>) => {
+    updateCustomer: (state, action: PayloadAction<{fileId: string, billId: string, customer: Customer}>) => {
       const fileIndex = state.files.findIndex(file => file.id === action.payload.fileId);
       if (fileIndex !== -1) {
         const billIndex = state.files[fileIndex].bills.findIndex(bill => bill.id === action.payload.billId);
         if (billIndex !== -1) {
-          state.files[fileIndex].bills[billIndex].customer = action.payload.customerDetails;
+          state.files[fileIndex].bills[billIndex].customer = action.payload.customer;
         }
       }
     }
   }
 });
 
-export const { 
-  addFile, 
+export const {
+  storeFiles,
+  addFile,
+  deleteFiles,
   setCurrentFile, 
   setCurrentBill,
   updateBillInFile,
-  updateInvoiceDetails,
-  updateProductDetails,
-  updateCustomerDetails
+  updateInvoice,
+  updateProduct,
+  updateCustomer
 } = fileSlice.actions;
 
 export default fileSlice.reducer;

@@ -11,7 +11,7 @@ const FileBillsPage: React.FC = () => {
   const navigate = useNavigate();
   const currentFile = useSelector((state: RootState) => state.files.currentFile);
 
-  const handleBillClick = (bill: any) => {
+  const handleClick = (bill: any) => {
     dispatch(setCurrentBill(bill));
     navigate('/bill-details');
   };
@@ -32,7 +32,7 @@ const FileBillsPage: React.FC = () => {
         {currentFile.bills.map((bill, index) => (
           <Card 
             key={bill.id || index} 
-            onClick={() => handleBillClick(bill)}
+            onClick={() => handleClick(bill)}
             className="cursor-pointer hover:shadow-lg transition-shadow"
           >
             <CardTitle className="p-4">

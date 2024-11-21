@@ -9,6 +9,7 @@ import BillDetailsPage from '@/pages/BillDetails';
 import { Toaster } from './components/ui/toaster';
 
 function App() {
+  
   return (
     <Provider store={store}>
       <Router>

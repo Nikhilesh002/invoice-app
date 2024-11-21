@@ -2,9 +2,9 @@ import React, { useState } from 'react';
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "../ui/tabs";
 import { Card } from "@/components/ui/card";
 import FileUpload from './FileUpload';
-import InvoicesTab from './InvoicesTab';
+import InvoicesTab from './InvoiceTab';
 import ProductsTab from './ProductsTab';
-import CustomersTab from './CustomersTab';
+import CustomersTab from './CustomerTab';
 import { useAppSelector } from '@/redux/store';
 import { Loader2 } from 'lucide-react';
 

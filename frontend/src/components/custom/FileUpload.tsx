@@ -1,9 +1,9 @@
 import React, { useState } from 'react';
-import { Button } from '../ui/button';
+import { Button } from '@/components/ui/button';
 import axios from 'axios';
-import { Input } from '../ui/input';
+import { Input } from '@/components/ui/input';
 import { useDispatch } from 'react-redux';
-import { addFile } from '../../redux/slices/fileSlice';
+import { addFile } from '@/redux/slices/fileSlice';
 import {
   Card,
   CardContent,
@@ -11,7 +11,6 @@ import {
   CardHeader,
   CardTitle,
 } from "../ui/card";
-import { v4 as uuidv4 } from 'uuid';
 import { useToast } from '@/hooks/use-toast';
 
 function FileUpload() {
@@ -33,55 +32,40 @@ function FileUpload() {
 
   const handleSubmit = async (event: React.FormEvent<HTMLFormElement>) => {
     event.preventDefault();
-    if (file) {
-      try {
-        const formData = new FormData();
-        formData.append("fileUpload", file);
-
-        const response = await axios.post('http://localhost:3217/api/file/upload', formData, {
-          headers: {
-            "Content-Type": "multipart/form-data",
-          }
-        });
-
-        // Generate a unique filename if needed
-        const fileName = response.data.fileName || file.name;
-        const uniqueFileName = response.data.bills.length > 0 
-          ? fileName + (Math.floor(Math.random() * 900) + 100).toString() 
-          : fileName;
-
-        // Dispatch the file with bills to Redux
-        dispatch(addFile({
-          id: uuidv4(),
-          name: uniqueFileName,
-          bills: response.data.bills.map((bill: any) => ({
-            id: uuidv4(),
-            invoice: bill.invoice || null,
-            products: bill.products || null,
-            customer: bill.customer || null
-          }))
-        }));
-
-        toast({
-          title: "File Uploaded Successfully",
-          description: `Processed ${response.data.bills.length} bills`
-        });
-
-        // Reset file input
-        setFile(null);
-        event.currentTarget.reset();
-
-      } catch (error) {
-        console.error("File upload error:", error);
-        toast({
-          title: "Upload Failed",
-          description: "Unable to process the file",
-          variant: "destructive"
-        });
-      }
-    } else {
+    if(!file){
       toast({
         title: "Please select a file",
+        variant: "destructive"
+      });
+      return;
+    }
+
+    try {
+      const formData = new FormData();
+      formData.append("fileUpload", file);
+
+      const res = await axios.post('http://localhost:3217/api/file/test', formData, {
+        headers: {
+          "Content-Type": "multipart/form-data",
+        }
+      });
+
+      toast({
+        title: "File Uploaded Successfully",
+        description: `Processed ${res.data.data.length} bills`
+      });
+
+      dispatch(addFile(res.data.data));
+
+      // Reset file input
+      setFile(null);
+      event.currentTarget.reset();
+
+    } catch (error) {
+      console.error("File upload error:", error);
+      toast({
+        title: "Upload Failed",
+        description: "Unable to process the file",
         variant: "destructive"
       });
     }
