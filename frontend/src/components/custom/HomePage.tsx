@@ -1,64 +1,20 @@
-import React, { useState } from 'react';
-import { Tabs, TabsContent, TabsList, TabsTrigger } from "../ui/tabs";
-import { Card } from "@/components/ui/card";
-import FileUpload from './FileUpload';
-import InvoicesTab from './InvoiceTab';
-import ProductsTab from './ProductsTab';
-import CustomersTab from './CustomerTab';
-import { useAppSelector } from '@/redux/store';
-import { Loader2 } from 'lucide-react';
+import { Button } from '@/components/ui/button';
+import { useNavigate } from 'react-router-dom';
 
-const HomePage: React.FC = () => {
-  const [activeTab, setActiveTab] = useState('invoices');
-  const { bills, loading, error } = useAppSelector(state => state.bills);
-
-  if (loading) {
-    return (
-      <div className="flex justify-center items-center h-screen">
-        <Loader2 className="animate-spin" size={48} />
-      </div>
-    );
-  }
-
-  if (error) {
-    return (
-      <Card className="p-4 text-red-500">
-        Error: {error}
-      </Card>
-    );
-  }
+function HomePage() {
+  const navigate = useNavigate();
 
   return (
-    <div className="container mx-auto p-4">
-      <FileUpload />
-      
-      {bills.length > 0 && (
-        <Tabs 
-          value={activeTab} 
-          onValueChange={setActiveTab} 
-          className="mt-4"
-        >
-          <TabsList className="grid w-full grid-cols-3">
-            <TabsTrigger value="invoices">Invoices</TabsTrigger>
-            <TabsTrigger value="products">Products</TabsTrigger>
-            <TabsTrigger value="customers">Customers</TabsTrigger>
-          </TabsList>
-          
-          <TabsContent value="invoices">
-            <InvoicesTab />
-          </TabsContent>
-          
-          <TabsContent value="products">
-            <ProductsTab />
-          </TabsContent>
-          
-          <TabsContent value="customers">
-            <CustomersTab />
-          </TabsContent>
-        </Tabs>
-      )}
+    <div className="flex flex-col items-center justify-center min-h-screen">
+      <h1 className="text-6xl font-bold">Welcome to Swipe</h1>
+      <Button
+        className="mt-4"
+        onClick={() => navigate('/upload-file')}
+      >
+        Get Started
+      </Button>
     </div>
-  );
-};
+  )
+}
 
 export default HomePage;

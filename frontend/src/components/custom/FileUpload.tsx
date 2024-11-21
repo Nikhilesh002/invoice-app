@@ -44,11 +44,14 @@ function FileUpload() {
       const formData = new FormData();
       formData.append("fileUpload", file);
 
-      const res = await axios.post('http://localhost:3217/api/file/test', formData, {
-        headers: {
-          "Content-Type": "multipart/form-data",
-        }
-      });
+      // const res = await axios.post('http://localhost:3217/api/file/test', formData, {
+      //   headers: {
+      //     "Content-Type": "multipart/form-data",
+      //   }
+      // });
+      const res = await axios.get('http://localhost:3217/api/file/test')
+
+      console.log(res.data)
 
       toast({
         title: "File Uploaded Successfully",
@@ -75,7 +78,7 @@ function FileUpload() {
     <div className="w-1/3 mx-auto mt-20">
       <Card>
         <CardHeader>
-          <CardTitle>Upload Invoice</CardTitle>
+          <CardTitle>Upload File</CardTitle>
           <CardDescription>Extract bill details from file</CardDescription>
         </CardHeader>
         <CardContent>

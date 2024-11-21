@@ -7,6 +7,7 @@ import YourFiles from '@/pages/YourFiles';
 import FileBillsPage from '@/pages/FileBillsPage';
 import BillDetailsPage from '@/pages/BillDetails';
 import { Toaster } from './components/ui/toaster';
+import FileUpload from './components/custom/FileUpload';
 
 function App() {
   
@@ -19,8 +20,13 @@ function App() {
             <Routes>
               <Route path="/" element={<HomePage />} />
               <Route path="/your-files" element={<YourFiles />} />
+              <Route path="/upload-file" element={<FileUpload />} />
               <Route path="/file-bills" element={<FileBillsPage />} />
               <Route path="/bill-details" element={<BillDetailsPage />} />
+              <Route path='/auth'>
+                <Route path="signin" element={<div>SignIn</div>} />
+                <Route path="signup" element={<div>SignUp</div>} />
+              </Route>
             </Routes>
           </div>
           <Toaster />

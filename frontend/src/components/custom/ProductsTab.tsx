@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { useDispatch } from 'react-redux';
-import { updateProductDetails } from '@/redux/slices/fileSlice';
+import { updateProduct } from '@/redux/slices/fileSlice';
 import { Products } from '@/redux/slices/fileSlice';
 import { Input } from '../ui/input';
 import { Button } from '../ui/button';
@@ -72,11 +72,11 @@ const ProductsTab: React.FC<ProductsTabProps> = ({
 
       // Redux update for each product
       editedProducts.forEach((product, index) => {
-        dispatch(updateProductDetails({
+        dispatch(updateProduct({
           fileId: fileId!, 
           billId: billId!, 
           productIndex: index,
-          productDetails: product
+          product: product
         }));
       });
     } catch (error) {

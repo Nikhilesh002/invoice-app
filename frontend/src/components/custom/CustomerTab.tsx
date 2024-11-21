@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { useDispatch } from 'react-redux';
-import { updateCustomerDetails } from '@/redux/slices/fileSlice';
+import { updateCustomer } from '@/redux/slices/fileSlice';
 import { Input } from '../ui/input';
 import { Button } from '../ui/button';
 import axios from 'axios';
@@ -45,10 +45,10 @@ const CustomerTab: React.FC<CustomerTabProps> = ({
       });
 
       // Redux update
-      dispatch(updateCustomerDetails({
+      dispatch(updateCustomer({
         fileId: fileId!, 
         billId: billId!, 
-        customerDetails: editedCustomer
+        customer: editedCustomer
       }));
     } catch (error) {
       console.error('Failed to update customer', error);
