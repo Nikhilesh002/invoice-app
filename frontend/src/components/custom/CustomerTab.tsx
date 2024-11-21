@@ -3,32 +3,27 @@ import { useDispatch } from 'react-redux';
 import { updateCustomer } from '@/redux/slices/fileSlice';
 import { Input } from '../ui/input';
 import { Button } from '../ui/button';
-import axios from 'axios';
-import { Customer } from '@/types';
+import { Bill, Customer } from '@/types';
+import { renderValue } from '@/lib/renderValue';
 
 interface CustomerTabProps {
-  customer: Customer | null;
+  handleBillUpdate: () => void;
+  currentBill:Bill
   isEditing: boolean;
   fileId: string;
   billId: string;
 }
 
 const CustomerTab: React.FC<CustomerTabProps> = ({ 
-  customer, 
+  handleBillUpdate,
+  currentBill,
   isEditing, 
   fileId, 
   billId 
 }) => {
+  const { customer } = currentBill;
   const dispatch = useDispatch();
-  const [editedCustomer, setEditedCustomer] = useState<Customer>(customer || {
-    customer_name: null,
-    customer_company: null,
-    phone_number: null,
-    customer_gstin: null,
-    total_purchase_amount: null,
-    email_address: null,
-    shipping_address: null
-  });
+  const [editedCustomer, setEditedCustomer] = useState<Customer>(customer);
 
   const handleInputChange = (key: keyof Customer, value: string) => {
     setEditedCustomer(prev => ({
@@ -39,30 +34,27 @@ const CustomerTab: React.FC<CustomerTabProps> = ({
 
   const handleSave = async () => {
     try {
-      // Backend update
-      await axios.put(`http://localhost:3217/api/bill/${billId}/customer`, {
-        customer: editedCustomer
-      });
-
+      console.log(editedCustomer)
       // Redux update
       dispatch(updateCustomer({
-        fileId: fileId!, 
-        billId: billId!, 
+        fileId: fileId, 
+        billId: billId, 
         customer: editedCustomer
       }));
+
+      // Backend update
+      await handleBillUpdate();
+
     } catch (error) {
       console.error('Failed to update customer', error);
     }
   };
 
-  const renderValue = (value: string | null) => 
-    value ? value : <span className="text-red-500">NA</span>;
-
   return (
     <div className="grid grid-cols-2 gap-4">
       {isEditing ? (
         <>
-          {Object.keys(editedCustomer).map((key) => (
+          {Object.keys(editedCustomer).filter((key) => key !== '_id').map((key) => (
             <div key={key} className="mb-4">
               <label className="block mb-2 capitalize">
                 {key.replace(/_/g, ' ')}
@@ -73,13 +65,13 @@ const CustomerTab: React.FC<CustomerTabProps> = ({
               />
             </div>
           ))}
-          <Button onClick={handleSave} className="col-span-2">
+          <Button onClick={handleSave}>
             Save Changes
           </Button>
         </>
       ) : (
         <>
-          {Object.entries(customer || {}).map(([key, value]) => (
+          {Object.entries(customer || {}).filter(([key]) => key !== '_id').map(([key, value]) => (
             <div key={key} className="mb-2">
               <strong className="capitalize">{key.replace(/_/g, ' ')}: </strong>
               {renderValue(value)}

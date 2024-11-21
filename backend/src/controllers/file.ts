@@ -23,27 +23,46 @@ export const getFileData = async (req:Request, res:Response) => {
 
     console.log("fileInfo",fileInfo);
 
-    if(fileInfo.mimetype === "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet" || fileInfo.mimetype === "application/vnd.ms-excel"){
-      fileInfo.filePath = await XLSXtoCSV(fileInfo.filePath);
-      fileInfo.fileName = fileInfo.fileName.replace(".xlsx",".csv");
-      fileInfo.mimetype = "text/csv";
-    }
-    else if((!fileInfo.mimetype.includes("pdf")) && (!fileInfo.mimetype.includes("image")) && (!fileInfo.mimetype.includes("csv"))){
-      fs.unlinkSync(fileInfo.filePath);
-      return res.status(400).json({success:false,message:"Invalid file format"});
-    }
+    // if(fileInfo.mimetype === "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet" || fileInfo.mimetype === "application/vnd.ms-excel"){
+    //   fileInfo.filePath = await XLSXtoCSV(fileInfo.filePath);
+    //   fileInfo.fileName = fileInfo.fileName.replace(".xlsx",".csv");
+    //   fileInfo.mimetype = "text/csv";
+    // }
+    // else if((!fileInfo.mimetype.includes("pdf")) && (!fileInfo.mimetype.includes("image")) && (!fileInfo.mimetype.includes("csv"))){
+    //   fs.unlinkSync(fileInfo.filePath);
+    //   return res.status(400).json({success:false,message:"Invalid file format"});
+    // }
 
-    const resp = await getDataWithAi(fileInfo);
+    // const resp = await getDataWithAi(fileInfo);
 
-    const newBill:any = await BillModel.create(resp);
+    // console.log("resp",resp);
+
+    // const newBill:any = await BillModel.create(resp);
+
+    // const newUserfile = new UserfileModel({
+    //   name: fileInfo.fileName.split(".")[0],
+    //   bills: [newBill[0]._id],
+    // });
+    // await newUserfile.save();
+    // console.log(newUserfile);
+
+    // const resp = await getDataWithAi(fileInfo);
+
+    // console.log("resp", resp);
+
+    const resp = data;
+
+    const newBills = await BillModel.insertMany(resp);
+
+    const billIds = newBills.map((bill: any) => bill._id);
 
     const newUserfile = new UserfileModel({
       name: fileInfo.fileName.split(".")[0],
-      bills: [newBill[0]._id],
+      bills: billIds,
     });
-    await newUserfile.save();
-    console.log(newUserfile);
 
+    await newUserfile.save();
+    
 
     return res.status(200).json(resp);
     

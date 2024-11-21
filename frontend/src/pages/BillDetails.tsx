@@ -8,6 +8,8 @@ import CustomerTab from '@/components/custom/CustomerTab';
 import { Button } from '@/components/ui/button';
 import { useParams } from 'react-router-dom';
 import { setCurrentBill, setCurrentFile } from '@/redux/slices/fileSlice';
+import axios from 'axios';
+import { toast } from '@/hooks/use-toast';
 
 
 const BillDetailsPage: React.FC = () => {
@@ -39,6 +41,25 @@ const BillDetailsPage: React.FC = () => {
     setIsEditing(!isEditing);
   };
 
+  const handleBillUpdate = async() => {
+    try{
+
+      console.log(currentBill)
+      await axios.put(`http://localhost:3217/api/file/update-bill/${currentBill._id}`,currentBill);
+      toast({
+        title: 'Bill Updated',
+        description: 'Bill details updated successfully'
+      })
+    }
+    catch(error){
+      console.error('Error deleting bill:', error);
+      toast({
+        title: 'Error',
+        description: 'Error updating bill'
+      })
+    }
+  };
+
   return (
     <div className="p-6">
       <div className="flex justify-between items-center mb-6">
@@ -62,7 +83,8 @@ const BillDetailsPage: React.FC = () => {
         
         <TabsContent value="invoice">
           <InvoiceTab 
-            invoice={currentBill.invoice} 
+            handleBillUpdate={handleBillUpdate}
+            currentBill={currentBill}
             isEditing={isEditing}
             fileId={fileId}
             billId={billId}
@@ -71,7 +93,8 @@ const BillDetailsPage: React.FC = () => {
         
         <TabsContent value="products">
           <ProductsTab 
-            products={currentBill.products} 
+            currentBill={currentBill}
+            handleBillUpdate={handleBillUpdate}
             isEditing={isEditing}
             fileId={fileId}
             billId={billId}
@@ -80,7 +103,8 @@ const BillDetailsPage: React.FC = () => {
         
         <TabsContent value="customer">
           <CustomerTab 
-            customer={currentBill.customer} 
+            handleBillUpdate={handleBillUpdate}
+            currentBill={currentBill}
             isEditing={isEditing}
             fileId={fileId}
             billId={billId}

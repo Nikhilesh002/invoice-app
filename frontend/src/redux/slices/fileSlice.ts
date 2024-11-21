@@ -52,13 +52,13 @@ const fileSlice = createSlice({
         }
       }
     },
-    updateProduct: (state, action: PayloadAction<{fileId: string, billId: string, productIndex: number, product: Products}>) => {
+    updateProducts: (state, action: PayloadAction<{fileId: string, billId: string, products: Products[]}>) => {
       const fileIndex = state.files.findIndex(file => file._id === action.payload.fileId);
       if (fileIndex !== -1) {
         const billIndex = state.files[fileIndex].bills.findIndex(bill => bill._id === action.payload.billId);
         if (billIndex !== -1) {
           if (state.files[fileIndex].bills[billIndex].products) {
-            state.files[fileIndex].bills[billIndex].products![action.payload.productIndex] = action.payload.product;
+            state.files[fileIndex].bills[billIndex].products = action.payload.products;
           }
         }
       }
@@ -70,6 +70,24 @@ const fileSlice = createSlice({
         if (billIndex !== -1) {
           state.files[fileIndex].bills[billIndex].customer = action.payload.customer;
         }
+      }
+    },
+    removeFile: (state, action: PayloadAction<string>) => {
+      state.files = state.files.filter(file => file._id !== action.payload);
+      if (state.currentFile && state.currentFile._id === action.payload) {
+        state.currentFile = null;
+      }
+    },
+    removeBill: (state, action: PayloadAction<{ fileId: string; billId: string }>) => {
+      const file = state.files.find(f => f._id === action.payload.fileId);
+      if (file) {
+        file.bills = file.bills.filter(bill => bill._id !== action.payload.billId);
+      }
+      if (state.currentFile && state.currentFile._id === action.payload.fileId) {
+        state.currentFile.bills = state.currentFile.bills.filter(bill => bill._id !== action.payload.billId);
+      }
+      if (state.currentBill && state.currentBill._id === action.payload.billId) {
+        state.currentBill = null;
       }
     }
   }
@@ -84,8 +102,10 @@ export const {
   setCurrentBill,
   updateBillInFile,
   updateInvoice,
-  updateProduct,
-  updateCustomer
+  updateProducts,
+  updateCustomer,
+  removeFile,
+  removeBill
 } = fileSlice.actions;
 
 export default fileSlice.reducer;

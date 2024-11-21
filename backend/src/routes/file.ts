@@ -16,11 +16,13 @@ const storage = multer.diskStorage({
 
 const upload = multer({ storage: storage })
 
-
+// api/file
 fileRouter.get('/',getFiles)
 fileRouter.get('/test',test)
 fileRouter.post('/get-ai-data',upload.single('fileUpload'),getFileData)
+
 fileRouter.delete('/delete-file/:fileId',deleteFile);
+
 fileRouter.put('/update-bill/:billId',updateBillInFile);
 fileRouter.delete('/delete-bill/:billId',deleteBillInFile);
 

@@ -55,7 +55,7 @@ function FileUpload() {
 
       toast({
         title: "File Uploaded Successfully",
-        description: `Processed ${res.data.data.length} bills from the file`,
+        description: `Processed ${res.data.length} bills from the file`,
       });
 
       dispatch(addFile(res.data));
