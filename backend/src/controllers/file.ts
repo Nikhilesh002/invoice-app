@@ -38,7 +38,7 @@ export const getFileData = async (req:Request, res:Response) => {
     const newBill:any = await BillModel.create(resp);
 
     const newUserfile = new UserfileModel({
-      name: fileInfo.fileName,
+      name: fileInfo.fileName.split(".")[0],
       bills: [newBill[0]._id],
     });
     await newUserfile.save();
@@ -49,6 +49,7 @@ export const getFileData = async (req:Request, res:Response) => {
     
   } catch (error) {
     console.log(error);
+    res.status(400).json({success:false,message:"Something went wrong"});
   }
 };
 
@@ -88,6 +89,42 @@ export const getFiles = async (req:Request, res:Response) => {
 }
 
 
+export const deleteFile = async (req:Request, res:Response) => {
+  try {
+    const fileId = req.params.fileId;
+    await UserfileModel.findByIdAndDelete(fileId);
+    res.status(200).json("File deleted");
+  } catch (error) {
+    console.log(error);
+    res.status(400).json({success:false,message:"Failed to delete userfile"});
+  }
+}
+
+
+export const updateBillInFile = async (req:Request, res:Response) => {
+  try {
+    const billId = req.params.billId;
+    await BillModel.findByIdAndUpdate(billId, req.body);
+    res.status(200).json("Bill updated");
+  } catch (error) {
+    console.log(error);
+    res.status(400).json({success:false,message:"Failed to update bill"});
+  }
+}
+
+
+export const deleteBillInFile = async (req:Request, res:Response) => {
+  try {
+    const billId = req.params.billId;
+    await BillModel.findByIdAndDelete(billId);
+    res.status(200).json("bill deleted");
+  } catch (error) {
+    console.log(error);
+    res.status(400).json({success:false,message:"Failed to delete bill"});
+  }
+}
+
+
 export const test = async (req:Request, res:Response) => {
   try {
     const randomIndex = Math.floor(Math.random() * 100 + 1)%2;
@@ -95,5 +132,6 @@ export const test = async (req:Request, res:Response) => {
     res.json({data:data[randomIndex]});
   } catch (error) {
     console.log(error);
+    res.status(400).json({success:false,message:"Something went wrong"});
   }
 };

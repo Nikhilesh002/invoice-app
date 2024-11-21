@@ -23,7 +23,7 @@ const fileSlice = createSlice({
       state.files = action.payload;
     },
     deleteFiles:(state,action:PayloadAction<string[]>)=>{
-      state.files = state.files.filter(file=>!action.payload.includes(file.id || ''));
+      state.files = state.files.filter(file=>!action.payload.includes(file._id || ''));
     },
     addFile: (state, action: PayloadAction<UserFile>) => {
       state.files.push(action.payload);
@@ -35,27 +35,27 @@ const fileSlice = createSlice({
       state.currentBill = action.payload;
     },
     updateBillInFile: (state, action: PayloadAction<{fileId: string, billId: string, updatedBill: Bill}>) => {
-      const fileIndex = state.files.findIndex(file => file.id === action.payload.fileId);
+      const fileIndex = state.files.findIndex(file => file._id === action.payload.fileId);
       if (fileIndex !== -1) {
-        const billIndex = state.files[fileIndex].bills.findIndex(bill => bill.id === action.payload.billId);
+        const billIndex = state.files[fileIndex].bills.findIndex(bill => bill._id === action.payload.billId);
         if (billIndex !== -1) {
           state.files[fileIndex].bills[billIndex] = action.payload.updatedBill;
         }
       }
     },
     updateInvoice: (state, action: PayloadAction<{fileId: string, billId: string, invoice: Invoice}>) => {
-      const fileIndex = state.files.findIndex(file => file.id === action.payload.fileId);
+      const fileIndex = state.files.findIndex(file => file._id === action.payload.fileId);
       if (fileIndex !== -1) {
-        const billIndex = state.files[fileIndex].bills.findIndex(bill => bill.id === action.payload.billId);
+        const billIndex = state.files[fileIndex].bills.findIndex(bill => bill._id === action.payload.billId);
         if (billIndex !== -1) {
           state.files[fileIndex].bills[billIndex].invoice = action.payload.invoice;
         }
       }
     },
     updateProduct: (state, action: PayloadAction<{fileId: string, billId: string, productIndex: number, product: Products}>) => {
-      const fileIndex = state.files.findIndex(file => file.id === action.payload.fileId);
+      const fileIndex = state.files.findIndex(file => file._id === action.payload.fileId);
       if (fileIndex !== -1) {
-        const billIndex = state.files[fileIndex].bills.findIndex(bill => bill.id === action.payload.billId);
+        const billIndex = state.files[fileIndex].bills.findIndex(bill => bill._id === action.payload.billId);
         if (billIndex !== -1) {
           if (state.files[fileIndex].bills[billIndex].products) {
             state.files[fileIndex].bills[billIndex].products![action.payload.productIndex] = action.payload.product;
@@ -64,9 +64,9 @@ const fileSlice = createSlice({
       }
     },
     updateCustomer: (state, action: PayloadAction<{fileId: string, billId: string, customer: Customer}>) => {
-      const fileIndex = state.files.findIndex(file => file.id === action.payload.fileId);
+      const fileIndex = state.files.findIndex(file => file._id === action.payload.fileId);
       if (fileIndex !== -1) {
-        const billIndex = state.files[fileIndex].bills.findIndex(bill => bill.id === action.payload.billId);
+        const billIndex = state.files[fileIndex].bills.findIndex(bill => bill._id === action.payload.billId);
         if (billIndex !== -1) {
           state.files[fileIndex].bills[billIndex].customer = action.payload.customer;
         }
@@ -74,6 +74,7 @@ const fileSlice = createSlice({
     }
   }
 });
+
 
 export const {
   storeFiles,

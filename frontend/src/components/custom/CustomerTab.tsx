@@ -9,8 +9,8 @@ import { Customer } from '@/types';
 interface CustomerTabProps {
   customer: Customer | null;
   isEditing: boolean;
-  fileId?: string;
-  billId?: string;
+  fileId: string;
+  billId: string;
 }
 
 const CustomerTab: React.FC<CustomerTabProps> = ({ 

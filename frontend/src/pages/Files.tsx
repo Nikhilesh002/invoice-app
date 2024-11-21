@@ -7,7 +7,7 @@ import { RootState } from '@/redux/store';
 import axios from 'axios';
 import { UserFile } from '@/types';
 
-const YourFiles: React.FC = () => {
+const Files: React.FC = () => {
   const dispatch = useDispatch();
   const navigate = useNavigate();
   const reduxFiles = useSelector((state: RootState) => state.files.files);
@@ -26,7 +26,7 @@ const YourFiles: React.FC = () => {
 
   const handleFileClick = (file: any) => {
     dispatch(setCurrentFile(file));
-    navigate('/file-bills');
+    navigate('/file/' + file._id);
   };
 
   return (
@@ -55,4 +55,4 @@ const YourFiles: React.FC = () => {
   );
 };
 
-export default YourFiles;
+export default Files;

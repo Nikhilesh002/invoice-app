@@ -1,22 +1,39 @@
 import React, { useState } from 'react';
-import { useSelector } from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
 import { RootState } from '../redux/store';
 import { Tabs, TabsContent, TabsList, TabsTrigger } from '@/components/ui/tabs';
 import InvoiceTab from '@/components/custom/InvoiceTab';
 import ProductsTab from '@/components/custom/ProductsTab';
 import CustomerTab from '@/components/custom/CustomerTab';
 import { Button } from '@/components/ui/button';
+import { useParams } from 'react-router-dom';
+import { setCurrentBill, setCurrentFile } from '@/redux/slices/fileSlice';
+
 
 const BillDetailsPage: React.FC = () => {
+
+  const { fileId, billId } = useParams();
+  const dispatch = useDispatch();
+
   const [activeTab, setActiveTab] = useState('invoice');
   const [isEditing, setIsEditing] = useState(false);
-  
-  const currentBill = useSelector((state: RootState) => state.files.currentBill);
-  const currentFile = useSelector((state: RootState) => state.files.currentFile);
+
+  const allFiles = useSelector((state: RootState) => state.files.files);
+
+  if (!fileId || !billId) {
+    return <div>No bill selected</div>;
+  }
+
+  const currentFile = allFiles.find(file => file._id === fileId);
+  const currentBill = currentFile?.bills.find(bill => bill._id === billId);
 
   if (!currentBill || !currentFile) {
     return <div>No bill selected</div>;
   }
+
+  dispatch(setCurrentFile(currentFile));
+  dispatch(setCurrentBill(currentBill));
+
 
   const handleEditToggle = () => {
     setIsEditing(!isEditing);
@@ -47,8 +64,8 @@ const BillDetailsPage: React.FC = () => {
           <InvoiceTab 
             invoice={currentBill.invoice} 
             isEditing={isEditing}
-            fileId={currentFile.id}
-            billId={currentBill.id}
+            fileId={fileId}
+            billId={billId}
           />
         </TabsContent>
         
@@ -56,8 +73,8 @@ const BillDetailsPage: React.FC = () => {
           <ProductsTab 
             products={currentBill.products} 
             isEditing={isEditing}
-            fileId={currentFile.id}
-            billId={currentBill.id}
+            fileId={fileId}
+            billId={billId}
           />
         </TabsContent>
         
@@ -65,8 +82,8 @@ const BillDetailsPage: React.FC = () => {
           <CustomerTab 
             customer={currentBill.customer} 
             isEditing={isEditing}
-            fileId={currentFile.id}
-            billId={currentBill.id}
+            fileId={fileId}
+            billId={billId}
           />
         </TabsContent>
       </Tabs>

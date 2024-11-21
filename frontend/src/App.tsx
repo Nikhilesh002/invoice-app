@@ -3,14 +3,13 @@ import { Provider } from 'react-redux';
 import { store } from '@/redux/store';
 import Navigation from '@/components/custom/Navigation';
 import HomePage from '@/components/custom/HomePage';
-import YourFiles from '@/pages/YourFiles';
-import FileBillsPage from '@/pages/FileBillsPage';
 import BillDetailsPage from '@/pages/BillDetails';
 import { Toaster } from '@/components/ui/toaster';
 import FileUpload from '@/components/custom/FileUpload';
+import Files from '@/pages/Files';
+import Bills from '@/pages/Bills';
 
 function App() {
-  
   return (
     <Provider store={store}>
       <Router>
@@ -19,11 +18,14 @@ function App() {
           <div className="flex-grow overflow-auto">
             <Routes>
               <Route path="/" element={<HomePage />} />
-              <Route path="/your-files" element={<YourFiles />} />
+              
+              <Route path="/files" element={<Files />} />
+              <Route path="/file/:fileId" element={<Bills />} />
+              <Route path="/file/:fileId/:billId" element={<BillDetailsPage />} />
+              
               <Route path="/upload-file" element={<FileUpload />} />
-              <Route path="/file-bills" element={<FileBillsPage />} />
-              <Route path="/bill-details" element={<BillDetailsPage />} />
-              <Route path='/auth'>
+              
+              <Route path="/auth">
                 <Route path="signin" element={<div>SignIn</div>} />
                 <Route path="signup" element={<div>SignUp</div>} />
               </Route>

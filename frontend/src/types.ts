@@ -1,9 +1,5 @@
-export interface ApiResponse {
-  success: boolean;
-  data: any;
-}
-
 export interface Invoice {
+  _id: string;
   serial_number: string;
   customer_name: string;
   products: string[];
@@ -16,6 +12,7 @@ export interface Invoice {
 }
 
 export interface Products {
+  _id: string;
   name: string;
   quantity: number;
   unit_price: number;
@@ -26,6 +23,7 @@ export interface Products {
 }
 
 export interface Customer {
+  _id: string;
   customer_name: string;
   customer_company: string;
   phone_number: string;
@@ -36,14 +34,14 @@ export interface Customer {
 }
 
 export interface Bill {
-  id: string;
+  _id: string;
   invoice: Invoice;
   products: Products[];
   customer: Customer;
 }
 
 export interface UserFile {
-  id: string;
+  _id: string;
   name: string;
   bills: Bill[];
 }
