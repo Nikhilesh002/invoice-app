@@ -18,6 +18,7 @@ import {
   AlertDialogHeader,
   AlertDialogTitle,
 } from "@/components/ui/alert-dialog"
+import { renderValue } from '@/lib/renderValue';
 
 const Files: React.FC = () => {
   const dispatch = useDispatch();
@@ -66,15 +67,15 @@ const Files: React.FC = () => {
     <div className="p-6">
       <h1 className="text-2xl font-bold mb-6">Your Files</h1>
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-        {reduxFiles.map((file) => (
+        {reduxFiles && reduxFiles.map((file) => (
           <Card 
             key={file._id} 
             onClick={() => handleFileClick(file)}
             className="cursor-pointer hover:shadow-lg transition-shadow"
           >
-            <CardTitle className="p-4">{file.name}</CardTitle>
+            <CardTitle className="p-4">{renderValue(file.name,20)}</CardTitle>
             <CardDescription className="px-4 pb-2">
-              {file.bills.length} Bills
+              {file?.bills?.length} Bills
             </CardDescription>
             <CardContent>
               <p className="text-sm text-gray-500">

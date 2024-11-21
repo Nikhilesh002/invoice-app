@@ -62,8 +62,7 @@ function FileUpload() {
 
       // Reset file input
       setFile(null);
-      event.currentTarget.reset();
-
+      (document.getElementById('fileUpload') as HTMLInputElement).value = '';
     } catch (error) {
       console.error("File upload error:", error);
       toast({

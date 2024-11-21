@@ -5,7 +5,6 @@ import { XLSXtoCSV } from "../utils/fileFormatConverter/XLSXtoCSV";
 import { data } from '../utils/sample_data';
 import { UserfileModel } from '../models/userfile';
 import { BillModel } from '../models/bill';
-// import { replaceWithDefaults } from '../utils/formatData/replaceWithDefaults';
 
 
 export const getFileData = async (req:Request, res:Response) => {
@@ -23,34 +22,17 @@ export const getFileData = async (req:Request, res:Response) => {
 
     console.log("fileInfo",fileInfo);
 
-    // if(fileInfo.mimetype === "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet" || fileInfo.mimetype === "application/vnd.ms-excel"){
-    //   fileInfo.filePath = await XLSXtoCSV(fileInfo.filePath);
-    //   fileInfo.fileName = fileInfo.fileName.replace(".xlsx",".csv");
-    //   fileInfo.mimetype = "text/csv";
-    // }
-    // else if((!fileInfo.mimetype.includes("pdf")) && (!fileInfo.mimetype.includes("image")) && (!fileInfo.mimetype.includes("csv"))){
-    //   fs.unlinkSync(fileInfo.filePath);
-    //   return res.status(400).json({success:false,message:"Invalid file format"});
-    // }
+    if(fileInfo.mimetype === "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet" || fileInfo.mimetype === "application/vnd.ms-excel"){
+      fileInfo.filePath = await XLSXtoCSV(fileInfo.filePath);
+      fileInfo.fileName = fileInfo.fileName.replace(".xlsx",".csv");
+      fileInfo.mimetype = "text/csv";
+    }
+    else if((!fileInfo.mimetype.includes("pdf")) && (!fileInfo.mimetype.includes("image")) && (!fileInfo.mimetype.includes("csv"))){
+      fs.unlinkSync(fileInfo.filePath);
+      return res.status(400).json({success:false,message:"Invalid file format"});
+    }
 
-    // const resp = await getDataWithAi(fileInfo);
-
-    // console.log("resp",resp);
-
-    // const newBill:any = await BillModel.create(resp);
-
-    // const newUserfile = new UserfileModel({
-    //   name: fileInfo.fileName.split(".")[0],
-    //   bills: [newBill[0]._id],
-    // });
-    // await newUserfile.save();
-    // console.log(newUserfile);
-
-    // const resp = await getDataWithAi(fileInfo);
-
-    // console.log("resp", resp);
-
-    const resp = data;
+    const resp = await getDataWithAi(fileInfo);
 
     const newBills = await BillModel.insertMany(resp);
 
@@ -62,7 +44,8 @@ export const getFileData = async (req:Request, res:Response) => {
     });
 
     await newUserfile.save();
-    
+
+    console.log(`Processed ${resp.length} bills from the file`)
 
     return res.status(200).json(resp);
     
@@ -72,28 +55,6 @@ export const getFileData = async (req:Request, res:Response) => {
   }
 };
 
-
-// export const getFiles = async (req:Request, res:Response) => {
-//   try {
-//     const cleanedObj = replaceWithDefaults(data[0]);
-    
-//     const newBill1:any = await BillModel.create(replaceWithDefaults(data[0]));
-//     const newBill2:any = await BillModel.create(replaceWithDefaults(data[1]));
-
-//     console.log(newBill1[0])
-
-//     const newUserfile = new UserfileModel({
-//       name: "Sample-data",
-//       bills: [newBill1[0]._id, newBill2[0]._id],
-//     });
-//     await newUserfile.save();
-//     console.log(newUserfile);
-    
-//     res.json([{bills:cleanedObj,name:"Sample-data",id:"asdfg"}]);
-//   } catch (error) {
-//     console.log(error);
-//   }
-// }
 
 export const getFiles = async (req:Request, res:Response) => {
   try {
