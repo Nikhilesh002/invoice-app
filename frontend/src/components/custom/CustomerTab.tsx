@@ -1,49 +1,61 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { useDispatch } from 'react-redux';
 import { updateCustomer } from '@/redux/slices/fileSlice';
 import { Input } from '../ui/input';
 import { Button } from '../ui/button';
 import { Bill, Customer } from '@/types';
 import { renderValue } from '@/lib/renderValue';
+import axios from 'axios';
 
 interface CustomerTabProps {
-  handleBillUpdate: () => void;
-  currentBill:Bill
+  currentBill: Bill;
   isEditing: boolean;
   fileId: string;
   billId: string;
 }
 
-const CustomerTab: React.FC<CustomerTabProps> = ({ 
-  handleBillUpdate,
+const CustomerTab: React.FC<CustomerTabProps> = ({
   currentBill,
-  isEditing, 
-  fileId, 
-  billId 
+  isEditing,
+  fileId,
+  billId,
 }) => {
-  const { customer } = currentBill;
   const dispatch = useDispatch();
-  const [editedCustomer, setEditedCustomer] = useState<Customer>(customer);
+  const [editedCustomer, setEditedCustomer] = useState<Customer>(
+    currentBill.customer || {}
+  );
+
+  // Update local state if currentBill changes
+  useEffect(() => {
+    setEditedCustomer(currentBill.customer || {});
+  }, [currentBill]);
 
   const handleInputChange = (key: keyof Customer, value: string) => {
-    setEditedCustomer(prev => ({
+    setEditedCustomer((prev) => ({
       ...prev,
-      [key]: value
+      [key]: value,
     }));
   };
 
   const handleSave = async () => {
     try {
+      // Create an updated bill object
+      const updatedBill = {
+        ...currentBill,
+        customer: editedCustomer,
+      };
+
       // Redux update
-      dispatch(updateCustomer({
-        fileId: fileId, 
-        billId: billId, 
-        customer: editedCustomer
-      }));
+      dispatch(
+        updateCustomer({
+          fileId,
+          billId,
+          customer: editedCustomer,
+        })
+      );
 
       // Backend update
-      await handleBillUpdate();
-
+      await axios.put(`${window.location.origin}/api/file/update-bill/${billId}`,updatedBill);
     } catch (error) {
       console.error('Failed to update customer', error);
     }
@@ -53,29 +65,35 @@ const CustomerTab: React.FC<CustomerTabProps> = ({
     <div className="grid grid-cols-2 gap-4">
       {isEditing ? (
         <>
-          {Object.keys(editedCustomer).filter((key) => key !== '_id').map((key) => (
-            <div key={key} className="mb-4">
-              <label className="block mb-2 capitalize">
-                {key.replace(/_/g, ' ')}
-              </label>
-              <Input
-                value={editedCustomer[key as keyof Customer] || ''}
-                onChange={(e) => handleInputChange(key as keyof Customer, e.target.value)}
-              />
-            </div>
-          ))}
-          <Button onClick={handleSave}>
-            Save Changes
-          </Button>
+          {Object.keys(editedCustomer)
+            .filter((key) => key !== '_id')
+            .map((key) => (
+              <div key={key} className="mb-4">
+                <label className="block mb-2 capitalize">
+                  {key.replace(/_/g, ' ')}
+                </label>
+                <Input
+                  value={editedCustomer[key as keyof Customer] || ''}
+                  onChange={(e) =>
+                    handleInputChange(key as keyof Customer, e.target.value)
+                  }
+                />
+              </div>
+            ))}
+          <Button onClick={handleSave}>Save Changes</Button>
         </>
       ) : (
         <>
-          {Object.entries(customer || {}).filter(([key]) => key !== '_id').map(([key, value]) => (
-            <div key={key} className="mb-2">
-              <strong className="capitalize">{key.replace(/_/g, ' ')}: </strong>
-              {renderValue(value)}
-            </div>
-          ))}
+          {Object.entries(currentBill.customer || {})
+            .filter(([key]) => key !== '_id')
+            .map(([key, value]) => (
+              <div key={key} className="mb-2">
+                <strong className="capitalize">
+                  {key.replace(/_/g, ' ')}:{' '}
+                </strong>
+                {renderValue(value)}
+              </div>
+            ))}
         </>
       )}
     </div>

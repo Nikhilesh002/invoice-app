@@ -1,30 +1,34 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { useDispatch } from 'react-redux';
 import { updateInvoice } from '@/redux/slices/fileSlice';
 import { Bill, Invoice } from '@/types';
 import { Input } from '../ui/input';
 import { Button } from '../ui/button';
 import { renderValue } from '@/lib/renderValue';
+import axios from 'axios';
 
 interface InvoiceTabProps {
-  handleBillUpdate: () => void;
-  currentBill:Bill
+  currentBill: Bill;
   isEditing: boolean;
   fileId: string;
   billId: string;
 }
 
-const InvoiceTab: React.FC<InvoiceTabProps> = ({ 
-  handleBillUpdate,
-  currentBill, 
-  isEditing, 
-  fileId, 
-  billId 
+const InvoiceTab: React.FC<InvoiceTabProps> = ({
+  currentBill,
+  isEditing,
+  fileId,
+  billId
 }) => {
   const { invoice } = currentBill;
 
   const dispatch = useDispatch();
   const [editedInvoice, setEditedInvoice] = useState<Invoice>(invoice);
+
+  // Sync the editedInvoice state if the currentBill changes
+  useEffect(() => {
+    setEditedInvoice(invoice);
+  }, [invoice]);
 
   const handleInputChange = (key: keyof Invoice, value: string) => {
     setEditedInvoice(prev => ({
@@ -35,20 +39,25 @@ const InvoiceTab: React.FC<InvoiceTabProps> = ({
 
   const handleSave = async () => {
     try {
+      // Create an updated bill object with the edited invoice
+      const updatedBill = {
+        ...currentBill,
+        invoice: editedInvoice,
+      };
+
       // Redux update
       dispatch(updateInvoice({
-        fileId: fileId, 
-        billId: billId, 
+        fileId: fileId,
+        billId: billId,
         invoice: editedInvoice
       }));
 
       // Backend update
-      await handleBillUpdate();
+      await axios.put(`${window.location.origin}/api/file/update-bill/${billId}`, updatedBill);
     } catch (error) {
       console.error('Failed to update invoice', error);
     }
   };
-
 
   return (
     <div className="grid grid-cols-2 gap-4">
@@ -59,7 +68,6 @@ const InvoiceTab: React.FC<InvoiceTabProps> = ({
               <label className="block mb-2 capitalize">
                 {key.replace(/_/g, ' ')}
               </label>
-              {/* TODO if i get input as date, then I am getting error a snot assignable to string, number */}
               <Input
                 value={editedInvoice[key as keyof Invoice] || ''}
                 onChange={(e) => handleInputChange(key as keyof Invoice, e.target.value)}

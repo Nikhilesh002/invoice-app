@@ -15,7 +15,7 @@ function App() {
     <Provider store={store}>
       <Router>
         <div className="flex flex-col h-screen">
-          <ReactHotToaster />
+          <ReactHotToaster position='bottom-right' />
           <Navigation />
           <div className="flex-grow overflow-auto">
             <Routes>

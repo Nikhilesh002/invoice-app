@@ -8,8 +8,6 @@ import CustomerTab from '@/components/custom/CustomerTab';
 import { Button } from '@/components/ui/button';
 import { useParams } from 'react-router-dom';
 import { setCurrentBill, setCurrentFile } from '@/redux/slices/fileSlice';
-import axios from 'axios';
-import { toast } from '@/hooks/use-toast';
 
 
 const BillDetailsPage: React.FC = () => {
@@ -41,23 +39,6 @@ const BillDetailsPage: React.FC = () => {
     setIsEditing(!isEditing);
   };
 
-  const handleBillUpdate = async() => {
-    try{
-
-      await axios.put(`${window.location.origin}/api/file/update-bill/${currentBill._id}`,currentBill);
-      toast({
-        title: 'Bill Updated',
-        description: 'Bill details updated successfully'
-      })
-    }
-    catch(error){
-      console.error('Error deleting bill:', error);
-      toast({
-        title: 'Error',
-        description: 'Error updating bill'
-      })
-    }
-  };
 
   return (
     <div className="p-6">
@@ -82,7 +63,6 @@ const BillDetailsPage: React.FC = () => {
         
         <TabsContent value="invoice">
           <InvoiceTab 
-            handleBillUpdate={handleBillUpdate}
             currentBill={currentBill}
             isEditing={isEditing}
             fileId={fileId}
@@ -93,7 +73,6 @@ const BillDetailsPage: React.FC = () => {
         <TabsContent value="products">
           <ProductsTab 
             currentBill={currentBill}
-            handleBillUpdate={handleBillUpdate}
             isEditing={isEditing}
             fileId={fileId}
             billId={billId}
@@ -102,7 +81,6 @@ const BillDetailsPage: React.FC = () => {
         
         <TabsContent value="customer">
           <CustomerTab 
-            handleBillUpdate={handleBillUpdate}
             currentBill={currentBill}
             isEditing={isEditing}
             fileId={fileId}
