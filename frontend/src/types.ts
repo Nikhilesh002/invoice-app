@@ -44,4 +44,5 @@ export interface UserFile {
   _id: string;
   name: string;
   bills: Bill[];
+  createdAt: Date;
 }
