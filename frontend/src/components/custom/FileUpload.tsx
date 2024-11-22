@@ -44,7 +44,7 @@ function FileUpload() {
       const formData = new FormData();
       formData.append("fileUpload", file);
 
-      const res = await axios.post('http://localhost:3217/api/file/get-ai-data', formData, {
+      const res = await axios.post(`${window.location.origin}/api/file/get-ai-data`, formData, {
         headers: {
           "Content-Type": "multipart/form-data",
         }

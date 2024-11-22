@@ -14,7 +14,7 @@ function HomePage() {
   useEffect(() => {
     const fetchFiles = async () => {
       try {
-        const response = await axios.get<UserFile[]>('http://localhost:3217/api/file');
+        const response = await axios.get<UserFile[]>(`${window.location.origin}/api/file`);
         dispatch(storeFiles(response.data));
       } catch (error) {
         console.error(error);

@@ -1,5 +1,5 @@
 export const renderValue = (value: string | number,size: number=50) => {
-  if (value === "NA" || value === 0) {
+  if(value === null || value === undefined ||value === "NA") {
     return <span className="text-red-500">NA</span>;
   }
 

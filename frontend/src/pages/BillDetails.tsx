@@ -44,7 +44,7 @@ const BillDetailsPage: React.FC = () => {
   const handleBillUpdate = async() => {
     try{
 
-      await axios.put(`http://localhost:3217/api/file/update-bill/${currentBill._id}`,currentBill);
+      await axios.put(`${window.location.origin}/api/file/update-bill/${currentBill._id}`,currentBill);
       toast({
         title: 'Bill Updated',
         description: 'Bill details updated successfully'

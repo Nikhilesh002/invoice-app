@@ -30,7 +30,7 @@ const Files: React.FC = () => {
   useEffect(() => {
     const fetchFiles = async () => {
       try {
-        const response = await axios.get<UserFile[]>('http://localhost:3217/api/file');
+        const response = await axios.get<UserFile[]>(`${window.location.origin}/api/file`);
         dispatch(storeFiles(response.data));
       } catch (error) {
         console.error(error);
@@ -53,7 +53,7 @@ const Files: React.FC = () => {
   const handleDeleteConfirm = async () => {
     if (fileToDelete) {
       try {
-        await axios.delete(`http://localhost:3217/api/file/delete-file/${fileToDelete._id}`);
+        await axios.delete(`${window.location.origin}/api/file/delete-file/${fileToDelete._id}`);
         dispatch(removeFile(fileToDelete._id));
         setIsDeleteDialogOpen(false);
         setFileToDelete(null);
