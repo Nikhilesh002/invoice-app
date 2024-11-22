@@ -8,12 +8,14 @@ import { Toaster } from '@/components/ui/toaster';
 import FileUpload from '@/components/custom/FileUpload';
 import Files from '@/pages/Files';
 import Bills from '@/pages/Bills';
+import { Toaster as ReactHotToaster } from 'react-hot-toast';
 
 function App() {
   return (
     <Provider store={store}>
       <Router>
         <div className="flex flex-col h-screen">
+          <ReactHotToaster />
           <Navigation />
           <div className="flex-grow overflow-auto">
             <Routes>

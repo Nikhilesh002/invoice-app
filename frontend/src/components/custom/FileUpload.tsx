@@ -11,11 +11,10 @@ import {
   CardHeader,
   CardTitle,
 } from "../ui/card";
-import { useToast } from '@/hooks/use-toast';
+import { toast } from 'react-hot-toast';
 
 const FileUpload: React.FC = () => {
   const [file, setFile] = useState<File | null>(null);
-  const { toast } = useToast();
   const dispatch = useDispatch();
 
   const handleChange = (event: React.ChangeEvent<HTMLInputElement>) => {
@@ -27,18 +26,11 @@ const FileUpload: React.FC = () => {
       if (validExtensions.includes(fileExtension || '')) {
         setFile(selectedFile);
       } else {
-        toast({
-          title: "Invalid File Type",
-          description: `Allowed formats: ${validExtensions.join(', ')}`,
-          variant: "destructive",
-        });
+        toast.error(`Invalid File Type. Allowed formats: ${validExtensions.join(', ')}`);
         setFile(null);
       }
     } else {
-      toast({
-        title: "No file selected",
-        variant: "destructive",
-      });
+      toast.error("No file selected");
     }
   };
 
@@ -46,10 +38,7 @@ const FileUpload: React.FC = () => {
     event.preventDefault();
 
     if (!file) {
-      toast({
-        title: "No file selected",
-        variant: "destructive",
-      });
+      toast.error("No file selected");
       return;
     }
 
@@ -57,19 +46,29 @@ const FileUpload: React.FC = () => {
       const formData = new FormData();
       formData.append("fileUpload", file);
 
+      toast.dismiss();
+
       const response = await axios.post(`${window.location.origin}/api/file/get-ai-data`, formData, {
         headers: {
           "Content-Type": "multipart/form-data",
         },
+        onUploadProgress: (progressEvent) => {
+          const percentCompleted = progressEvent.total ? Math.round((progressEvent.loaded * 100) / progressEvent.total) : 0;
+          toast.loading(`Uploading file... ${percentCompleted}%`, { id: 'upload-progress' });
+          if(percentCompleted === 100){
+            toast.dismiss('upload-progress');
+            toast.loading(`Processing file...`, { id: 'processing-progress' });
+          }
+        }
       });
+
+      toast.dismiss('upload-progress');
+      toast.dismiss('processing-progress');
+
 
       if (response.status === 200) {
         const billsCount = response.data?.length || 0;
-        toast({
-          title: "File Uploaded Successfully",
-          description: `Processed ${billsCount} bill${billsCount !== 1 ? 's' : ''} from the file.`,
-        });
-
+        toast.success(`File Uploaded Successfully. Processed ${billsCount} bill${billsCount > 1 ? 's' : ''} from the file.`);
         dispatch(addFile(response.data));
 
         // Reset file input
@@ -80,11 +79,7 @@ const FileUpload: React.FC = () => {
       }
     } catch (error) {
       console.error("File upload error:", error);
-      toast({
-        title: "Upload Failed",
-        description: "Unable to process the file",
-        variant: "destructive",
-      });
+      toast.error("Upload Failed. Unable to process the file.");
     }
   };
 
