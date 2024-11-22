@@ -53,7 +53,7 @@ const InvoiceTab: React.FC<InvoiceTabProps> = ({
       }));
 
       // Backend update
-      await axios.put(`${window.location.origin}/api/file/update-bill/${billId}`, updatedBill);
+      await axios.put(`${import.meta.env.VITE_BACKEND_URL}/api/file/update-bill/${billId}`, updatedBill);
     } catch (error) {
       console.error('Failed to update invoice', error);
     }

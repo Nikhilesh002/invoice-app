@@ -59,7 +59,7 @@ const Bills: React.FC = () => {
   const handleDeleteConfirm = async () => {
     if (billToDelete && currentFile) {
       try {
-        await axios.delete(`${window.location.origin}/api/file/delete-bill/${billToDelete._id}`);
+        await axios.delete(`${import.meta.env.VITE_BACKEND_URL}/api/file/delete-bill/${billToDelete._id}`);
         dispatch(removeBill({ fileId: currentFile._id, billId: billToDelete._id }));
         setIsDeleteDialogOpen(false);
         setBillToDelete(null);

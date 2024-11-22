@@ -48,7 +48,7 @@ const FileUpload: React.FC = () => {
 
       toast.dismiss();
 
-      const response = await axios.post(`${window.location.origin}/api/file/get-ai-data`, formData, {
+      const response = await axios.post(`${import.meta.env.VITE_BACKEND_URL}/api/file/get-ai-data`, formData, {
         headers: {
           "Content-Type": "multipart/form-data",
         },
