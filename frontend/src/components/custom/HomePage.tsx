@@ -3,6 +3,7 @@ import { storeFiles } from '@/redux/slices/fileSlice';
 import { UserFile } from '@/types';
 import axios from 'axios';
 import { useEffect } from 'react';
+import toast from 'react-hot-toast';
 import { useDispatch } from 'react-redux';
 import { useNavigate } from 'react-router-dom';
 
@@ -14,10 +15,13 @@ function HomePage() {
   useEffect(() => {
     const fetchFiles = async () => {
       try {
+        toast.loading('Fetching files...');
         const response = await axios.get<UserFile[]>(`${import.meta.env.VITE_BACKEND_URL}/api/file`);
+        toast.dismiss();
         dispatch(storeFiles(response.data));
       } catch (error) {
         console.error(error);
+        toast.error('Failed to fetch files');
       }
     };
     fetchFiles();

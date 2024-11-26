@@ -7,6 +7,7 @@ import { Button } from '../ui/button';
 import { Trash2, Plus, Search } from 'lucide-react';
 import { renderValue } from '@/lib/renderValue';
 import axios from 'axios';
+import toast from 'react-hot-toast';
 
 interface ProductsTabProps {
   currentBill: Bill;
@@ -78,8 +79,10 @@ const ProductsTab: React.FC<ProductsTabProps> = ({
 
       // Backend update
       await axios.put(`${import.meta.env.VITE_BACKEND_URL}/api/file/update-bill/${billId}`, updatedBill);
+      toast.success('Products updated successfully');
     } catch (error) {
       console.error('Failed to update products', error);
+      toast.error('Failed to update products');
     }
   };
 

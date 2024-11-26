@@ -18,6 +18,7 @@ import {
   AlertDialogTitle,
 } from "@/components/ui/alert-dialog";
 import { Bill } from '@/types';
+import toast from 'react-hot-toast';
 
 const Bills: React.FC = () => {
   const { fileId } = useParams<{ fileId: string }>();
@@ -60,11 +61,13 @@ const Bills: React.FC = () => {
     if (billToDelete && currentFile) {
       try {
         await axios.delete(`${import.meta.env.VITE_BACKEND_URL}/api/file/delete-bill/${billToDelete._id}`);
+        toast.success('Bill deleted successfully');
         dispatch(removeBill({ fileId: currentFile._id, billId: billToDelete._id }));
         setIsDeleteDialogOpen(false);
         setBillToDelete(null);
       } catch (error) {
         console.error('Error deleting bill:', error);
+        toast.error('Failed to delete bill');
       }
     }
   };

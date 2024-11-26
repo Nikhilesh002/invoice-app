@@ -19,6 +19,7 @@ import {
   AlertDialogTitle,
 } from "@/components/ui/alert-dialog"
 import { renderValue } from '@/lib/renderValue';
+import toast from 'react-hot-toast';
 
 const Files: React.FC = () => {
   const dispatch = useDispatch();
@@ -30,12 +31,15 @@ const Files: React.FC = () => {
   useEffect(() => {
     const fetchFiles = async () => {
       try {
+        toast.loading('Fetching files...');
         const response = await axios.get<UserFile[]>(`${import.meta.env.VITE_BACKEND_URL}/api/file`);
+        toast.dismiss();
         if (response?.data) {
           dispatch(storeFiles(response.data));
         }
       } catch (error) {
         console.error('Error fetching files:', error);
+        toast.error('Failed to fetch files');
       }
     };
 
@@ -59,11 +63,13 @@ const Files: React.FC = () => {
     if (fileToDelete?._id) {
       try {
         await axios.delete(`${import.meta.env.VITE_BACKEND_URL}/api/file/delete-file/${fileToDelete._id}`);
+        toast.success('File deleted successfully');
         dispatch(removeFile(fileToDelete._id));
         setIsDeleteDialogOpen(false);
         setFileToDelete(null);
       } catch (error) {
         console.error('Error deleting file:', error);
+        toast.error('Failed to delete file');
       }
     }
   };

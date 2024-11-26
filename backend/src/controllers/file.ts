@@ -84,19 +84,19 @@ export const deleteFile = async (req:Request, res:Response) => {
 export const updateBillInFile = async (req:Request, res:Response) => {
   try {
     const billId = req.params.billId;
-    console.log("--------")
     const newBill = req.body;
-    console.log(newBill.products.length)
+    
     const lastProduct = newBill.products[newBill.products.length - 1];
     if(lastProduct._id.toString() ===""){
       newBill.products.pop();
     }
-    delete lastProduct._id;
-    console.log(newBill.products.length)
-    console.log(lastProduct)
+    
     await BillModel.findByIdAndUpdate(billId, newBill);
     // now insert last product
-    await BillModel.findByIdAndUpdate(billId, {$push:{products:lastProduct}});
+    if(lastProduct._id.toString() ===""){
+      delete lastProduct._id;
+      await BillModel.findByIdAndUpdate(billId, {$push:{products:lastProduct}});
+    }
     res.status(200).json({success:true,message:"Bill updated"});
   } catch (error) {
     console.log("Failed to update bill",error);

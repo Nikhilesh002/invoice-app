@@ -6,6 +6,7 @@ import { Button } from '../ui/button';
 import { Bill, Customer } from '@/types';
 import { renderValue } from '@/lib/renderValue';
 import axios from 'axios';
+import toast from 'react-hot-toast';
 
 interface CustomerTabProps {
   currentBill: Bill;
@@ -56,8 +57,10 @@ const CustomerTab: React.FC<CustomerTabProps> = ({
 
       // Backend update
       await axios.put(`${import.meta.env.VITE_BACKEND_URL}/api/file/update-bill/${billId}`,updatedBill);
+      toast.success('Customer details updated successfully');
     } catch (error) {
       console.error('Failed to update customer', error);
+      toast.error('Failed to update customer');
     }
   };
 

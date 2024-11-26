@@ -6,6 +6,7 @@ import { Input } from '../ui/input';
 import { Button } from '../ui/button';
 import { renderValue } from '@/lib/renderValue';
 import axios from 'axios';
+import toast from 'react-hot-toast';
 
 interface InvoiceTabProps {
   currentBill: Bill;
@@ -54,8 +55,10 @@ const InvoiceTab: React.FC<InvoiceTabProps> = ({
 
       // Backend update
       await axios.put(`${import.meta.env.VITE_BACKEND_URL}/api/file/update-bill/${billId}`, updatedBill);
+      toast.success('Invoice updated successfully');
     } catch (error) {
       console.error('Failed to update invoice', error);
+      toast.error('Failed to update invoice');
     }
   };
 
