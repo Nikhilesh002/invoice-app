@@ -60,7 +60,9 @@ const Bills: React.FC = () => {
   const handleDeleteConfirm = async () => {
     if (billToDelete && currentFile) {
       try {
+        toast.loading('Deleting bill...');
         await axios.delete(`${import.meta.env.VITE_BACKEND_URL}/api/file/delete-bill/${billToDelete._id}`);
+        toast.dismiss();
         toast.success('Bill deleted successfully');
         dispatch(removeBill({ fileId: currentFile._id, billId: billToDelete._id }));
         setIsDeleteDialogOpen(false);
@@ -68,6 +70,9 @@ const Bills: React.FC = () => {
       } catch (error) {
         console.error('Error deleting bill:', error);
         toast.error('Failed to delete bill');
+      }
+      finally {
+        toast.dismiss();
       }
     }
   };

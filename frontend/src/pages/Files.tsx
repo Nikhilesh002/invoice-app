@@ -62,7 +62,9 @@ const Files: React.FC = () => {
   const handleDeleteConfirm = async () => {
     if (fileToDelete?._id) {
       try {
+        toast.loading('Deleting file...');
         await axios.delete(`${import.meta.env.VITE_BACKEND_URL}/api/file/delete-file/${fileToDelete._id}`);
+        toast.dismiss();
         toast.success('File deleted successfully');
         dispatch(removeFile(fileToDelete._id));
         setIsDeleteDialogOpen(false);
@@ -70,6 +72,9 @@ const Files: React.FC = () => {
       } catch (error) {
         console.error('Error deleting file:', error);
         toast.error('Failed to delete file');
+      }
+      finally {
+        toast.dismiss();
       }
     }
   };

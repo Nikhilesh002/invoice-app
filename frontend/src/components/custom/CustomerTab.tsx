@@ -58,12 +58,16 @@ const CustomerTab: React.FC<CustomerTabProps> = ({
       );
 
       // Backend update
+      toast.loading('Updating customer details...');
       await axios.put(`${import.meta.env.VITE_BACKEND_URL}/api/file/update-bill/${billId}`,updatedBill);
       setIsEditing(false);
+      toast.dismiss();
       toast.success('Customer details updated successfully');
     } catch (error) {
       console.error('Failed to update customer', error);
       toast.error('Failed to update customer');
+    } finally {
+      toast.dismiss();
     }
   };
 

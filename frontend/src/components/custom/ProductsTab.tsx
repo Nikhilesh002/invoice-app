@@ -80,12 +80,17 @@ const ProductsTab: React.FC<ProductsTabProps> = ({
       }));
 
       // Backend update
+      toast.loading('Updating products...');
       await axios.put(`${import.meta.env.VITE_BACKEND_URL}/api/file/update-bill/${billId}`, updatedBill);
+      toast.dismiss();
       setIsEditing(false);
       toast.success('Products updated successfully');
     } catch (error) {
       console.error('Failed to update products', error);
       toast.error('Failed to update products');
+    }
+    finally {
+      toast.dismiss();
     }
   };
 

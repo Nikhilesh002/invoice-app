@@ -56,12 +56,17 @@ const InvoiceTab: React.FC<InvoiceTabProps> = ({
       }));
 
       // Backend update
+      toast.loading('Updating invoice details...');
       await axios.put(`${import.meta.env.VITE_BACKEND_URL}/api/file/update-bill/${billId}`, updatedBill);
+      toast.dismiss();
       setIsEditing(false);
       toast.success('Invoice updated successfully');
     } catch (error) {
       console.error('Failed to update invoice', error);
       toast.error('Failed to update invoice');
+    }
+    finally {
+      toast.dismiss();
     }
   };
 
