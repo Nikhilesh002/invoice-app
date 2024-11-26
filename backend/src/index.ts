@@ -4,7 +4,7 @@ import router from "./routes/index"
 import cors from "cors";
 import cookieParser from "cookie-parser";
 import { connectDb } from "./utils/db";
-import path from "path";
+// import path from "path";
 
 dotenv.config();
 
@@ -18,13 +18,13 @@ app.use(cors({ origin: "*" }));
 
 
 // deploy react build in this server
-app.use(express.static(path.join(__dirname,'../../frontend/dist')));
+// app.use(express.static(path.join(__dirname,'../../frontend/dist')));
 
 app.use(cookieParser())
 
 
 app.get("/", (req: Request, res: Response) => {
-  res.send("Express + TypeScript Server");
+  res.send("Invoice API");
 });
 
 app.use("/api",router);
@@ -43,9 +43,9 @@ app.use((err:any,req:Request,res:Response,next:NextFunction)=>{
 
 
 // Catch-all route to handle client-side routing
-app.get('*', (req, res) => {
-  res.sendFile(path.join(__dirname, '../../frontend/dist/index.html'));
-});
+// app.get('*', (req, res) => {
+//   res.sendFile(path.join(__dirname, '../../frontend/dist/index.html'));
+// });
 
 
 const port = process.env.B_PORT || 3000;
