@@ -3,9 +3,8 @@ import { useSelector, useDispatch } from 'react-redux';
 import { useNavigate, useParams } from 'react-router-dom';
 import { RootState } from '../redux/store';
 import { setCurrentBill, setCurrentFile, removeBill } from '@/redux/slices/fileSlice';
-import { Card, CardTitle, CardDescription, CardContent, CardFooter } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
-import { Trash2 } from 'lucide-react';
+import { Trash2, Search } from 'lucide-react';
 import axios from 'axios';
 import {
   AlertDialog,
@@ -19,6 +18,19 @@ import {
 } from "@/components/ui/alert-dialog";
 import { Bill } from '@/types';
 import toast from 'react-hot-toast';
+import { Input } from '@/components/ui/input';
+import {
+  Table,
+  TableBody,
+  TableCaption,
+  TableCell,
+  TableHead,
+  TableHeader,
+  TableRow,
+} from "@/components/ui/table"
+import { renderValue } from '@/lib/renderValue';
+
+
 
 const Bills: React.FC = () => {
   const { fileId } = useParams<{ fileId: string }>();
@@ -30,6 +42,7 @@ const Bills: React.FC = () => {
 
   const [isDeleteDialogOpen, setIsDeleteDialogOpen] = useState(false);
   const [billToDelete, setBillToDelete] = useState<Bill | null>(null);
+  const [searchTerm, setSearchTerm] = useState('');
 
   if (!currentFile) {
     return (
@@ -77,6 +90,15 @@ const Bills: React.FC = () => {
     }
   };
 
+  // Filter bills based on search term
+  const filteredBills = Array.isArray(currentFile.bills) 
+    ? currentFile.bills.filter((bill) => 
+        bill && (
+          bill?.invoice?.customer_name?.toLowerCase().includes(searchTerm.toLowerCase())
+        )
+      )
+    : [];
+
   return (
     <div className="p-6">
       <div className="flex justify-between items-center mb-6">
@@ -85,40 +107,64 @@ const Bills: React.FC = () => {
           Back to Files
         </Button>
       </div>
-      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-        {Array.isArray(currentFile.bills) && currentFile.bills.length > 0 ? (
-          currentFile.bills.map((bill, index) => (
-            bill && (
-              <Card
-                key={bill._id}
-                onClick={() => handleClick(bill)}
-                className="cursor-pointer hover:shadow-lg transition-shadow"
-              >
-                <CardTitle className="p-4">Bill {index + 1}</CardTitle>
-                <CardDescription className="px-4 pb-2">
-                  {bill?.invoice?.customer_name || 'Unnamed Customer'}
-                </CardDescription>
-                <CardContent className="text-sm">
-                  <p>Total Amount: {bill?.invoice?.total_amount || 'N/A'}</p>
-                  <p>Date: {bill?.invoice?.date || 'N/A'}</p>
-                </CardContent>
-                <CardFooter className="justify-end">
-                  <Button
-                    variant="destructive"
-                    size="sm"
-                    onClick={(e) => handleDeleteClick(e, bill)}
-                  >
-                    <Trash2 className="w-4 h-4 mr-2" />
-                    Delete
-                  </Button>
-                </CardFooter>
-              </Card>
-            )
-          ))
-        ) : (
-          <p className="text-center text-gray-500">No bills available for this file.</p>
-        )}
+
+      {/* Search Input */}
+      <div className="relative mb-6">
+        <Search className="absolute left-3 top-1/2 transform -translate-y-1/2 text-gray-400" />
+        <Input
+          type="text"
+          placeholder="Search bills..."
+          value={searchTerm}
+          onChange={(e) => setSearchTerm(e.target.value)}
+          className="pl-10 w-full"
+        />
       </div>
+
+      {filteredBills.length > 0 ? (
+        <div className="overflow-x-auto">
+          <Table className="w-full text-center">
+            <TableCaption>Bills </TableCaption>
+            <TableHeader>
+              <TableRow>
+                <TableHead className='text-center'>Bill No</TableHead>
+                <TableHead className='text-center'>Customer Name</TableHead>
+                <TableHead className='text-center'>Total Amount</TableHead>
+                <TableHead className='text-center'>Date</TableHead>
+                <TableHead className='text-center'>Time</TableHead>
+                <TableHead className='text-center'>Actions</TableHead>
+              </TableRow>
+            </TableHeader>
+            <TableBody>
+              {filteredBills.map((bill, index) => (
+                bill && (
+                  <TableRow 
+                    key={bill._id} 
+                    onClick={() => handleClick(bill)}
+                   
+                  >
+                    <TableCell className=" text-center">{index + 1}</TableCell>
+                    <TableCell>{renderValue(bill?.invoice?.customer_name)}</TableCell>
+                    <TableCell>{renderValue(bill?.invoice?.total_amount,{type:"money"})}</TableCell>
+                    <TableCell>{renderValue(bill?.invoice?.date,{type:"date"})}</TableCell>
+                    <TableCell>{renderValue(bill?.invoice?.date,{type:"time"})}</TableCell>
+                    <TableCell className=" text-center">
+                      <Button
+                        variant="destructive"
+                        size="sm"
+                        onClick={(e) => handleDeleteClick(e, bill)}
+                      >
+                        <Trash2 className="w-4 h-4" />
+                      </Button>
+                    </TableCell>
+                  </TableRow>
+                )
+              ))}
+            </TableBody>
+          </Table>
+        </div>
+      ) : (
+        <p className="text-center text-gray-500">No bills available for this file.</p>
+      )}
 
       {isDeleteDialogOpen && (
         <AlertDialog open={isDeleteDialogOpen} onOpenChange={setIsDeleteDialogOpen}>

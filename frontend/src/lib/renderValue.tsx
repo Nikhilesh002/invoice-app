@@ -1,6 +1,21 @@
-export const renderValue = (value: string | number,size: number=50) => {
+import dayjs from "dayjs";
+
+export const renderValue = (value: string | number | Date, { type, size=50 }: { type?: "date" | "time" | "money" ; size?: number } = {}) => {
+
   if(value === null || value === undefined ||value === "NA" || value === -1){
     return <span className="text-red-500">NA</span>;
+  }
+
+  if (type === "date") {
+    return dayjs(new Date(value)).format("DD-MM-YYYY");
+  }
+
+  if(type === "time"){
+    return dayjs(new Date(value)).format("hh:mm A");
+  }
+
+  if(type === "money" && typeof value === "number"){
+    return new Intl.NumberFormat('en-IN', { style: 'currency', currency: 'INR' }).format(value);
   }
 
   const valueString = value.toString();

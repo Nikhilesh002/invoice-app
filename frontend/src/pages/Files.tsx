@@ -2,7 +2,6 @@ import React, { useEffect, useState } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 import { useNavigate } from 'react-router-dom';
 import { setCurrentFile, storeFiles, removeFile } from '@/redux/slices/fileSlice';
-import { Card, CardTitle, CardDescription, CardContent, CardFooter } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
 import { RootState } from '@/redux/store';
 import axios from 'axios';
@@ -20,6 +19,18 @@ import {
 } from "@/components/ui/alert-dialog"
 import { renderValue } from '@/lib/renderValue';
 import toast from 'react-hot-toast';
+import { Input } from '@/components/ui/input';
+import {
+  Table,
+  TableBody,
+  TableCaption,
+  TableCell,
+  TableHead,
+  TableHeader,
+  TableRow,
+} from "@/components/ui/table"
+
+
 
 const Files: React.FC = () => {
   const dispatch = useDispatch();
@@ -27,6 +38,7 @@ const Files: React.FC = () => {
   const reduxFiles = useSelector((state: RootState) => state.files.files);
   const [isDeleteDialogOpen, setIsDeleteDialogOpen] = useState(false);
   const [fileToDelete, setFileToDelete] = useState<UserFile | null>(null);
+  const [searchTerm, setSearchTerm] = useState('');
 
   useEffect(() => {
     const fetchFiles = async () => {
@@ -79,40 +91,52 @@ const Files: React.FC = () => {
     }
   };
 
+  // Filter bills based on search term
+  const filteredFiles = Array.isArray(reduxFiles) 
+    ? reduxFiles.filter(file => file?.name?.toLowerCase().includes(searchTerm.toLowerCase())) 
+    : [];
+
+
   return (
     <div className="p-6">
       <h1 className="text-2xl font-bold mb-6">Your Files</h1>
-      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+      <Input type='text' value={searchTerm}
+          onChange={(e) => setSearchTerm(e.target.value)}
+          placeholder="Search Files" className="mb-6"
+        />
+      <div className="w-full">
         {Array.isArray(reduxFiles) && reduxFiles.length > 0 ? (
-          reduxFiles.map((file) => (
-            file && (
-              <Card 
-                key={file._id} 
-                onClick={() => handleFileClick(file)}
-                className="cursor-pointer hover:shadow-lg transition-shadow"
-              >
-                <CardTitle className="p-4">{renderValue(file?.name ?? 'Unnamed File', 20)}</CardTitle>
-                <CardDescription className="px-4 pb-2">
-                  {file?.bills?.length ?? 0} Bills
-                </CardDescription>
-                <CardContent>
-                  <p className="text-sm text-gray-500">
-                    Uploaded on: {file?.createdAt ? new Date(file.createdAt).toLocaleDateString() : 'Unknown'}
-                  </p>
-                </CardContent>
-                <CardFooter className="justify-end">
-                  <Button
-                    variant="destructive"
-                    size="sm"
-                    onClick={(e) => handleDeleteClick(e, file)}
-                  >
-                    <Trash2 className="w-4 h-4 mr-2" />
-                    Delete
-                  </Button>
-                </CardFooter>
-              </Card>
-            )
-          ))
+          <Table className='text-center'>
+          <TableCaption>A list of bills in the file.</TableCaption>
+          <TableHeader>
+            <TableRow className='text-center'>
+              <TableHead>S.No</TableHead>
+              <TableHead className="text-center">File Name</TableHead>
+              <TableHead className="text-center">No of bills</TableHead>
+              <TableHead className="text-center">Upload Date</TableHead>
+              <TableHead className="text-center">Upload Time</TableHead>
+              <TableHead className='w-20 text-center'>Delete</TableHead>
+            </TableRow>
+          </TableHeader>
+          <TableBody>
+            {
+              filteredFiles && filteredFiles.map((file,ind) => (
+                <TableRow key={ind} onClick={() => handleFileClick(file)} >
+                  <TableCell >{ind+1}</TableCell>
+                  <TableCell>{renderValue(file.name)}</TableCell>
+                  <TableCell>{renderValue(file?.bills?.length)}</TableCell>
+                  <TableCell className="">{renderValue(new Date(file.createdAt), { type: "date"})}</TableCell>
+                  <TableCell className="">{renderValue(new Date(file.createdAt), { type: "time"})}</TableCell>
+                  <TableCell className='w-20'>
+                    <Button variant="destructive" onClick={(e) => handleDeleteClick(e, reduxFiles[0])}>
+                      <Trash2 className="h-4 w-4" />
+                    </Button>
+                  </TableCell>
+                </TableRow>
+              ))
+            }
+          </TableBody>
+        </Table>
         ) : (
           <p className="text-center text-gray-500">No files found.</p>
         )}

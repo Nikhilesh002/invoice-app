@@ -8,6 +8,17 @@ import { Trash2, Plus, Search } from 'lucide-react';
 import { renderValue } from '@/lib/renderValue';
 import axios from 'axios';
 import toast from 'react-hot-toast';
+import {
+  Table,
+  TableBody,
+  TableCaption,
+  TableCell,
+  TableHead,
+  TableHeader,
+  TableRow,
+} from "@/components/ui/table"
+
+
 
 interface ProductsTabProps {
   currentBill: Bill;
@@ -126,22 +137,22 @@ const ProductsTab: React.FC<ProductsTabProps> = ({
 
           {/* Table for editing products */}
           <div className="overflow-x-auto ">
-            <table className="w-full border-collapse ">
-              <thead>
-                <tr className="">
+            <Table className="w-full  ">
+              <TableHeader>
+                <TableRow className="">
                   {productKeys.map(key => (
-                    <th key={key} className="border p-2 capitalize">
+                    <TableCell key={key} className=" capitalize">
                       {key.replace(/_/g, ' ')}
-                    </th>
+                    </TableCell>
                   ))}
-                  <th className="border p-2">Actions</th>
-                </tr>
-              </thead>
-              <tbody>
+                  <th className="">Actions</th>
+                </TableRow>
+              </TableHeader>
+              <TableBody>
                 {filteredProducts.map((product, index) => (
-                  <tr key={index} className="">
+                  <TableRow key={index} className="">
                     {productKeys.map(key => (
-                      <td key={key} className="border p-2">
+                      <TableCell key={key} className="">
                         <Input
                           type={key === 'name' ? 'text' : 'number'}
                           value={product[key as keyof Products] || ''}
@@ -150,9 +161,9 @@ const ProductsTab: React.FC<ProductsTabProps> = ({
                           }
                           className="w-full"
                         />
-                      </td>
+                      </TableCell>
                     ))}
-                    <td className="border p-2">
+                    <td className="">
                       <Button
                         variant="destructive"
                         size="icon"
@@ -161,10 +172,10 @@ const ProductsTab: React.FC<ProductsTabProps> = ({
                         <Trash2 className="h-4 w-4" />
                       </Button>
                     </td>
-                  </tr>
+                  </TableRow>
                 ))}
-              </tbody>
-            </table>
+              </TableBody>
+            </Table>
           </div>
 
           <div className="flex justify-between mt-4">
@@ -190,28 +201,29 @@ const ProductsTab: React.FC<ProductsTabProps> = ({
 
           {/* Table for viewing products */}
           <div className="overflow-x-auto">
-            <table className="w-full border-collapse">
-              <thead>
-                <tr className="">
+            <Table className="w-full text-center">
+              <TableCaption>Products in the bill</TableCaption>
+              <TableHeader>
+                <TableRow className="">
                   {productKeys.map(key => (
-                    <th key={key} className="border p-2 capitalize">
+                    <TableHead key={key} className="text-center capitalize">
                       {key.replace(/_/g, ' ')}
-                    </th>
+                    </TableHead>
                   ))}
-                </tr>
-              </thead>
-              <tbody>
+                </TableRow>
+              </TableHeader>
+              <TableBody>
                 {filteredProducts.map((product, index) => (
-                  <tr key={index} className="">
+                  <TableRow key={index} className="">
                     {productKeys.map(key => (
-                      <td key={key} className="border p-2">
-                        {renderValue(product[key as keyof Products])}
-                      </td>
+                      <TableCell key={key} className="">
+                        { key==="quantity" ? renderValue(product[key as keyof Products]) : renderValue(product[key as keyof Products],{type:'money'}) }
+                      </TableCell>
                     ))}
-                  </tr>
+                  </TableRow>
                 ))}
-              </tbody>
-            </table>
+              </TableBody>
+            </Table>
           </div>
         </>
       )}
