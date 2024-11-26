@@ -4,7 +4,7 @@ import { updateProducts } from '@/redux/slices/fileSlice';
 import { Bill, Products } from '@/types';
 import { Input } from '../ui/input';
 import { Button } from '../ui/button';
-import { Trash2, Plus } from 'lucide-react';
+import { Trash2, Plus, Search } from 'lucide-react';
 import { renderValue } from '@/lib/renderValue';
 import axios from 'axios';
 
@@ -26,6 +26,7 @@ const ProductsTab: React.FC<ProductsTabProps> = ({
   const dispatch = useDispatch();
 
   const [editedProducts, setEditedProducts] = useState<Products[]>(products?.length ? [...products] : []);
+  const [searchTerm, setSearchTerm] = useState<string>('');
 
   // Sync the editedProducts state when currentBill changes
   useEffect(() => {
@@ -82,42 +83,80 @@ const ProductsTab: React.FC<ProductsTabProps> = ({
     }
   };
 
+  // Filter products based on search term
+  const filteredProducts = editedProducts.filter(product => 
+    Object.values(product)
+      .some(value => 
+        value && 
+        value.toString().toLowerCase().includes(searchTerm.toLowerCase())
+      )
+  );
+
+  // Get product keys for table headers (excluding _id)
+  const productKeys = editedProducts.length > 0 
+    ? Object.keys(editedProducts[0]).filter(key => key !== '_id') 
+    : [];
+
   return (
-    <div className="space-y-4">
+    <div className="space-y-4 text-center">
       {isEditing ? (
         <>
-          {editedProducts?.length > 0 &&
-            editedProducts.map((product, index) => (
-              <div key={index} className="border p-4 rounded relative">
-                <Button
-                  variant="destructive"
-                  size="icon"
-                  className="absolute top-2 right-2"
-                  onClick={() => removeProduct(index)}
-                >
-                  <Trash2 className="h-4 w-4" />
-                </Button>
-                <div className="grid grid-cols-2 gap-4">
-                  {Object.keys(product)
-                    .filter((key) => key !== '_id')
-                    .map((key) => (
-                      <div key={key} className="mb-2">
-                        <label className="block mb-2 capitalize">
-                          {key.replace(/_/g, ' ')}
-                        </label>
+          {/* Search input for editing mode */}
+          <div className="relative mb-4">
+            <Search className="absolute left-3 top-1/2 transform -translate-y-1/2 text-gray-400" />
+            <Input
+              type="text"
+              placeholder="Search products..."
+              value={searchTerm}
+              onChange={(e) => setSearchTerm(e.target.value)}
+              className="pl-10 w-full"
+            />
+          </div>
+
+          {/* Table for editing products */}
+          <div className="overflow-x-auto ">
+            <table className="w-full border-collapse ">
+              <thead>
+                <tr className="">
+                  {productKeys.map(key => (
+                    <th key={key} className="border p-2 capitalize">
+                      {key.replace(/_/g, ' ')}
+                    </th>
+                  ))}
+                  <th className="border p-2">Actions</th>
+                </tr>
+              </thead>
+              <tbody>
+                {filteredProducts.map((product, index) => (
+                  <tr key={index} className="">
+                    {productKeys.map(key => (
+                      <td key={key} className="border p-2">
                         <Input
                           type={key === 'name' ? 'text' : 'number'}
                           value={product[key as keyof Products] || ''}
                           onChange={(e) =>
                             handleProductChange(index, key as keyof Products, e.target.value)
                           }
+                          className="w-full"
                         />
-                      </div>
+                      </td>
                     ))}
-                </div>
-              </div>
-            ))}
-          <div className="flex justify-between">
+                    <td className="border p-2">
+                      <Button
+                        variant="destructive"
+                        size="icon"
+                        onClick={() => removeProduct(index)}
+                      >
+                        <Trash2 className="h-4 w-4" />
+                      </Button>
+                    </td>
+                  </tr>
+                ))}
+              </tbody>
+            </table>
+          </div>
+
+          <div className="flex justify-between mt-4">
             <Button onClick={addProduct} variant="outline">
               <Plus className="mr-2 h-4 w-4" /> Add Product
             </Button>
@@ -125,22 +164,45 @@ const ProductsTab: React.FC<ProductsTabProps> = ({
           </div>
         </>
       ) : (
-        <div className="space-y-4">
-          {editedProducts.map((product, index) => (
-            <div key={index} className="border p-4 rounded">
-              <div className="grid grid-cols-2 gap-4">
-                {Object.entries(product)
-                  .filter(([key]) => key !== '_id')
-                  .map(([key, value]) => (
-                    <div key={key} className="mb-2">
-                      <strong className="capitalize">{key.replace(/_/g, ' ')}: </strong>
-                      {renderValue(value)}
-                    </div>
+        <>
+          {/* Search input for view mode */}
+          <div className="relative mb-4">
+            <Search className="absolute left-3 top-1/2 transform -translate-y-1/2 text-gray-400" />
+            <Input
+              type="text"
+              placeholder="Search products..."
+              value={searchTerm}
+              onChange={(e) => setSearchTerm(e.target.value)}
+              className="pl-10 w-full"
+            />
+          </div>
+
+          {/* Table for viewing products */}
+          <div className="overflow-x-auto">
+            <table className="w-full border-collapse">
+              <thead>
+                <tr className="">
+                  {productKeys.map(key => (
+                    <th key={key} className="border p-2 capitalize">
+                      {key.replace(/_/g, ' ')}
+                    </th>
                   ))}
-              </div>
-            </div>
-          ))}
-        </div>
+                </tr>
+              </thead>
+              <tbody>
+                {filteredProducts.map((product, index) => (
+                  <tr key={index} className="">
+                    {productKeys.map(key => (
+                      <td key={key} className="border p-2">
+                        {renderValue(product[key as keyof Products])}
+                      </td>
+                    ))}
+                  </tr>
+                ))}
+              </tbody>
+            </table>
+          </div>
+        </>
       )}
     </div>
   );
