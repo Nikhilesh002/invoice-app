@@ -14,13 +14,15 @@ interface ProductsTabProps {
   isEditing: boolean;
   fileId: string;
   billId: string;
+  setIsEditing: (isEditing: boolean) => void
 }
 
 const ProductsTab: React.FC<ProductsTabProps> = ({
   currentBill,
   isEditing,
   fileId,
-  billId
+  billId,
+  setIsEditing
 }) => {
   const { products } = currentBill;
 
@@ -79,6 +81,7 @@ const ProductsTab: React.FC<ProductsTabProps> = ({
 
       // Backend update
       await axios.put(`${import.meta.env.VITE_BACKEND_URL}/api/file/update-bill/${billId}`, updatedBill);
+      setIsEditing(false);
       toast.success('Products updated successfully');
     } catch (error) {
       console.error('Failed to update products', error);

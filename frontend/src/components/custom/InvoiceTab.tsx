@@ -13,13 +13,15 @@ interface InvoiceTabProps {
   isEditing: boolean;
   fileId: string;
   billId: string;
+  setIsEditing: (isEditing: boolean) => void;
 }
 
 const InvoiceTab: React.FC<InvoiceTabProps> = ({
   currentBill,
   isEditing,
   fileId,
-  billId
+  billId,
+  setIsEditing
 }) => {
   const { invoice } = currentBill;
 
@@ -55,6 +57,7 @@ const InvoiceTab: React.FC<InvoiceTabProps> = ({
 
       // Backend update
       await axios.put(`${import.meta.env.VITE_BACKEND_URL}/api/file/update-bill/${billId}`, updatedBill);
+      setIsEditing(false);
       toast.success('Invoice updated successfully');
     } catch (error) {
       console.error('Failed to update invoice', error);

@@ -13,6 +13,7 @@ interface CustomerTabProps {
   isEditing: boolean;
   fileId: string;
   billId: string;
+  setIsEditing: (isEditing: boolean) => void;
 }
 
 const CustomerTab: React.FC<CustomerTabProps> = ({
@@ -20,6 +21,7 @@ const CustomerTab: React.FC<CustomerTabProps> = ({
   isEditing,
   fileId,
   billId,
+  setIsEditing
 }) => {
   const dispatch = useDispatch();
   const [editedCustomer, setEditedCustomer] = useState<Customer>(
@@ -57,6 +59,7 @@ const CustomerTab: React.FC<CustomerTabProps> = ({
 
       // Backend update
       await axios.put(`${import.meta.env.VITE_BACKEND_URL}/api/file/update-bill/${billId}`,updatedBill);
+      setIsEditing(false);
       toast.success('Customer details updated successfully');
     } catch (error) {
       console.error('Failed to update customer', error);

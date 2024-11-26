@@ -65,6 +65,7 @@ const BillDetailsPage: React.FC = () => {
           <InvoiceTab 
             currentBill={currentBill}
             isEditing={isEditing}
+            setIsEditing={setIsEditing}
             fileId={fileId}
             billId={billId}
           />
@@ -74,6 +75,7 @@ const BillDetailsPage: React.FC = () => {
           <ProductsTab 
             currentBill={currentBill}
             isEditing={isEditing}
+            setIsEditing={setIsEditing}
             fileId={fileId}
             billId={billId}
           />
@@ -83,6 +85,7 @@ const BillDetailsPage: React.FC = () => {
           <CustomerTab 
             currentBill={currentBill}
             isEditing={isEditing}
+            setIsEditing={setIsEditing}
             fileId={fileId}
             billId={billId}
           />
