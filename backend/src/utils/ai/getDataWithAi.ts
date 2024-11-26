@@ -22,8 +22,8 @@ export const getDataWithAi=async(fileInfo:{filePath:string,fileName:string,mimet
       `Uploaded file ${uploadResult.file.displayName} as: ${uploadResult.file.uri}`,
     );
     
-    const genAI = new GoogleGenerativeAI(process.env.API_KEY ?? "");
-    const model = genAI.getGenerativeModel({ model: "gemini-1.5-flash" });
+    const genAI = new GoogleGenerativeAI(process.env.GEMINI_API_KEY ?? "");
+    const model = genAI.getGenerativeModel({ model: process.env.GEMINI_MODEL ?? "" });
     const result = await model.generateContent([
       `${process.env.MY_PROMPT ?? "Analyze this image and extract data"}`,
       {
