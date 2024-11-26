@@ -8,7 +8,7 @@ export const getDataWithAi=async(fileInfo:{filePath:string,fileName:string,mimet
   const {filePath,fileName,mimetype} = fileInfo;
 
   try{
-    const fileManager = new GoogleAIFileManager(process.env.API_KEY ?? "");
+    const fileManager = new GoogleAIFileManager(process.env.GEMINI_API_KEY ?? "");
   
     const uploadResult = await fileManager.uploadFile(
       filePath,
@@ -33,7 +33,7 @@ export const getDataWithAi=async(fileInfo:{filePath:string,fileName:string,mimet
         },
       },
     ]);
-    // console.log(result.response.text());
+    console.log(result.response.text());
 
 
     // Delete the file from cloud

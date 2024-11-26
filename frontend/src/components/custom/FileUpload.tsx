@@ -64,6 +64,7 @@ const FileUpload: React.FC = () => {
 
       toast.dismiss('upload-progress');
       toast.dismiss('processing-progress');
+      toast.dismiss();
 
 
       if (response.status === 200) {
