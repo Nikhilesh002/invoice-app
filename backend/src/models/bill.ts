@@ -5,7 +5,6 @@ import { Bill,Customer, Invoice, Products } from "../utils/types";
 const InvoiceSchema = new Schema<Invoice>({
   serial_number: { type: String, required: true },
   customer_name: { type: String, required: true },
-  products: { type: [String], required: true },
   shop_name: { type: String, required: true },
   shop_gstin: { type: String, required: true },
   quantity: { type: Number, required: true },

@@ -5,6 +5,7 @@ import { XLSXtoCSV } from "../utils/fileFormatConverter/XLSXtoCSV";
 import { data } from '../utils/sample_data';
 import { UserfileModel } from '../models/userfile';
 import { BillModel } from '../models/bill';
+import { makeChunks } from '../utils/ai/makeChunks';
 
 
 export const getFileData = async (req:Request, res:Response) => {
@@ -32,7 +33,7 @@ export const getFileData = async (req:Request, res:Response) => {
       return res.status(400).json({success:false,message:"Invalid file format"});
     }
 
-    const resp = await getDataWithAi(fileInfo);
+    const resp = await makeChunks(fileInfo);
 
     const newBills = await BillModel.insertMany(resp);
 
