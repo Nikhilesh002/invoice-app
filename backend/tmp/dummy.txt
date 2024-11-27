@@ -2843,4 +2843,3762 @@
 ]
 ```
 
+ abc```json
+[
+  {
+    "invoice": [
+      "RAY/23-24/286",
+      "Shounak",
+      "181499.69",
+      null,
+      null,
+      "629",
+      "34461.55",
+      "181499.69",
+      "12 Nov 2024"
+    ],
+    "products": [
+      [
+        "iPHONE 16",
+        "1.000",
+        "79990.00",
+        null,
+        null,
+        "79990.00",
+        "18"
+      ],
+      [
+        "iPHONE 16 Cover",
+        "1.000",
+        "4599.00",
+        null,
+        null,
+        "4599.00",
+        "18"
+      ],
+      [
+        "Beats PRO X",
+        "1.000",
+        "24999.00",
+        null,
+        null,
+        "24999.00",
+        "18"
+      ]
+    ],
+    "customer": [
+      "Shounak",
+      "NextSpeed Technologies Pvt Ltd",
+      null,
+      null,
+      "181499.69"
+    ]
+  },
+  {
+    "invoice": [
+      "RAY/23-24/285",
+      "Abhinav",
+      "10000.00",
+      null,
+      null,
+      "1",
+      "0",
+      "10000.00",
+      "12 Nov 2024"
+    ],
+    "products": [
+      [
+        "SPEAKER",
+        "1.000",
+        "10000.00",
+        null,
+        null,
+        "10000.00",
+        "0"
+      ]
+    ],
+    "customer": [
+      "Abhinav",
+      "GAME STATION",
+      null,
+      null,
+      "10000.00"
+    ]
+  },
+  {
+    "invoice": [
+      "RAY/23-24/284",
+      "Ramesh",
+      "88.98",
+      null,
+      null,
+      "1",
+      "0",
+      "88.98",
+      "08 Nov 2024"
+    ],
+    "products": [
+      [
+        "12 MM PLAIN GLASS",
+        "1.000",
+        "88.98",
+        null,
+        null,
+        "88.98",
+        "0"
+      ]
+    ],
+    "customer": [
+      "Ramesh",
+      "Apple India",
+      null,
+      null,
+      "88.98"
+    ]
+  },
+  {
+    "invoice": [
+      "RAY/23-24/283",
+      "Ramesh",
+      "88.98",
+      null,
+      null,
+      "1",
+      "0",
+      "88.98",
+      "08 Nov 2024"
+    ],
+    "products": [
+      [
+        "12 MM PLAIN GLASS",
+        "1.000",
+        "88.98",
+        null,
+        null,
+        "88.98",
+        "0"
+      ]
+    ],
+    "customer": [
+      "Ramesh",
+      "Apple India",
+      null,
+      null,
+      "88.98"
+    ]
+  },
+  {
+    "invoice": [
+      "RAY/23-24/282",
+      "RAM",
+      "37.08",
+      null,
+      null,
+      "500",
+      "0",
+      "37.08",
+      "07 Nov 2024"
+    ],
+    "products": [
+      [
+        "12 MM PLAIN GLASS",
+        "500.000",
+        "0.07",
+        null,
+        null,
+        "0.07",
+        "0"
+      ]
+    ],
+    "customer": [
+      "RAM",
+      "Apple India",
+      null,
+      null,
+      "37.08"
+    ]
+  },
+  {
+    "invoice": [
+      "RAY/23-24/281",
+      "RAM",
+      "88.98",
+      null,
+      null,
+      "1",
+      "0",
+      "88.98",
+      "07 Nov 2024"
+    ],
+    "products": [
+      [
+        "12 MM PLAIN GLASS",
+        "1.000",
+        "88.98",
+        null,
+        null,
+        "88.98",
+        "0"
+      ]
+    ],
+    "customer": [
+      "RAM",
+      "Apple India",
+      null,
+      null,
+      "88.98"
+    ]
+  },
+  {
+    "invoice": [
+      "RAY/23-24/280",
+      "Ramesh",
+      "105.00",
+      null,
+      null,
+      "2",
+      "18",
+      "105.00",
+      "06 Nov 2024"
+    ],
+    "products": [
+      [
+        "12 MM PLAIN GLASS",
+        "1.000",
+        "105.00",
+        null,
+        null,
+        "105.00",
+        "18"
+      ],
+      [
+        "plain glass",
+        "1.000",
+        "0.00",
+        null,
+        null,
+        "0.00",
+        "18"
+      ]
+    ],
+    "customer": [
+      "Ramesh",
+      "Apple India",
+      null,
+      null,
+      "105.00"
+    ]
+  },
+  {
+    "invoice": [
+      "RAY/23-24/279",
+      "Abhinav",
+      "20.00",
+      null,
+      null,
+      "3",
+      "0",
+      "20.00",
+      "05 Nov 2024"
+    ],
+    "products": [
+      [
+        "Ct Sheet",
+        "3.000",
+        "500.00",
+        null,
+        null,
+        "500.00",
+        "0"
+      ]
+    ],
+    "customer": [
+      "Abhinav",
+      "GAME STATION",
+      null,
+      null,
+      "20.00"
+    ]
+  },
+  {
+    "invoice": [
+      "RAY/23-24/278",
+      "Decathlon",
+      "105.00",
+      null,
+      null,
+      "1",
+      "18",
+      "105.00",
+      "05 Nov 2024"
+    ],
+    "products": [
+      [
+        "12 MM PLAIN GLASS",
+        "1.000",
+        "105.00",
+        null,
+        null,
+        "105.00",
+        "18"
+      ]
+    ],
+    "customer": [
+      "Decathlon",
+      "DECATHLON SPORTS INDIA PRIVATE LIMITED",
+      null,
+      null,
+      "105.00"
+    ]
+  },
+  {
+    "invoice": [
+      "RAY/23-24/277",
+      "Abhinav",
+      "20475.00",
+      null,
+      null,
+      "15",
+      "18",
+      "20475.00",
+      "02 Nov 2024"
+    ],
+    "products": [
+      [
+        "12 MM PLAIN GLASS",
+        "15.000",
+        "11.50",
+        null,
+        null,
+        "11.50",
+        "18"
+      ]
+    ],
+    "customer": [
+      "Abhinav",
+      "GAME STATION",
+      null,
+      null,
+      "20475.00"
+    ]
+  },
+  {
+    "invoice": [
+      "RAY/23-24/276",
+      "geeetha",
+      "708.00",
+      null,
+      null,
+      "1",
+      "18",
+      "708.00",
+      "01 Nov 2024"
+    ],
+    "products": [
+      [
+        "plain glass",
+        "1.000",
+        "708.00",
+        null,
+        null,
+        "708.00",
+        "18"
+      ]
+    ],
+    "customer": [
+      "geeetha",
+      "Flipkart Co",
+      null,
+      null,
+      "708.00"
+    ]
+  },
+  {
+    "invoice": [
+      "RAY/23-24/275",
+      "geeetha",
+      "55000.00",
+      null,
+      null,
+      "100",
+      "18",
+      "55000.00",
+      "01 Nov 2024"
+    ],
+    "products": [
+      [
+        "plain glass",
+        "100.000",
+        "590.00",
+        null,
+        null,
+        "590.00",
+        "18"
+      ]
+    ],
+    "customer": [
+      "geeetha",
+      "Flipkart Co",
+      null,
+      null,
+      "55000.00"
+    ]
+  }
+]
+```
+
+ abc```json
+[
+  {
+    "invoice": [
+      "RAY/23-24/286",
+      "Shounak",
+      "94782.67",
+      "SHUBHAM JEWELLERY",
+      "ABCDE1234567890",
+      "3",
+      "14458.37",
+      "94782.67",
+      "12 Nov 2024"
+    ],
+    "products": [
+      [
+        "iPHONE 16",
+        "1.0",
+        "79990.00",
+        "5599.3",
+        "74390.7",
+        "69183.35",
+        "14458.37"
+      ],
+      [
+        "iPHONE 16 Cover",
+        "1.0",
+        "4599.00",
+        "321.93",
+        "4277.07",
+        "3977.68",
+        "0"
+      ],
+      [
+        "Beats PRO X",
+        "1.0",
+        "24999.00",
+        "1749.93",
+        "23249.07",
+        "21621.64",
+        "0"
+      ]
+    ],
+    "customer": [
+      "Shounak",
+      null,
+      null,
+      "ABCDE1234567890",
+      "94782.67"
+    ]
+  }
+]
+```
+ abc```json
+[
+  {
+    "invoice": [
+      null,
+      null,
+      3611625.84,
+      null,
+      null,
+      null,
+      3611625.84 - 3176727.46,
+      3611625.84,
+      null
+    ],
+    "products": [],
+    "customer": [
+      null,
+      null,
+      null,
+      null,
+      3611625.84
+    ]
+  }
+]
+```
+
+ abc```json
+[
+  {
+    "invoice": [
+      "INV-TEST-456",
+      "Sandeep Ranga",
+      153600,
+      null,
+      null,
+      null,
+      0,
+      153600,
+      "12 Nov 2024"
+    ],
+    "products": [],
+    "customer": [
+      "Sandeep Ranga",
+      null,
+      null,
+      null,
+      153600
+    ]
+  },
+  {
+    "invoice": [
+      "INV-TEST-963",
+      "Vardharajulu",
+      90169.49,
+      null,
+      null,
+      null,
+      16230.51,
+      106400,
+      "12 Nov 2024"
+    ],
+    "products": [],
+    "customer": [
+      "Vardharajulu",
+      null,
+      null,
+      null,
+      106400
+    ]
+  },
+  {
+    "invoice": [
+      "INV-148CZS",
+      "Shounak",
+      200385.76,
+      "NextSpeed Technologies Pvt Ltd",
+      null,
+      null,
+      5095.24,
+      205481,
+      "12 Nov 2024"
+    ],
+    "products": [],
+    "customer": [
+      "Shounak",
+      "NextSpeed Technologies Pvt Ltd",
+      null,
+      null,
+      205481
+    ]
+  },
+  {
+    "invoice": [
+      "INV-147CZS",
+      "Kumar Red Red Reddi",
+      1561.75,
+      "BILAL AGENCIES",
+      null,
+      null,
+      0,
+      1561.75,
+      "12 Nov 2024"
+    ],
+    "products": [],
+    "customer": [
+      "Kumar Red Red Reddi",
+      "BILAL AGENCIES",
+      null,
+      null,
+      1561.75
+    ]
+  },
+  {
+    "invoice": [
+      "INV-146CZS",
+      "Kumar Red Red Reddi",
+      1987796.61,
+      "BILAL AGENCIES",
+      null,
+      null,
+      357803.39,
+      2345600,
+      "12 Nov 2024"
+    ],
+    "products": [],
+    "customer": [
+      "Kumar Red Red Reddi",
+      "BILAL AGENCIES",
+      null,
+      null,
+      2345600
+    ]
+  },
+  {
+    "invoice": [
+      "INV-145CZS",
+      "Kumar Red Red Reddi",
+      198728.81,
+      "BILAL AGENCIES",
+      null,
+      null,
+      35771.19,
+      234500,
+      "12 Nov 2024"
+    ],
+    "products": [],
+    "customer": [
+      "Kumar Red Red Reddi",
+      "BILAL AGENCIES",
+      null,
+      null,
+      234500
+    ]
+  },
+  {
+    "invoice": [
+      "INV-144CZS",
+      "Kumar Red Red Reddi",
+      847.46,
+      "BILAL AGENCIES",
+      null,
+      null,
+      152.54,
+      1000,
+      "12 Nov 2024"
+    ],
+    "products": [],
+    "customer": [
+      "Kumar Red Red Reddi",
+      "BILAL AGENCIES",
+      null,
+      null,
+      1000
+    ]
+  },
+  {
+    "invoice": [
+      "INV-143CZS",
+      "Kumar Red Red Reddi",
+      100,
+      "BILAL AGENCIES",
+      null,
+      null,
+      18,
+      118,
+      "11 Nov 2024"
+    ],
+    "products": [],
+    "customer": [
+      "Kumar Red Red Reddi",
+      "BILAL AGENCIES",
+      null,
+      null,
+      118
+    ]
+  },
+  {
+    "invoice": [
+      "INV-142CZS",
+      "Test Assam",
+      71.82,
+      null,
+      null,
+      null,
+      0,
+      71.82,
+      "11 Nov 2024"
+    ],
+    "products": [],
+    "customer": [
+      "Test Assam",
+      null,
+      null,
+      null,
+      71.82
+    ]
+  },
+  {
+    "invoice": [
+      "INV-141CZS",
+      "Kumar Red Red Reddi",
+      14.12,
+      "BILAL AGENCIES",
+      null,
+      null,
+      2.54,
+      16.67,
+      "11 Nov 2024"
+    ],
+    "products": [],
+    "customer": [
+      "Kumar Red Red Reddi",
+      "BILAL AGENCIES",
+      null,
+      null,
+      16.67
+    ]
+  },
+  {
+    "invoice": [
+      "INV-140CZS",
+      "Kumar Red Red Reddi",
+      84745.76,
+      "BILAL AGENCIES",
+      null,
+      null,
+      15254.24,
+      100000,
+      "11 Nov 2024"
+    ],
+    "products": [],
+    "customer": [
+      "Kumar Red Red Reddi",
+      "BILAL AGENCIES",
+      null,
+      null,
+      100000
+    ]
+  },
+  {
+    "invoice": [
+      "INV-139CZS",
+      "einvoice testing",
+      2865.6,
+      "SREE RUDRANI FOODS",
+      null,
+      null,
+      0,
+      2865.6,
+      "11 Nov 2024"
+    ],
+    "products": [],
+    "customer": [
+      "einvoice testing",
+      "SREE RUDRANI FOODS",
+      null,
+      null,
+      2865.6
+    ]
+  },
+  {
+    "invoice": [
+      "INV-138CZS",
+      "Kumar Red Red Reddi",
+      1000,
+      "BILAL AGENCIES",
+      null,
+      null,
+      50,
+      1050,
+      "11 Nov 2024"
+    ],
+    "products": [],
+    "customer": [
+      "Kumar Red Red Reddi",
+      "BILAL AGENCIES",
+      null,
+      null,
+      1050
+    ]
+  },
+  {
+    "invoice": [
+      "INV-137CZS",
+      "KL: 06: 98989",
+      150,
+      "SHREE GLASS",
+      null,
+      null,
+      18,
+      168,
+      "11 Nov 2024"
+    ],
+    "products": [],
+    "customer": [
+      "KL: 06: 98989",
+      "SHREE GLASS",
+      null,
+      null,
+      168
+    ]
+  },
+  {
+    "invoice": [
+      "INV-136CZS",
+      "Kumar Red Red Reddi",
+      847.46,
+      "BILAL AGENCIES",
+      null,
+      null,
+      152.54,
+      1000,
+      "11 Nov 2024"
+    ],
+    "products": [],
+    "customer": [
+      "Kumar Red Red Reddi",
+      "BILAL AGENCIES",
+      null,
+      null,
+      1000
+    ]
+  },
+  {
+    "invoice": [
+      "INV-135CZS",
+      "Kumar Red Red Reddi",
+      15000,
+      "BILAL AGENCIES",
+      null,
+      null,
+      2700,
+      17700,
+      "11 Nov 2024"
+    ],
+    "products": [],
+    "customer": [
+      "Kumar Red Red Reddi",
+      "BILAL AGENCIES",
+      null,
+      null,
+      17700
+    ]
+  },
+  {
+    "invoice": [
+      "INV-134CZS",
+      "Kumar Red Red Reddi",
+      137933.38,
+      "BILAL AGENCIES",
+      null,
+      null,
+      97.62,
+      138031,
+      "11 Nov 2024"
+    ],
+    "products": [],
+    "customer": [
+      "Kumar Red Red Reddi",
+      "BILAL AGENCIES",
+      null,
+      null,
+      138031
+    ]
+  },
+  {
+    "invoice": [
+      "INV-133CZS",
+      "Kumar Red Red Reddi",
+      2857.14,
+      "BILAL AGENCIES",
+      null,
+      null,
+      142.86,
+      3000,
+      "11 Nov 2024"
+    ],
+    "products": [],
+    "customer": [
+      "Kumar Red Red Reddi",
+      "BILAL AGENCIES",
+      null,
+      null,
+      3000
+    ]
+  },
+  {
+    "invoice": [
+      "INV-132CZS",
+      "Kumar Red Red Reddi",
+      136581,
+      "BILAL AGENCIES",
+      null,
+      null,
+      25,
+      136606,
+      "11 Nov 2024"
+    ],
+    "products": [],
+    "customer": [
+      "Kumar Red Red Reddi",
+      "BILAL AGENCIES",
+      null,
+      null,
+      136606
+    ]
+  },
+  {
+    "invoice": [
+      "INV-131CZS",
+      "Kumar Red Red Reddi",
+      1000,
+      "BILAL AGENCIES",
+      null,
+      null,
+      50,
+      1050,
+      "11 Nov 2024"
+    ],
+    "products": [],
+    "customer": [
+      "Kumar Red Red Reddi",
+      "BILAL AGENCIES",
+      null,
+      null,
+      1050
+    ]
+  },
+  {
+    "invoice": [
+      "INV-130CZS",
+      "Kumar Red Red Reddi",
+      1500,
+      "BILAL AGENCIES",
+      null,
+      null,
+      75,
+      1575,
+      "11 Nov 2024"
+    ],
+    "products": [],
+    "customer": [
+      "Kumar Red Red Reddi",
+      "BILAL AGENCIES",
+      null,
+      null,
+      1575
+    ]
+  },
+  {
+    "invoice": [
+      "INV-129CZS",
+      "Kumar Red Red Reddi",
+      137433.38,
+      "BILAL AGENCIES",
+      null,
+      null,
+      72.62,
+      137506,
+      "11 Nov 2024"
+    ],
+    "products": [],
+    "customer": [
+      "Kumar Red Red Reddi",
+      "BILAL AGENCIES",
+      null,
+      null,
+      137506
+    ]
+  },
+  {
+    "invoice": [
+      "INV-128CZS",
+      "Kumar Red Red Reddi",
+      1000,
+      "BILAL AGENCIES",
+      null,
+      null,
+      50,
+      1050,
+      "11 Nov 2024"
+    ],
+    "products": [],
+    "customer": [
+      "Kumar Red Red Reddi",
+      "BILAL AGENCIES",
+      null,
+      null,
+      1050
+    ]
+  },
+  {
+    "invoice": [
+      "INV-127CZS",
+      "Kumar Red Red Reddi",
+      3809.52,
+      "BILAL AGENCIES",
+      null,
+      null,
+      190.48,
+      4000,
+      "11 Nov 2024"
+    ],
+    "products": [],
+    "customer": [
+      "Kumar Red Red Reddi",
+      "BILAL AGENCIES",
+      null,
+      null,
+      4000
+    ]
+  },
+  {
+    "invoice": [
+      "INV-126CZS",
+      "SRUSTI",
+      847.46,
+      null,
+      null,
+      null,
+      152.54,
+      1000,
+      "11 Nov 2024"
+    ],
+    "products": [],
+    "customer": [
+      "SRUSTI",
+      null,
+      null,
+      null,
+      1000
+    ]
+  },
+  {
+    "invoice": [
+      "INV-125CZS",
+      "Kumar Red Red Reddi",
+      3809.52,
+      "BILAL AGENCIES",
+      null,
+      null,
+      190.48,
+      4000,
+      "11 Nov 2024"
+    ],
+    "products": [],
+    "customer": [
+      "Kumar Red Red Reddi",
+      "BILAL AGENCIES",
+      null,
+      null,
+      4000
+    ]
+  },
+  {
+    "invoice": [
+      "INV-124CZS",
+      "Kumar Red Red Reddi",
+      1500,
+      "BILAL AGENCIES",
+      null,
+      null,
+      75,
+      1575,
+      "11 Nov 2024"
+    ],
+    "products": [],
+    "customer": [
+      "Kumar Red Red Reddi",
+      "BILAL AGENCIES",
+      null,
+      null,
+      1575
+    ]
+  },
+  {
+    "invoice": [
+      "INV-123CZS",
+      "Kumar Red Red Reddi",
+      1500,
+      "BILAL AGENCIES",
+      null,
+      null,
+      75,
+      1575,
+      "11 Nov 2024"
+    ],
+    "products": [],
+    "customer": [
+      "Kumar Red Red Reddi",
+      "BILAL AGENCIES",
+      null,
+      null,
+      1575
+    ]
+  },
+  {
+    "invoice": [
+      "INV-122CZS",
+      "Kumar Red Red Reddi",
+      500,
+      "BILAL AGENCIES",
+      null,
+      null,
+      25,
+      525,
+      "11 Nov 2024"
+    ],
+    "products": [],
+    "customer": [
+      "Kumar Red Red Reddi",
+      "BILAL AGENCIES",
+      null,
+      null,
+      525
+    ]
+  },
+  {
+    "invoice": [
+      "INV-121CZS",
+      "Kumar Red Red Reddi",
+      1904.76,
+      "BILAL AGENCIES",
+      null,
+      null,
+      95.24,
+      2000,
+      "11 Nov 2024"
+    ],
+    "products": [],
+    "customer": [
+      "Kumar Red Red Reddi",
+      "BILAL AGENCIES",
+      null,
+      null,
+      2000
+    ]
+  },
+  {
+    "invoice": [
+      "INV-120CZS",
+      "Kumar Red Red Reddi",
+      952.38,
+      "BILAL AGENCIES",
+      null,
+      null,
+      47.62,
+      1000,
+      "11 Nov 2024"
+    ],
+    "products": [],
+    "customer": [
+      "Kumar Red Red Reddi",
+      "BILAL AGENCIES",
+      null,
+      null,
+      1000
+    ]
+  },
+  {
+    "invoice": [
+      "INV-119CZS",
+      "Kumar Red Red Reddi",
+      2857.14,
+      "BILAL AGENCIES",
+      null,
+      null,
+      142.86,
+      3000,
+      "11 Nov 2024"
+    ],
+    "products": [],
+    "customer": [
+      "Kumar Red Red Reddi",
+      "BILAL AGENCIES",
+      null,
+      null,
+      3000
+    ]
+  },
+  {
+    "invoice": [
+      "INV-118CZS",
+      "Kumar Red Red Reddi",
+      1904.76,
+      "BILAL AGENCIES",
+      null,
+      null,
+      95.24,
+      2000,
+      "11 Nov 2024"
+    ],
+    "products": [],
+    "customer": [
+      "Kumar Red Red Reddi",
+      "BILAL AGENCIES",
+      null,
+      null,
+      2000
+    ]
+  },
+  {
+    "invoice": [
+      "INV-117CZS",
+      "Kumar Red Red Reddi",
+      952.38,
+      "BILAL AGENCIES",
+      null,
+      null,
+      47.62,
+      1000,
+      "11 Nov 2024"
+    ],
+    "products": [],
+    "customer": [
+      "Kumar Red Red Reddi",
+      "BILAL AGENCIES",
+      null,
+      null,
+      1000
+    ]
+  }
+]
+```
+
+ abc```json
+[
+  {
+    "invoice": [
+      "INV-122CZS",
+      "Kumar Red Red Reddi",
+      "525",
+      "BILAL AGENCIES",
+      null,
+      null,
+      "25",
+      "525",
+      "11 Nov 2024"
+    ],
+    "products": [],
+    "customer": [
+      "Kumar Red Red Reddi",
+      null,
+      null,
+      null,
+      "525"
+    ]
+  },
+  {
+    "invoice": [
+      "INV-121CZS",
+      "Kumar Red Red Reddi",
+      "2000",
+      "BILAL AGENCIES",
+      null,
+      null,
+      "95.24",
+      "2000",
+      "11 Nov 2024"
+    ],
+    "products": [],
+    "customer": [
+      "Kumar Red Red Reddi",
+      null,
+      null,
+      null,
+      "2000"
+    ]
+  },
+  {
+    "invoice": [
+      "INV-120CZS",
+      "Kumar Red Red Reddi",
+      "1000",
+      "BILAL AGENCIES",
+      null,
+      null,
+      "47.62",
+      "1000",
+      "11 Nov 2024"
+    ],
+    "products": [],
+    "customer": [
+      "Kumar Red Red Reddi",
+      null,
+      null,
+      null,
+      "1000"
+    ]
+  },
+  {
+    "invoice": [
+      "INV-119CZS",
+      "Kumar Red Red Reddi",
+      "3000",
+      "BILAL AGENCIES",
+      null,
+      null,
+      "142.86",
+      "3000",
+      "11 Nov 2024"
+    ],
+    "products": [],
+    "customer": [
+      "Kumar Red Red Reddi",
+      null,
+      null,
+      null,
+      "3000"
+    ]
+  },
+  {
+    "invoice": [
+      "INV-118CZS",
+      "Kumar Red Red Reddi",
+      "2000",
+      "BILAL AGENCIES",
+      null,
+      null,
+      "95.24",
+      "2000",
+      "11 Nov 2024"
+    ],
+    "products": [],
+    "customer": [
+      "Kumar Red Red Reddi",
+      null,
+      null,
+      null,
+      "2000"
+    ]
+  },
+  {
+    "invoice": [
+      "INV-117CZS",
+      "Kumar Red Red Reddi",
+      "1000",
+      "BILAL AGENCIES",
+      null,
+      null,
+      "47.62",
+      "1000",
+      "11 Nov 2024"
+    ],
+    "products": [],
+    "customer": [
+      "Kumar Red Red Reddi",
+      null,
+      null,
+      null,
+      "1000"
+    ]
+  }
+]
+```
+
+ abc```json
+[
+  {
+    "invoice": [
+      "INV-TEST-456",
+      "Sandeep Ranga",
+      153600,
+      null,
+      null,
+      null,
+      0,
+      153600,
+      "12 Nov 2024"
+    ],
+    "products": [],
+    "customer": [
+      "Sandeep Ranga",
+      null,
+      null,
+      null,
+      153600
+    ]
+  },
+  {
+    "invoice": [
+      "INV-TEST-963",
+      "Vardharajulu",
+      90169.49,
+      null,
+      null,
+      null,
+      16230.51,
+      106400,
+      "12 Nov 2024"
+    ],
+    "products": [],
+    "customer": [
+      "Vardharajulu",
+      null,
+      null,
+      null,
+      106400
+    ]
+  },
+  {
+    "invoice": [
+      "INV-148CZS",
+      "Shounak",
+      200385.76,
+      "NextSpeed Technologies Pvt Ltd",
+      null,
+      null,
+      5095.24,
+      205481,
+      "12 Nov 2024"
+    ],
+    "products": [],
+    "customer": [
+      "Shounak",
+      "NextSpeed Technologies Pvt Ltd",
+      null,
+      null,
+      205481
+    ]
+  },
+  {
+    "invoice": [
+      "INV-147CZS",
+      "Kumar Red Red Reddi",
+      1561.75,
+      "BILAL AGENCIES",
+      null,
+      null,
+      0,
+      1561.75,
+      "12 Nov 2024"
+    ],
+    "products": [],
+    "customer": [
+      "Kumar Red Red Reddi",
+      "BILAL AGENCIES",
+      null,
+      null,
+      1561.75
+    ]
+  },
+  {
+    "invoice": [
+      "INV-146CZS",
+      "Kumar Red Red Reddi",
+      1987796.61,
+      "BILAL AGENCIES",
+      null,
+      null,
+      357803.39,
+      2345600,
+      "12 Nov 2024"
+    ],
+    "products": [],
+    "customer": [
+      "Kumar Red Red Reddi",
+      "BILAL AGENCIES",
+      null,
+      null,
+      2345600
+    ]
+  },
+  {
+    "invoice": [
+      "INV-145CZS",
+      "Kumar Red Red Reddi",
+      198728.81,
+      "BILAL AGENCIES",
+      null,
+      null,
+      35771.19,
+      234500,
+      "12 Nov 2024"
+    ],
+    "products": [],
+    "customer": [
+      "Kumar Red Red Reddi",
+      "BILAL AGENCIES",
+      null,
+      null,
+      234500
+    ]
+  },
+  {
+    "invoice": [
+      "INV-144CZS",
+      "Kumar Red Red Reddi",
+      847.46,
+      "BILAL AGENCIES",
+      null,
+      null,
+      152.54,
+      1000,
+      "12 Nov 2024"
+    ],
+    "products": [],
+    "customer": [
+      "Kumar Red Red Reddi",
+      "BILAL AGENCIES",
+      null,
+      null,
+      1000
+    ]
+  },
+  {
+    "invoice": [
+      "INV-143CZS",
+      "Kumar Red Red Reddi",
+      100,
+      "BILAL AGENCIES",
+      null,
+      null,
+      18,
+      118,
+      "11 Nov 2024"
+    ],
+    "products": [],
+    "customer": [
+      "Kumar Red Red Reddi",
+      "BILAL AGENCIES",
+      null,
+      null,
+      118
+    ]
+  },
+  {
+    "invoice": [
+      "INV-142CZS",
+      "Test Assam",
+      71.82,
+      null,
+      null,
+      null,
+      0,
+      71.82,
+      "11 Nov 2024"
+    ],
+    "products": [],
+    "customer": [
+      "Test Assam",
+      null,
+      null,
+      null,
+      71.82
+    ]
+  },
+  {
+    "invoice": [
+      "INV-141CZS",
+      "Kumar Red Red Reddi",
+      14.12,
+      "BILAL AGENCIES",
+      null,
+      null,
+      2.54,
+      16.67,
+      "11 Nov 2024"
+    ],
+    "products": [],
+    "customer": [
+      "Kumar Red Red Reddi",
+      "BILAL AGENCIES",
+      null,
+      null,
+      16.67
+    ]
+  },
+  {
+    "invoice": [
+      "INV-140CZS",
+      "Kumar Red Red Reddi",
+      84745.76,
+      "BILAL AGENCIES",
+      null,
+      null,
+      15254.24,
+      100000,
+      "11 Nov 2024"
+    ],
+    "products": [],
+    "customer": [
+      "Kumar Red Red Reddi",
+      "BILAL AGENCIES",
+      null,
+      null,
+      100000
+    ]
+  },
+  {
+    "invoice": [
+      "INV-139CZS",
+      "einvoice testing",
+      2865.6,
+      "SREE RUDRANI FOODS",
+      null,
+      null,
+      0,
+      2865.6,
+      "11 Nov 2024"
+    ],
+    "products": [],
+    "customer": [
+      "einvoice testing",
+      "SREE RUDRANI FOODS",
+      null,
+      null,
+      2865.6
+    ]
+  },
+  {
+    "invoice": [
+      "INV-138CZS",
+      "Kumar Red Red Reddi",
+      1000,
+      "BILAL AGENCIES",
+      null,
+      null,
+      50,
+      1050,
+      "11 Nov 2024"
+    ],
+    "products": [],
+    "customer": [
+      "Kumar Red Red Reddi",
+      "BILAL AGENCIES",
+      null,
+      null,
+      1050
+    ]
+  },
+  {
+    "invoice": [
+      "INV-137CZS",
+      "KL: 06: 98989",
+      150,
+      "SHREE GLASS",
+      null,
+      null,
+      18,
+      168,
+      "11 Nov 2024"
+    ],
+    "products": [],
+    "customer": [
+      "KL: 06: 98989",
+      "SHREE GLASS",
+      null,
+      null,
+      168
+    ]
+  },
+  {
+    "invoice": [
+      "INV-136CZS",
+      "Kumar Red Red Reddi",
+      847.46,
+      "BILAL AGENCIES",
+      null,
+      null,
+      152.54,
+      1000,
+      "11 Nov 2024"
+    ],
+    "products": [],
+    "customer": [
+      "Kumar Red Red Reddi",
+      "BILAL AGENCIES",
+      null,
+      null,
+      1000
+    ]
+  },
+  {
+    "invoice": [
+      "INV-135CZS",
+      "Kumar Red Red Reddi",
+      15000,
+      "BILAL AGENCIES",
+      null,
+      null,
+      2700,
+      17700,
+      "11 Nov 2024"
+    ],
+    "products": [],
+    "customer": [
+      "Kumar Red Red Reddi",
+      "BILAL AGENCIES",
+      null,
+      null,
+      17700
+    ]
+  },
+  {
+    "invoice": [
+      "INV-134CZS",
+      "Kumar Red Red Reddi",
+      137933.38,
+      "BILAL AGENCIES",
+      null,
+      null,
+      97.62,
+      138031,
+      "11 Nov 2024"
+    ],
+    "products": [],
+    "customer": [
+      "Kumar Red Red Reddi",
+      "BILAL AGENCIES",
+      null,
+      null,
+      138031
+    ]
+  },
+  {
+    "invoice": [
+      "INV-133CZS",
+      "Kumar Red Red Reddi",
+      2857.14,
+      "BILAL AGENCIES",
+      null,
+      null,
+      142.86,
+      3000,
+      "11 Nov 2024"
+    ],
+    "products": [],
+    "customer": [
+      "Kumar Red Red Reddi",
+      "BILAL AGENCIES",
+      null,
+      null,
+      3000
+    ]
+  },
+  {
+    "invoice": [
+      "INV-132CZS",
+      "Kumar Red Red Reddi",
+      136581,
+      "BILAL AGENCIES",
+      null,
+      null,
+      25,
+      136606,
+      "11 Nov 2024"
+    ],
+    "products": [],
+    "customer": [
+      "Kumar Red Red Reddi",
+      "BILAL AGENCIES",
+      null,
+      null,
+      136606
+    ]
+  },
+  {
+    "invoice": [
+      "INV-131CZS",
+      "Kumar Red Red Reddi",
+      1000,
+      "BILAL AGENCIES",
+      null,
+      null,
+      50,
+      1050,
+      "11 Nov 2024"
+    ],
+    "products": [],
+    "customer": [
+      "Kumar Red Red Reddi",
+      "BILAL AGENCIES",
+      null,
+      null,
+      1050
+    ]
+  },
+  {
+    "invoice": [
+      "INV-130CZS",
+      "Kumar Red Red Reddi",
+      1500,
+      "BILAL AGENCIES",
+      null,
+      null,
+      75,
+      1575,
+      "11 Nov 2024"
+    ],
+    "products": [],
+    "customer": [
+      "Kumar Red Red Reddi",
+      "BILAL AGENCIES",
+      null,
+      null,
+      1575
+    ]
+  },
+  {
+    "invoice": [
+      "INV-129CZS",
+      "Kumar Red Red Reddi",
+      137433.38,
+      "BILAL AGENCIES",
+      null,
+      null,
+      72.62,
+      137506,
+      "11 Nov 2024"
+    ],
+    "products": [],
+    "customer": [
+      "Kumar Red Red Reddi",
+      "BILAL AGENCIES",
+      null,
+      null,
+      137506
+    ]
+  },
+  {
+    "invoice": [
+      "INV-128CZS",
+      "Kumar Red Red Reddi",
+      1000,
+      "BILAL AGENCIES",
+      null,
+      null,
+      50,
+      1050,
+      "11 Nov 2024"
+    ],
+    "products": [],
+    "customer": [
+      "Kumar Red Red Reddi",
+      "BILAL AGENCIES",
+      null,
+      null,
+      1050
+    ]
+  },
+  {
+    "invoice": [
+      "INV-127CZS",
+      "Kumar Red Red Reddi",
+      3809.52,
+      "BILAL AGENCIES",
+      null,
+      null,
+      190.48,
+      4000,
+      "11 Nov 2024"
+    ],
+    "products": [],
+    "customer": [
+      "Kumar Red Red Reddi",
+      "BILAL AGENCIES",
+      null,
+      null,
+      4000
+    ]
+  },
+  {
+    "invoice": [
+      "INV-126CZS",
+      "SRUSTI",
+      847.46,
+      null,
+      null,
+      null,
+      152.54,
+      1000,
+      "11 Nov 2024"
+    ],
+    "products": [],
+    "customer": [
+      "SRUSTI",
+      null,
+      null,
+      null,
+      1000
+    ]
+  },
+  {
+    "invoice": [
+      "INV-125CZS",
+      "Kumar Red Red Reddi",
+      3809.52,
+      "BILAL AGENCIES",
+      null,
+      null,
+      190.48,
+      4000,
+      "11 Nov 2024"
+    ],
+    "products": [],
+    "customer": [
+      "Kumar Red Red Reddi",
+      "BILAL AGENCIES",
+      null,
+      null,
+      4000
+    ]
+  },
+  {
+    "invoice": [
+      "INV-124CZS",
+      "Kumar Red Red Reddi",
+      1500,
+      "BILAL AGENCIES",
+      null,
+      null,
+      75,
+      1575,
+      "11 Nov 2024"
+    ],
+    "products": [],
+    "customer": [
+      "Kumar Red Red Reddi",
+      "BILAL AGENCIES",
+      null,
+      null,
+      1575
+    ]
+  },
+  {
+    "invoice": [
+      "INV-123CZS",
+      "Kumar Red Red Reddi",
+      1500,
+      "BILAL AGENCIES",
+      null,
+      null,
+      75,
+      1575,
+      "11 Nov 2024"
+    ],
+    "products": [],
+    "customer": [
+      "Kumar Red Red Reddi",
+      "BILAL AGENCIES",
+      null,
+      null,
+      1575
+    ]
+  }
+]
+```
+
+ abc```json
+[
+  {
+    "invoice": [
+      "INV-129CZS",
+      null,
+      60.00000000,
+      null,
+      null,
+      1,
+      0,
+      60.00000000,
+      "11 Nov 2024"
+    ],
+    "products": [
+      [
+        "Shipping Charges",
+        1,
+        60.00000000,
+        0,
+        60.00000000,
+        60.00000000,
+        0
+      ]
+    ],
+    "customer": [
+      null,
+      null,
+      null,
+      null,
+      60.00000000
+    ]
+  },
+  {
+    "invoice": [
+      "INV-128CZS",
+      null,
+      525.00,
+      null,
+      null,
+      2.000,
+      5,
+      525.00,
+      "11 Nov 2024"
+    ],
+    "products": [
+      [
+        "GEMINI TEA",
+        2.000,
+        500.00,
+        0.00,
+        500.00,
+        525.00,
+        5
+      ]
+    ],
+    "customer": [
+      null,
+      null,
+      null,
+      null,
+      525.00
+    ]
+  },
+  {
+    "invoice": [
+      "INV-127CZS",
+      null,
+      1000.00,
+      null,
+      null,
+      4.000,
+      5,
+      1000.00,
+      "11 Nov 2024"
+    ],
+    "products": [
+      [
+        "SWEET BOX",
+        4.000,
+        952.38,
+        0.00,
+        952.38,
+        1000.00,
+        5
+      ]
+    ],
+    "customer": [
+      null,
+      null,
+      null,
+      null,
+      1000.00
+    ]
+  },
+  {
+    "invoice": [
+      "INV-126CZS",
+      null,
+      1000.00,
+      null,
+      null,
+      1.000,
+      18,
+      1000.00,
+      "11 Nov 2024"
+    ],
+    "products": [
+      [
+        "MARATHON SERVICE",
+        1.000,
+        847.46,
+        0.00,
+        847.46,
+        1000.00,
+        18
+      ]
+    ],
+    "customer": [
+      null,
+      null,
+      null,
+      null,
+      1000.00
+    ]
+  },
+  {
+    "invoice": [
+      "INV-125CZS",
+      null,
+      1000.00,
+      null,
+      null,
+      4.000,
+      5,
+      1000.00,
+      "11 Nov 2024"
+    ],
+    "products": [
+      [
+        "SWEET BOX",
+        4.000,
+        952.38,
+        0.00,
+        952.38,
+        1000.00,
+        5
+      ]
+    ],
+    "customer": [
+      null,
+      null,
+      null,
+      null,
+      1000.00
+    ]
+  },
+  {
+    "invoice": [
+      "INV-124CZS",
+      null,
+      525.00,
+      null,
+      null,
+      3.000,
+      5,
+      525.00,
+      "11 Nov 2024"
+    ],
+    "products": [
+      [
+        "GEMINI TEA",
+        3.000,
+        500.00,
+        0.00,
+        500.00,
+        525.00,
+        5
+      ]
+    ],
+    "customer": [
+      null,
+      null,
+      null,
+      null,
+      525.00
+    ]
+  },
+  {
+    "invoice": [
+      "INV-123CZS",
+      null,
+      525.00,
+      null,
+      null,
+      3.000,
+      5,
+      525.00,
+      "11 Nov 2024"
+    ],
+    "products": [
+      [
+        "GEMINI TEA",
+        3.000,
+        500.00,
+        0.00,
+        500.00,
+        525.00,
+        5
+      ]
+    ],
+    "customer": [
+      null,
+      null,
+      null,
+      null,
+      525.00
+    ]
+  },
+  {
+    "invoice": [
+      "INV-122CZS",
+      null,
+      525.00,
+      null,
+      null,
+      1.000,
+      5,
+      525.00,
+      "11 Nov 2024"
+    ],
+    "products": [
+      [
+        "GEMINI TEA",
+        1.000,
+        500.00,
+        0.00,
+        500.00,
+        525.00,
+        5
+      ]
+    ],
+    "customer": [
+      null,
+      null,
+      null,
+      null,
+      525.00
+    ]
+  },
+  {
+    "invoice": [
+      "INV-121CZS",
+      null,
+      1000.00,
+      null,
+      null,
+      2.000,
+      5,
+      1000.00,
+      "11 Nov 2024"
+    ],
+    "products": [
+      [
+        "SWEET BOX",
+        2.000,
+        952.38,
+        0.00,
+        952.38,
+        1000.00,
+        5
+      ]
+    ],
+    "customer": [
+      null,
+      null,
+      null,
+      null,
+      1000.00
+    ]
+  },
+  {
+    "invoice": [
+      "INV-120CZS",
+      null,
+      1000.00,
+      null,
+      null,
+      1.000,
+      5,
+      1000.00,
+      "11 Nov 2024"
+    ],
+    "products": [
+      [
+        "SWEET BOX",
+        1.000,
+        952.38,
+        0.00,
+        952.38,
+        1000.00,
+        5
+      ]
+    ],
+    "customer": [
+      null,
+      null,
+      null,
+      null,
+      1000.00
+    ]
+  },
+  {
+    "invoice": [
+      "INV-119CZS",
+      null,
+      1000.00,
+      null,
+      null,
+      3.000,
+      5,
+      1000.00,
+      "11 Nov 2024"
+    ],
+    "products": [
+      [
+        "SWEET BOX",
+        3.000,
+        952.38,
+        0.00,
+        952.38,
+        1000.00,
+        5
+      ]
+    ],
+    "customer": [
+      null,
+      null,
+      null,
+      null,
+      1000.00
+    ]
+  },
+  {
+    "invoice": [
+      "INV-118CZS",
+      null,
+      1000.00,
+      null,
+      null,
+      2.000,
+      5,
+      1000.00,
+      "11 Nov 2024"
+    ],
+    "products": [
+      [
+        "SWEET BOX",
+        2.000,
+        952.38,
+        0.00,
+        952.38,
+        1000.00,
+        5
+      ]
+    ],
+    "customer": [
+      null,
+      null,
+      null,
+      null,
+      1000.00
+    ]
+  },
+  {
+    "invoice": [
+      "INV-117CZS",
+      null,
+      1000.00,
+      null,
+      null,
+      1.000,
+      5,
+      1000.00,
+      "11 Nov 2024"
+    ],
+    "products": [
+      [
+        "SWEET BOX",
+        1.000,
+        952.38,
+        0.00,
+        952.38,
+        1000.00,
+        5
+      ]
+    ],
+    "customer": [
+      null,
+      null,
+      null,
+      null,
+      1000.00
+    ]
+  }
+]
+```
+
+ abc```json
+[
+  {
+    "invoice": [
+      "INV-138CZS",
+      null,
+      525.00,
+      null,
+      null,
+      2.000,
+      5,
+      525.00,
+      "11 Nov 2024"
+    ],
+    "products": [
+      [
+        "GEMINI TEA",
+        2.000,
+        500.00,
+        0.00,
+        500.00,
+        525.00,
+        5
+      ]
+    ],
+    "customer": [
+      null,
+      null,
+      null,
+      null,
+      525.00
+    ]
+  },
+  {
+    "invoice": [
+      "INV-137CZS",
+      null,
+      168.00,
+      null,
+      null,
+      2.000,
+      18,
+      168.00,
+      "11 Nov 2024"
+    ],
+    "products": [
+      [
+        "BULK INVOICE",
+        1.000,
+        100.00,
+        0.00,
+        100.00,
+        118.00,
+        18
+      ],
+      [
+        "Delivery/ Shipping Charges",
+        1,
+        50.00000000,
+        0,
+        50.00000000,
+        50.00000000,
+        0
+      ]
+    ],
+    "customer": [
+      null,
+      null,
+      null,
+      null,
+      168.00
+    ]
+  },
+  {
+    "invoice": [
+      "INV-136CZS",
+      null,
+      1000.00,
+      null,
+      null,
+      1.000,
+      18,
+      1000.00,
+      "11 Nov 2024"
+    ],
+    "products": [
+      [
+        "MIXED BUTTONS",
+        1.000,
+        847.46,
+        0.00,
+        847.46,
+        1000.00,
+        18
+      ]
+    ],
+    "customer": [
+      null,
+      null,
+      null,
+      null,
+      1000.00
+    ]
+  },
+  {
+    "invoice": [
+      "INV-135CZS",
+      null,
+      17700.00,
+      null,
+      null,
+      1.000,
+      18,
+      17700.00,
+      "11 Nov 2024"
+    ],
+    "products": [
+      [
+        "BIRTHDAY PARTY",
+        1.000,
+        15000.00,
+        0.00,
+        15000.00,
+        17700.00,
+        18
+      ]
+    ],
+    "customer": [
+      null,
+      null,
+      null,
+      null,
+      17700.00
+    ]
+  },
+  {
+    "invoice": [
+      "INV-134CZS",
+      null,
+      136121.00,
+      null,
+      null,
+      9.000,
+      5,
+      136121.00,
+      "11 Nov 2024"
+    ],
+    "products": [
+      [
+        "Shipping Charges",
+        1,
+        60.00000000,
+        0,
+        60.00000000,
+        60.00000000,
+        0
+      ],
+      [
+        "GEMINI TEA",
+        2.000,
+        500.00,
+        0.00,
+        500.00,
+        525.00,
+        5
+      ],
+      [
+        "Making charges",
+        1,
+        123456.00000000,
+        0,
+        123456.00000000,
+        123456.00000000,
+        0
+      ],
+      [
+        "debit card charges ",
+        1,
+        12345.00000000,
+        0,
+        12345.00000000,
+        12345.00000000,
+        0
+      ],
+      [
+        "SWEET BOX",
+        1.000,
+        952.38,
+        0.00,
+        952.38,
+        1000.00,
+        5
+      ],
+      [
+        "Shipping Charges",
+        1,
+        60.00000000,
+        0,
+        60.00000000,
+        60.00000000,
+        0
+      ],
+      [
+        "Shipping Charges",
+        1,
+        60.00000000,
+        0,
+        60.00000000,
+        60.00000000,
+        0
+      ]
+    ],
+    "customer": [
+      null,
+      null,
+      null,
+      null,
+      136121.00
+    ]
+  },
+  {
+    "invoice": [
+      "INV-133CZS",
+      null,
+      3000.00,
+      null,
+      null,
+      3.000,
+      5,
+      3000.00,
+      "11 Nov 2024"
+    ],
+    "products": [
+      [
+        "SWEET BOX",
+        3.000,
+        952.38,
+        0.00,
+        952.38,
+        1000.00,
+        5
+      ]
+    ],
+    "customer": [
+      null,
+      null,
+      null,
+      null,
+      3000.00
+    ]
+  },
+  {
+    "invoice": [
+      "INV-132CZS",
+      null,
+      124121.00,
+      null,
+      null,
+      6.000,
+      5,
+      124121.00,
+      "11 Nov 2024"
+    ],
+    "products": [
+      [
+        "GEMINI TEA",
+        1.000,
+        500.00,
+        0.00,
+        500.00,
+        525.00,
+        5
+      ],
+      [
+        "L ARM",
+        1.000,
+        100.00,
+        0.00,
+        100.00,
+        100.00,
+        0
+      ],
+      [
+        "Shipping Charges",
+        1,
+        60.00000000,
+        0,
+        60.00000000,
+        60.00000000,
+        0
+      ],
+      [
+        "Shipping Charges",
+        1,
+        60.00000000,
+        0,
+        60.00000000,
+        60.00000000,
+        0
+      ],
+      [
+        "Making charges",
+        1,
+        123456.00000000,
+        0,
+        123456.00000000,
+        123456.00000000,
+        0
+      ],
+      [
+        "debit card charges ",
+        1,
+        12345.00000000,
+        0,
+        12345.00000000,
+        12345.00000000,
+        0
+      ],
+      [
+        "Shipping Charges",
+        1,
+        60.00000000,
+        0,
+        60.00000000,
+        60.00000000,
+        0
+      ]
+    ],
+    "customer": [
+      null,
+      null,
+      null,
+      null,
+      124121.00
+    ]
+  },
+  {
+    "invoice": [
+      "INV-131CZS",
+      null,
+      525.00,
+      null,
+      null,
+      2.000,
+      5,
+      525.00,
+      "11 Nov 2024"
+    ],
+    "products": [
+      [
+        "GEMINI TEA",
+        2.000,
+        500.00,
+        0.00,
+        500.00,
+        525.00,
+        5
+      ]
+    ],
+    "customer": [
+      null,
+      null,
+      null,
+      null,
+      525.00
+    ]
+  },
+  {
+    "invoice": [
+      "INV-130CZS",
+      null,
+      1575.00,
+      null,
+      null,
+      3.000,
+      5,
+      1575.00,
+      "11 Nov 2024"
+    ],
+    "products": [
+      [
+        "GEMINI TEA",
+        3.000,
+        500.00,
+        0.00,
+        500.00,
+        525.00,
+        5
+      ]
+    ],
+    "customer": [
+      null,
+      null,
+      null,
+      null,
+      1575.00
+    ]
+  },
+  {
+    "invoice": [
+      "INV-129CZS",
+      null,
+      124121.00,
+      null,
+      null,
+      6.000,
+      5,
+      124121.00,
+      "11 Nov 2024"
+    ],
+    "products": [
+      [
+        "debit card charges ",
+        1,
+        12345.00000000,
+        0,
+        12345.00000000,
+        12345.00000000,
+        0
+      ],
+      [
+        "Shipping Charges",
+        1,
+        60.00000000,
+        0,
+        60.00000000,
+        60.00000000,
+        0
+      ],
+      [
+        "Shipping Charges",
+        1,
+        60.00000000,
+        0,
+        60.00000000,
+        60.00000000,
+        0
+      ],
+      [
+        "Making charges",
+        1,
+        123456.00000000,
+        0,
+        123456.00000000,
+        123456.00000000,
+        0
+      ],
+      [
+        "GEMINI TEA",
+        1.000,
+        500.00,
+        0.00,
+        500.00,
+        525.00,
+        5
+      ],
+      [
+        "SWEET BOX",
+        1.000,
+        952.38,
+        0.00,
+        952.38,
+        1000.00,
+        5
+      ]
+    ],
+    "customer": [
+      null,
+      null,
+      null,
+      null,
+      124121.00
+    ]
+  }
+]
+```
+
+ abc```json
+[
+  {
+    "invoice": [
+      "INV-TEST-1526",
+      null,
+      273863.0,
+      null,
+      null,
+      10.000,
+      null,
+      null,
+      "12 Nov 2024"
+    ],
+    "products": [
+      [
+        "Shipping Charges",
+        1,
+        60.0,
+        0,
+        60.0,
+        60.0,
+        0
+      ],
+      [
+        "Matrix and Pillows",
+        1.000,
+        45084.75,
+        0.00,
+        45084.75,
+        53200.00,
+        18
+      ],
+      [
+        "Shipping Charges",
+        1,
+        60.0,
+        0,
+        60.0,
+        60.0,
+        0
+      ],
+      [
+        "Shipping Charges",
+        1,
+        60.0,
+        0,
+        60.0,
+        60.0,
+        0
+      ],
+      [
+        "debit card charges ",
+        1,
+        12345.0,
+        0,
+        12345.0,
+        12345.0,
+        0
+      ],
+      [
+        "Making charges",
+        1,
+        123456.0,
+        0,
+        123456.0,
+        123456.0,
+        0
+      ],
+      [
+        "YONEX ZR 100 LIGHT  Racket",
+        7.000,
+        25600.0,
+        0.00,
+        25600.0,
+        25600.0,
+        0
+      ]
+    ],
+    "customer": [
+      null,
+      null,
+      null,
+      null,
+      273863.0
+    ]
+  },
+  {
+    "invoice": [
+      "INV-149CZS",
+      null,
+      100.0,
+      null,
+      null,
+      56789.000,
+      null,
+      null,
+      "12 Nov 2024"
+    ],
+    "products": [
+      [
+        "Monster Energy",
+        56789.000,
+        84.75,
+        0.00,
+        84.75,
+        100.00,
+        18
+      ]
+    ],
+    "customer": [
+      null,
+      null,
+      null,
+      null,
+      100.0
+    ]
+  },
+  {
+    "invoice": [
+      "INV-TEST-963",
+      null,
+      53200.0,
+      null,
+      null,
+      2.000,
+      null,
+      null,
+      "12 Nov 2024"
+    ],
+    "products": [
+      [
+        "Matrix and Pillows",
+        2.000,
+        45084.75,
+        0.00,
+        45084.75,
+        53200.00,
+        18
+      ]
+    ],
+    "customer": [
+      null,
+      null,
+      null,
+      null,
+      53200.0
+    ]
+  },
+  {
+    "invoice": [
+      "INV-148CZS",
+      null,
+      201711.0,
+      null,
+      null,
+      201.000,
+      null,
+      null,
+      "12 Nov 2024"
+    ],
+    "products": [
+      [
+        "MILK BIKIS CLASSIC CASE 120PK",
+        20.000,
+        809.52,
+        0.00,
+        809.52,
+        850.00,
+        5
+      ],
+      [
+        "Shipping Charges",
+        1,
+        60.0,
+        0,
+        60.0,
+        60.0,
+        0
+      ],
+      [
+        "Making charges",
+        1,
+        123456.0,
+        0,
+        123456.0,
+        123456.0,
+        0
+      ],
+      [
+        "debit card charges ",
+        1,
+        12345.0,
+        0,
+        12345.0,
+        12345.0,
+        0
+      ],
+      [
+        "TREAT BKS CASE 80PKT",
+        50.000,
+        535.71,
+        0.00,
+        535.71,
+        600.00,
+        12
+      ],
+      [
+        "Shipping Charges",
+        1,
+        60.0,
+        0,
+        60.0,
+        60.0,
+        0
+      ],
+      [
+        "Shipping Charges",
+        1,
+        60.0,
+        0,
+        60.0,
+        60.0,
+        0
+      ],
+      [
+        "NUTRI CHOICE BKS CASE",
+        25.000,
+        666.67,
+        0.00,
+        666.67,
+        700.00,
+        5
+      ],
+      [
+        "GEMS CHOCLATE POUCH",
+        1000.000,
+        4.76,
+        0.00,
+        4.76,
+        5.00,
+        5
+      ]
+    ],
+    "customer": [
+      null,
+      null,
+      null,
+      null,
+      201711.0
+    ]
+  },
+  {
+    "invoice": [
+      "INV-147CZS",
+      null,
+      1561.752,
+      null,
+      null,
+      2.000,
+      null,
+      null,
+      "12 Nov 2024"
+    ],
+    "products": [
+      [
+        "Delivery/ Shipping Charges",
+        1,
+        128.952,
+        0,
+        128.952,
+        128.952,
+        0
+      ],
+      [
+        "OTHER BUSINESS SERVICES",
+        1.000,
+        1432.80,
+        0.00,
+        1432.80,
+        1432.80,
+        0
+      ]
+    ],
+    "customer": [
+      null,
+      null,
+      null,
+      null,
+      1561.752
+    ]
+  },
+  {
+    "invoice": [
+      "INV-146CZS",
+      null,
+      100.0,
+      null,
+      null,
+      23456.000,
+      null,
+      null,
+      "12 Nov 2024"
+    ],
+    "products": [
+      [
+        "Monster Energy",
+        23456.000,
+        84.75,
+        0.00,
+        84.75,
+        100.00,
+        18
+      ]
+    ],
+    "customer": [
+      null,
+      null,
+      null,
+      null,
+      100.0
+    ]
+  },
+  {
+    "invoice": [
+      "INV-145CZS",
+      null,
+      100.0,
+      null,
+      null,
+      2345.000,
+      null,
+      null,
+      "12 Nov 2024"
+    ],
+    "products": [
+      [
+        "Monster Energy",
+        2345.000,
+        84.75,
+        0.00,
+        84.75,
+        100.00,
+        18
+      ]
+    ],
+    "customer": [
+      null,
+      null,
+      null,
+      null,
+      100.0
+    ]
+  },
+  {
+    "invoice": [
+      "INV-144CZS",
+      null,
+      100.0,
+      null,
+      null,
+      10.000,
+      null,
+      null,
+      "12 Nov 2024"
+    ],
+    "products": [
+      [
+        "dark chocolagte",
+        10.000,
+        84.75,
+        0.00,
+        84.75,
+        100.00,
+        18
+      ]
+    ],
+    "customer": [
+      null,
+      null,
+      null,
+      null,
+      100.0
+    ]
+  },
+  {
+    "invoice": [
+      "INV-143CZS",
+      null,
+      118.0,
+      null,
+      null,
+      1.000,
+      null,
+      null,
+      "11 Nov 2024"
+    ],
+    "products": [
+      [
+        "dark chocolagte",
+        1.000,
+        100.00,
+        0.00,
+        100.00,
+        118.00,
+        18
+      ]
+    ],
+    "customer": [
+      null,
+      null,
+      null,
+      null,
+      118.0
+    ]
+  },
+  {
+    "invoice": [
+      "INV-142CZS",
+      null,
+      84.75,
+      null,
+      null,
+      1.000,
+      null,
+      null,
+      "11 Nov 2024"
+    ],
+    "products": [
+      [
+        "dark chocolagte",
+        1.000,
+        84.75,
+        0.00,
+        84.75,
+        84.75,
+        0
+      ]
+    ],
+    "customer": [
+      null,
+      null,
+      null,
+      null,
+      84.75
+    ]
+  },
+  {
+    "invoice": [
+      "INV-141CZS",
+      null,
+      8.33,
+      null,
+      null,
+      2.000,
+      null,
+      null,
+      "11 Nov 2024"
+    ],
+    "products": [
+      [
+        "dark chocolagte",
+        2.000,
+        7.06,
+        0.00,
+        7.06,
+        8.33,
+        18
+      ]
+    ],
+    "customer": [
+      null,
+      null,
+      null,
+      null,
+      8.33
+    ]
+  },
+  {
+    "invoice": [
+      "INV-140CZS",
+      null,
+      100.0,
+      null,
+      null,
+      1000.000,
+      null,
+      null,
+      "11 Nov 2024"
+    ],
+    "products": [
+      [
+        "Monster Energy",
+        1000.000,
+        84.75,
+        0.00,
+        84.75,
+        100.00,
+        18
+      ]
+    ],
+    "customer": [
+      null,
+      null,
+      null,
+      null,
+      100.0
+    ]
+  },
+  {
+    "invoice": [
+      "INV-139CZS",
+      null,
+      1432.80,
+      null,
+      null,
+      2.000,
+      null,
+      null,
+      "11 Nov 2024"
+    ],
+    "products": [
+      [
+        "OTHER BUSINESS SERVICES",
+        2.000,
+        1432.80,
+        0.00,
+        1432.80,
+        1432.80,
+        0
+      ]
+    ],
+    "customer": [
+      null,
+      null,
+      null,
+      null,
+      2865.6
+    ]
+  }
+]
+```
+
+ abc```json
+[
+  {
+    "invoice": [
+      "RAY/23-24/286",
+      "Shounak",
+      "69183.35",
+      null,
+      null,
+      "3",
+      "18",
+      "129783.35",
+      "12 Nov 2024"
+    ],
+    "products": [
+      [
+        "iPHONE 16",
+        "1.000",
+        "79990.00",
+        null,
+        null,
+        "79990.00",
+        "18"
+      ],
+      [
+        "iPHONE 16 Cover",
+        "1.000",
+        "4599.00",
+        null,
+        null,
+        "4599.00",
+        "18"
+      ],
+      [
+        "Beats PRO X",
+        "1.000",
+        "24999.00",
+        null,
+        null,
+        "24999.00",
+        "18"
+      ]
+    ],
+    "customer": [
+      "Shounak",
+      "NextSpeed Technologies Pvt Ltd",
+      null,
+      null,
+      "69183.35"
+    ]
+  },
+  {
+    "invoice": [
+      "RAY/23-24/285",
+      "Abhinav",
+      "10000.00",
+      null,
+      null,
+      "1",
+      "0",
+      "10000.00",
+      "12 Nov 2024"
+    ],
+    "products": [
+      [
+        "SPEAKER",
+        "1.000",
+        "10000.00",
+        null,
+        null,
+        "10000.00",
+        "0"
+      ]
+    ],
+    "customer": [
+      "Abhinav",
+      "GAME STATION",
+      null,
+      null,
+      "10000.00"
+    ]
+  },
+  {
+    "invoice": [
+      "RAY/23-24/284",
+      "Ramesh",
+      "88.98",
+      null,
+      null,
+      "1",
+      "0",
+      "88.98",
+      "08 Nov 2024"
+    ],
+    "products": [
+      [
+        "12 MM PLAIN GLASS",
+        "1.000",
+        "88.98",
+        null,
+        null,
+        "88.98",
+        "0"
+      ]
+    ],
+    "customer": [
+      "Ramesh",
+      "Apple India",
+      null,
+      null,
+      "88.98"
+    ]
+  },
+  {
+    "invoice": [
+      "RAY/23-24/283",
+      "Ramesh",
+      "88.98",
+      null,
+      null,
+      "1",
+      "0",
+      "88.98",
+      "08 Nov 2024"
+    ],
+    "products": [
+      [
+        "12 MM PLAIN GLASS",
+        "1.000",
+        "88.98",
+        null,
+        null,
+        "88.98",
+        "0"
+      ]
+    ],
+    "customer": [
+      "Ramesh",
+      "Apple India",
+      null,
+      null,
+      "88.98"
+    ]
+  },
+  {
+    "invoice": [
+      "RAY/23-24/282",
+      "RAM",
+      "37.08",
+      null,
+      null,
+      "500.000",
+      "0",
+      "37.08",
+      "07 Nov 2024"
+    ],
+    "products": [
+      [
+        "12 MM PLAIN GLASS",
+        "500.000",
+        "0.07",
+        null,
+        null,
+        "0.07",
+        "0"
+      ]
+    ],
+    "customer": [
+      "RAM",
+      "Apple India",
+      null,
+      null,
+      "37.08"
+    ]
+  },
+  {
+    "invoice": [
+      "RAY/23-24/281",
+      "RAM",
+      "88.98",
+      null,
+      null,
+      "1",
+      "0",
+      "88.98",
+      "07 Nov 2024"
+    ],
+    "products": [
+      [
+        "12 MM PLAIN GLASS",
+        "1.000",
+        "88.98",
+        null,
+        null,
+        "88.98",
+        "0"
+      ]
+    ],
+    "customer": [
+      "RAM",
+      "Apple India",
+      null,
+      null,
+      "88.98"
+    ]
+  },
+  {
+    "invoice": [
+      "RAY/23-24/280",
+      "Ramesh",
+      "105.00",
+      null,
+      null,
+      "2",
+      "18",
+      "105.00",
+      "06 Nov 2024"
+    ],
+    "products": [
+      [
+        "12 MM PLAIN GLASS",
+        "1.000",
+        "105.00",
+        null,
+        null,
+        "105.00",
+        "18"
+      ],
+      [
+        "plain glass",
+        "1.000",
+        "0.00",
+        null,
+        null,
+        "0.00",
+        "18"
+      ]
+    ],
+    "customer": [
+      "Ramesh",
+      "Apple India",
+      null,
+      null,
+      "105.00"
+    ]
+  },
+  {
+    "invoice": [
+      "RAY/23-24/279",
+      "Abhinav",
+      "20.00",
+      null,
+      null,
+      "3",
+      "0",
+      "20.00",
+      "05 Nov 2024"
+    ],
+    "products": [
+      [
+        "Ct Sheet",
+        "3.000",
+        "500.00",
+        null,
+        null,
+        "500.00",
+        "0"
+      ]
+    ],
+    "customer": [
+      "Abhinav",
+      "GAME STATION",
+      null,
+      null,
+      "20.00"
+    ]
+  },
+  {
+    "invoice": [
+      "RAY/23-24/278",
+      "Decathlon",
+      "105.00",
+      null,
+      null,
+      "1",
+      "18",
+      "105.00",
+      "05 Nov 2024"
+    ],
+    "products": [
+      [
+        "12 MM PLAIN GLASS",
+        "1.000",
+        "105.00",
+        null,
+        null,
+        "105.00",
+        "18"
+      ]
+    ],
+    "customer": [
+      "Decathlon",
+      "DECATHLON SPORTS INDIA PRIVATE LIMITED",
+      null,
+      null,
+      "105.00"
+    ]
+  },
+  {
+    "invoice": [
+      "RAY/23-24/277",
+      "Abhinav",
+      "20475.00",
+      null,
+      null,
+      "15",
+      "18",
+      "20475.00",
+      "02 Nov 2024"
+    ],
+    "products": [
+      [
+        "12 MM PLAIN GLASS",
+        "15.000",
+        "11.50",
+        null,
+        null,
+        "11.50",
+        "18"
+      ]
+    ],
+    "customer": [
+      "Abhinav",
+      "GAME STATION",
+      null,
+      null,
+      "20475.00"
+    ]
+  },
+  {
+    "invoice": [
+      "RAY/23-24/276",
+      "geeetha",
+      "708.00",
+      null,
+      null,
+      "1",
+      "18",
+      "708.00",
+      "01 Nov 2024"
+    ],
+    "products": [
+      [
+        "plain glass",
+        "1.000",
+        "708.00",
+        null,
+        null,
+        "708.00",
+        "18"
+      ]
+    ],
+    "customer": [
+      "geeetha",
+      "Flipkart Co",
+      null,
+      null,
+      "708.00"
+    ]
+  },
+  {
+    "invoice": [
+      "RAY/23-24/275",
+      "geeetha",
+      "55000.00",
+      null,
+      null,
+      "100",
+      "18",
+      "55000.00",
+      "01 Nov 2024"
+    ],
+    "products": [
+      [
+        "plain glass",
+        "100.000",
+        "590.00",
+        null,
+        null,
+        "590.00",
+        "18"
+      ]
+    ],
+    "customer": [
+      "geeetha",
+      "Flipkart Co",
+      null,
+      null,
+      "55000.00"
+    ]
+  }
+]
+```
+
  abc
