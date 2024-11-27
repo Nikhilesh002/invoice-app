@@ -7,7 +7,6 @@ const fileRouter=express.Router();
 
 const storage = multer.diskStorage({
   destination: function (req, file, cb) {
-    console.log(process.cwd());
     cb(null, '/tmp')
   },
   filename: function (req, file, cb) {

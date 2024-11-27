@@ -51,7 +51,7 @@ export const getFileData = async (req:Request, res:Response) => {
     return res.status(200).json(resp);
     
   } catch (error) {
-    console.log(error);
+    console.log("Failed to get file data with AI",error);
     res.status(400).json({success:false,message:"Something went wrong"});
   }
 };
@@ -65,7 +65,7 @@ export const getFiles = async (req:Request, res:Response) => {
     
     res.json(userfiles);
   } catch (error) {
-    console.log(error);
+    console.log("Failed to get userfiles",error);
   }
 }
 
@@ -76,7 +76,7 @@ export const deleteFile = async (req:Request, res:Response) => {
     await UserfileModel.findByIdAndDelete(fileId);
     res.status(200).json("File deleted");
   } catch (error) {
-    console.log(error);
+    console.log("Failed to delete userfile",error);
     res.status(400).json({success:false,message:"Failed to delete userfile"});
   }
 }
@@ -112,7 +112,7 @@ export const deleteBillInFile = async (req:Request, res:Response) => {
     await BillModel.findByIdAndDelete(billId);
     res.status(200).json("bill deleted");
   } catch (error) {
-    console.log(error);
+    console.log("Failed to delete bill",error);
     res.status(400).json({success:false,message:"Failed to delete bill"});
   }
 }

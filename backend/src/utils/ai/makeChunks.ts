@@ -19,20 +19,26 @@ export const makeChunks = async (fileInfo: { filePath: string; fileName: string;
       throw new Error('The file is empty or contains no data lines.');
     }
 
-    const header = lines[0]; // Extract header
-    lines.shift(); // Remove header from lines
+    // Extract header, its first ele
+    const header = lines[0];
+    lines.shift();  // remove ele at 0 index
     const chunks = [];
     const sanitizedFileName = path.parse(fileName).name;
 
-    // Split lines into chunks of 15
-    for (let i = 0; i < lines.length; i += 15) {
-      const chunk = lines.slice(i, i + 15).join('\n');
-      const chunkFileName = `${sanitizedFileName}_chunk_${i / 15}.csv`;
+    const CHUNK_SIZE = 35;
+    let cnt = 0;
+    // Split lines into chunks of CHUNK_SIZE
+    for (let i = 0; i < lines.length; i += CHUNK_SIZE) {
+      const chunk = lines.slice(i, i + CHUNK_SIZE).join('\n');
+      const chunkFileName = `${sanitizedFileName}_chunk_${i / CHUNK_SIZE}.csv`;
       const chunkFilePath = path.join(path.dirname(filePath), chunkFileName); // Create full file path
 
       // Write chunk to a new file
       await fs.writeFile(chunkFilePath, `${header}\n${chunk}`);
       chunks.push(chunkFilePath);
+
+      cnt++;
+      if(cnt === 2) break;
     }
 
     // Process each chunk asynchronously using getDataWithAi
@@ -46,7 +52,27 @@ export const makeChunks = async (fileInfo: { filePath: string; fileName: string;
       )
     );
 
-    return results;
+    // if results has any null, then remove it
+    results.forEach((result, index) => {
+      if (result === null) {
+        results.splice(index, 1);
+      }
+    });
+
+    const finalOp:any=[]
+
+    // I want to merge contrents of each element of results array into a single array
+    results.forEach((result) => {
+      if (result) {
+        result.forEach((item:any) => {
+          if (item) {
+            finalOp.push(item);
+          }
+        });
+      }
+    });
+
+    return finalOp;
   } catch (error) {
     console.error('Error in makeChunks:', error);
     throw error;

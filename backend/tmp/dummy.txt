@@ -1,1 +1,2846 @@
-thala for  a reason
+```json
+[
+  {
+    "invoice": [
+      "INV-TEST-1526",
+      null,
+      263281.0,
+      null,
+      null,
+      12.0,
+      null,
+      null,
+      "12 Nov 2024"
+    ],
+    "products": [
+      [
+        "Shipping Charges",
+        1,
+        60.0,
+        0,
+        60.0,
+        60.0,
+        0
+      ],
+      [
+        "Matrix and Pillows",
+        1.0,
+        45084.75,
+        0.0,
+        45084.75,
+        53200.0,
+        18
+      ],
+      [
+        "Shipping Charges",
+        1,
+        60.0,
+        0,
+        60.0,
+        60.0,
+        0
+      ],
+      [
+        "Shipping Charges",
+        1,
+        60.0,
+        0,
+        60.0,
+        60.0,
+        0
+      ],
+      [
+        "debit card charges ",
+        1,
+        12345.0,
+        0,
+        12345.0,
+        12345.0,
+        0
+      ],
+      [
+        "Making charges",
+        1,
+        123456.0,
+        0,
+        123456.0,
+        123456.0,
+        0
+      ],
+      [
+        "YONEX ZR 100 LIGHT  Racket",
+        7.0,
+        25600.0,
+        0.0,
+        25600.0,
+        25600.0,
+        0
+      ]
+    ],
+    "customer": [
+      null,
+      null,
+      null,
+      null,
+      263281.0
+    ]
+  },
+  {
+    "invoice": [
+      "INV-149CZS",
+      null,
+      100.0,
+      null,
+      null,
+      56789.0,
+      null,
+      null,
+      "12 Nov 2024"
+    ],
+    "products": [
+      [
+        "Monster Energy",
+        56789.0,
+        84.75,
+        0.0,
+        84.75,
+        100.0,
+        18
+      ]
+    ],
+    "customer": [
+      null,
+      null,
+      null,
+      null,
+      100.0
+    ]
+  },
+  {
+    "invoice": [
+      "INV-TEST-963",
+      null,
+      106400.0,
+      null,
+      null,
+      2.0,
+      null,
+      null,
+      "12 Nov 2024"
+    ],
+    "products": [
+      [
+        "Matrix and Pillows",
+        2.0,
+        45084.75,
+        0.0,
+        45084.75,
+        53200.0,
+        18
+      ]
+    ],
+    "customer": [
+      null,
+      null,
+      null,
+      null,
+      106400.0
+    ]
+  },
+  {
+    "invoice": [
+      "INV-148CZS",
+      null,
+      273821.0,
+      null,
+      null,
+      20100.0,
+      null,
+      null,
+      "12 Nov 2024"
+    ],
+    "products": [
+      [
+        "MILK BIKIS CLASSIC CASE 120PK",
+        20.0,
+        809.52,
+        0.0,
+        809.52,
+        850.0,
+        5
+      ],
+      [
+        "Shipping Charges",
+        1,
+        60.0,
+        0,
+        60.0,
+        60.0,
+        0
+      ],
+      [
+        "Making charges",
+        1,
+        123456.0,
+        0,
+        123456.0,
+        123456.0,
+        0
+      ],
+      [
+        "debit card charges ",
+        1,
+        12345.0,
+        0,
+        12345.0,
+        12345.0,
+        0
+      ],
+      [
+        "TREAT BKS CASE 80PKT",
+        50.0,
+        535.71,
+        0.0,
+        535.71,
+        600.0,
+        12
+      ],
+      [
+        "Shipping Charges",
+        1,
+        60.0,
+        0,
+        60.0,
+        60.0,
+        0
+      ],
+      [
+        "Shipping Charges",
+        1,
+        60.0,
+        0,
+        60.0,
+        60.0,
+        0
+      ],
+      [
+        "NUTRI CHOICE BKS CASE",
+        25.0,
+        666.67,
+        0.0,
+        666.67,
+        700.0,
+        5
+      ],
+      [
+        "GEMS CHOCLATE POUCH",
+        1000.0,
+        4.76,
+        0.0,
+        4.76,
+        5.0,
+        5
+      ]
+    ],
+    "customer": [
+      null,
+      null,
+      null,
+      null,
+      273821.0
+    ]
+  },
+  {
+    "invoice": [
+      "INV-147CZS",
+      null,
+      1561.75,
+      null,
+      null,
+      2.0,
+      null,
+      null,
+      "12 Nov 2024"
+    ],
+    "products": [
+      [
+        "Delivery/ Shipping Charges",
+        1,
+        128.95,
+        0,
+        128.95,
+        128.95,
+        0
+      ],
+      [
+        "OTHER BUSINESS SERVICES",
+        1.0,
+        1432.8,
+        0.0,
+        1432.8,
+        1432.8,
+        0
+      ]
+    ],
+    "customer": [
+      null,
+      null,
+      null,
+      null,
+      1561.75
+    ]
+  },
+  {
+    "invoice": [
+      "INV-146CZS",
+      null,
+      100.0,
+      null,
+      null,
+      23456.0,
+      null,
+      null,
+      "12 Nov 2024"
+    ],
+    "products": [
+      [
+        "Monster Energy",
+        23456.0,
+        84.75,
+        0.0,
+        84.75,
+        100.0,
+        18
+      ]
+    ],
+    "customer": [
+      null,
+      null,
+      null,
+      null,
+      100.0
+    ]
+  },
+  {
+    "invoice": [
+      "INV-145CZS",
+      null,
+      100.0,
+      null,
+      null,
+      2345.0,
+      null,
+      null,
+      "12 Nov 2024"
+    ],
+    "products": [
+      [
+        "Monster Energy",
+        2345.0,
+        84.75,
+        0.0,
+        84.75,
+        100.0,
+        18
+      ]
+    ],
+    "customer": [
+      null,
+      null,
+      null,
+      null,
+      100.0
+    ]
+  },
+  {
+    "invoice": [
+      "INV-144CZS",
+      null,
+      100.0,
+      null,
+      null,
+      10.0,
+      null,
+      null,
+      "12 Nov 2024"
+    ],
+    "products": [
+      [
+        "dark chocolagte",
+        10.0,
+        84.75,
+        0.0,
+        84.75,
+        100.0,
+        18
+      ]
+    ],
+    "customer": [
+      null,
+      null,
+      null,
+      null,
+      100.0
+    ]
+  },
+  {
+    "invoice": [
+      "INV-143CZS",
+      null,
+      118.0,
+      null,
+      null,
+      1.0,
+      null,
+      null,
+      "11 Nov 2024"
+    ],
+    "products": [
+      [
+        "dark chocolagte",
+        1.0,
+        100.0,
+        0.0,
+        100.0,
+        118.0,
+        18
+      ]
+    ],
+    "customer": [
+      null,
+      null,
+      null,
+      null,
+      118.0
+    ]
+  },
+  {
+    "invoice": [
+      "INV-142CZS",
+      null,
+      84.75,
+      null,
+      null,
+      1.0,
+      null,
+      null,
+      "11 Nov 2024"
+    ],
+    "products": [
+      [
+        "dark chocolagte",
+        1.0,
+        84.75,
+        0.0,
+        84.75,
+        84.75,
+        0
+      ]
+    ],
+    "customer": [
+      null,
+      null,
+      null,
+      null,
+      84.75
+    ]
+  },
+  {
+    "invoice": [
+      "INV-141CZS",
+      null,
+      8.33,
+      null,
+      null,
+      2.0,
+      null,
+      null,
+      "11 Nov 2024"
+    ],
+    "products": [
+      [
+        "dark chocolagte",
+        2.0,
+        7.06,
+        0.0,
+        7.06,
+        8.33,
+        18
+      ]
+    ],
+    "customer": [
+      null,
+      null,
+      null,
+      null,
+      8.33
+    ]
+  },
+  {
+    "invoice": [
+      "INV-140CZS",
+      null,
+      100.0,
+      null,
+      null,
+      1000.0,
+      null,
+      null,
+      "11 Nov 2024"
+    ],
+    "products": [
+      [
+        "Monster Energy",
+        1000.0,
+        84.75,
+        0.0,
+        84.75,
+        100.0,
+        18
+      ]
+    ],
+    "customer": [
+      null,
+      null,
+      null,
+      null,
+      100.0
+    ]
+  },
+  {
+    "invoice": [
+      "INV-139CZS",
+      null,
+      2865.6,
+      null,
+      null,
+      2.0,
+      null,
+      null,
+      "11 Nov 2024"
+    ],
+    "products": [
+      [
+        "OTHER BUSINESS SERVICES",
+        2.0,
+        1432.8,
+        0.0,
+        1432.8,
+        1432.8,
+        0
+      ]
+    ],
+    "customer": [
+      null,
+      null,
+      null,
+      null,
+      2865.6
+    ]
+  },
+  {
+    "invoice": [
+      "INV-138CZS",
+      null,
+      525.0,
+      null,
+      null,
+      2.0,
+      null,
+      null,
+      "11 Nov 2024"
+    ],
+    "products": [
+      [
+        "GEMINI TEA",
+        2.0,
+        500.0,
+        0.0,
+        500.0,
+        525.0,
+        5
+      ]
+    ],
+    "customer": [
+      null,
+      null,
+      null,
+      null,
+      525.0
+    ]
+  },
+  {
+    "invoice": [
+      "INV-137CZS",
+      null,
+      168.0,
+      null,
+      null,
+      2.0,
+      null,
+      null,
+      "11 Nov 2024"
+    ],
+    "products": [
+      [
+        "BULK INVOICE",
+        1.0,
+        100.0,
+        0.0,
+        100.0,
+        118.0,
+        18
+      ],
+      [
+        "Delivery/ Shipping Charges",
+        1,
+        50.0,
+        0,
+        50.0,
+        50.0,
+        0
+      ]
+    ],
+    "customer": [
+      null,
+      null,
+      null,
+      null,
+      168.0
+    ]
+  },
+  {
+    "invoice": [
+      "INV-136CZS",
+      null,
+      1000.0,
+      null,
+      null,
+      1.0,
+      null,
+      null,
+      "11 Nov 2024"
+    ],
+    "products": [
+      [
+        "MIXED BUTTONS",
+        1.0,
+        847.46,
+        0.0,
+        847.46,
+        1000.0,
+        18
+      ]
+    ],
+    "customer": [
+      null,
+      null,
+      null,
+      null,
+      1000.0
+    ]
+  },
+  {
+    "invoice": [
+      "INV-135CZS",
+      null,
+      17700.0,
+      null,
+      null,
+      1.0,
+      null,
+      null,
+      "11 Nov 2024"
+    ],
+    "products": [
+      [
+        "BIRTHDAY PARTY",
+        1.0,
+        15000.0,
+        0.0,
+        15000.0,
+        17700.0,
+        18
+      ]
+    ],
+    "customer": [
+      null,
+      null,
+      null,
+      null,
+      17700.0
+    ]
+  },
+  {
+    "invoice": [
+      "INV-134CZS",
+      null,
+      60.0,
+      null,
+      null,
+      3.0,
+      null,
+      null,
+      "11 Nov 2024"
+    ],
+    "products": [
+      [
+        "Shipping Charges",
+        1,
+        60.0,
+        0,
+        60.0,
+        60.0,
+        0
+      ],
+      [
+        "GEMINI TEA",
+        2.0,
+        500.0,
+        0.0,
+        500.0,
+        525.0,
+        5
+      ]
+    ],
+    "customer": [
+      null,
+      null,
+      null,
+      null,
+      585.0
+    ]
+  }
+]
+```
+ abc```json
+[
+  {
+    "invoice": [
+      "INV-134CZS",
+      null,
+      136041.0,
+      null,
+      null,
+      7.000,
+      50.00,
+      136091.00,
+      "11 Nov 2024"
+    ],
+    "products": [
+      [
+        "Making charges",
+        1,
+        123456.00000000,
+        0,
+        123456.00000000,
+        123456.00000000,
+        0
+      ],
+      [
+        "debit card charges ",
+        1,
+        12345.00000000,
+        0,
+        12345.00000000,
+        12345.00000000,
+        0
+      ],
+      [
+        "SWEET BOX",
+        1.000,
+        952.38,
+        0.00,
+        952.38,
+        1000.00,
+        5
+      ],
+      [
+        "Shipping Charges",
+        1,
+        60.00000000,
+        0,
+        60.00000000,
+        60.00000000,
+        0
+      ],
+      [
+        "Shipping Charges",
+        1,
+        60.00000000,
+        0,
+        60.00000000,
+        60.00000000,
+        0
+      ]
+    ],
+    "customer": [
+      null,
+      null,
+      null,
+      null,
+      136041.0
+    ]
+  },
+  {
+    "invoice": [
+      "INV-133CZS",
+      null,
+      3000.0,
+      null,
+      null,
+      3.000,
+      150.00,
+      3150.00,
+      "11 Nov 2024"
+    ],
+    "products": [
+      [
+        "SWEET BOX",
+        3.000,
+        952.38,
+        0.00,
+        952.38,
+        1000.00,
+        5
+      ]
+    ],
+    "customer": [
+      null,
+      null,
+      null,
+      null,
+      3000.0
+    ]
+  },
+  {
+    "invoice": [
+      "INV-132CZS",
+      null,
+      136041.0,
+      null,
+      null,
+      6.000,
+      0.00,
+      136041.00,
+      "11 Nov 2024"
+    ],
+    "products": [
+      [
+        "GEMINI TEA",
+        1.000,
+        500.00,
+        0.00,
+        500.00,
+        525.00,
+        5
+      ],
+      [
+        "L ARM",
+        1.000,
+        100.00,
+        0.00,
+        100.00,
+        100.00,
+        0
+      ],
+      [
+        "Shipping Charges",
+        1,
+        60.00000000,
+        0,
+        60.00000000,
+        60.00000000,
+        0
+      ],
+      [
+        "Shipping Charges",
+        1,
+        60.00000000,
+        0,
+        60.00000000,
+        60.00000000,
+        0
+      ],
+      [
+        "Making charges",
+        1,
+        123456.00000000,
+        0,
+        123456.00000000,
+        123456.00000000,
+        0
+      ],
+      [
+        "debit card charges ",
+        1,
+        12345.00000000,
+        0,
+        12345.00000000,
+        12345.00000000,
+        0
+      ],
+      [
+        "Shipping Charges",
+        1,
+        60.00000000,
+        0,
+        60.00000000,
+        60.00000000,
+        0
+      ]
+    ],
+    "customer": [
+      null,
+      null,
+      null,
+      null,
+      136041.0
+    ]
+  },
+  {
+    "invoice": [
+      "INV-131CZS",
+      null,
+      1050.0,
+      null,
+      null,
+      2.000,
+      100.00,
+      1150.00,
+      "11 Nov 2024"
+    ],
+    "products": [
+      [
+        "GEMINI TEA",
+        2.000,
+        500.00,
+        0.00,
+        500.00,
+        525.00,
+        5
+      ]
+    ],
+    "customer": [
+      null,
+      null,
+      null,
+      null,
+      1050.0
+    ]
+  },
+  {
+    "invoice": [
+      "INV-130CZS",
+      null,
+      1575.0,
+      null,
+      null,
+      3.000,
+      150.00,
+      1725.00,
+      "11 Nov 2024"
+    ],
+    "products": [
+      [
+        "GEMINI TEA",
+        3.000,
+        500.00,
+        0.00,
+        500.00,
+        525.00,
+        5
+      ]
+    ],
+    "customer": [
+      null,
+      null,
+      null,
+      null,
+      1575.0
+    ]
+  },
+  {
+    "invoice": [
+      "INV-129CZS",
+      null,
+      136041.0,
+      null,
+      null,
+      7.000,
+      50.00,
+      136091.00,
+      "11 Nov 2024"
+    ],
+    "products": [
+      [
+        "debit card charges ",
+        1,
+        12345.00000000,
+        0,
+        12345.00000000,
+        12345.00000000,
+        0
+      ],
+      [
+        "Shipping Charges",
+        1,
+        60.00000000,
+        0,
+        60.00000000,
+        60.00000000,
+        0
+      ],
+      [
+        "Shipping Charges",
+        1,
+        60.00000000,
+        0,
+        60.00000000,
+        60.00000000,
+        0
+      ],
+      [
+        "Making charges",
+        1,
+        123456.00000000,
+        0,
+        123456.00000000,
+        123456.00000000,
+        0
+      ],
+      [
+        "GEMINI TEA",
+        1.000,
+        500.00,
+        0.00,
+        500.00,
+        525.00,
+        5
+      ],
+      [
+        "SWEET BOX",
+        1.000,
+        952.38,
+        0.00,
+        952.38,
+        1000.00,
+        5
+      ],
+      [
+        "Shipping Charges",
+        1,
+        60.00000000,
+        0,
+        60.00000000,
+        60.00000000,
+        0
+      ]
+    ],
+    "customer": [
+      null,
+      null,
+      null,
+      null,
+      136041.0
+    ]
+  },
+  {
+    "invoice": [
+      "INV-128CZS",
+      null,
+      1050.0,
+      null,
+      null,
+      2.000,
+      100.00,
+      1150.00,
+      "11 Nov 2024"
+    ],
+    "products": [
+      [
+        "GEMINI TEA",
+        2.000,
+        500.00,
+        0.00,
+        500.00,
+        525.00,
+        5
+      ]
+    ],
+    "customer": [
+      null,
+      null,
+      null,
+      null,
+      1050.0
+    ]
+  },
+  {
+    "invoice": [
+      "INV-127CZS",
+      null,
+      4000.0,
+      null,
+      null,
+      4.000,
+      200.00,
+      4200.00,
+      "11 Nov 2024"
+    ],
+    "products": [
+      [
+        "SWEET BOX",
+        4.000,
+        952.38,
+        0.00,
+        952.38,
+        1000.00,
+        5
+      ]
+    ],
+    "customer": [
+      null,
+      null,
+      null,
+      null,
+      4000.0
+    ]
+  },
+  {
+    "invoice": [
+      "INV-126CZS",
+      null,
+      1000.0,
+      null,
+      null,
+      1.000,
+      180.00,
+      1180.00,
+      "11 Nov 2024"
+    ],
+    "products": [
+      [
+        "MARATHON SERVICE",
+        1.000,
+        847.46,
+        0.00,
+        847.46,
+        1000.00,
+        18
+      ]
+    ],
+    "customer": [
+      null,
+      null,
+      null,
+      null,
+      1000.0
+    ]
+  },
+  {
+    "invoice": [
+      "INV-125CZS",
+      null,
+      4000.0,
+      null,
+      null,
+      4.000,
+      200.00,
+      4200.00,
+      "11 Nov 2024"
+    ],
+    "products": [
+      [
+        "SWEET BOX",
+        4.000,
+        952.38,
+        0.00,
+        952.38,
+        1000.00,
+        5
+      ]
+    ],
+    "customer": [
+      null,
+      null,
+      null,
+      null,
+      4000.0
+    ]
+  },
+  {
+    "invoice": [
+      "INV-124CZS",
+      null,
+      1575.0,
+      null,
+      null,
+      3.000,
+      150.00,
+      1725.00,
+      "11 Nov 2024"
+    ],
+    "products": [
+      [
+        "GEMINI TEA",
+        3.000,
+        500.00,
+        0.00,
+        500.00,
+        525.00,
+        5
+      ]
+    ],
+    "customer": [
+      null,
+      null,
+      null,
+      null,
+      1575.0
+    ]
+  },
+  {
+    "invoice": [
+      "INV-123CZS",
+      null,
+      1575.0,
+      null,
+      null,
+      3.000,
+      150.00,
+      1725.00,
+      "11 Nov 2024"
+    ],
+    "products": [
+      [
+        "GEMINI TEA",
+        3.000,
+        500.00,
+        0.00,
+        500.00,
+        525.00,
+        5
+      ]
+    ],
+    "customer": [
+      null,
+      null,
+      null,
+      null,
+      1575.0
+    ]
+  },
+  {
+    "invoice": [
+      "INV-122CZS",
+      null,
+      525.0,
+      null,
+      null,
+      1.000,
+      50.00,
+      575.00,
+      "11 Nov 2024"
+    ],
+    "products": [
+      [
+        "GEMINI TEA",
+        1.000,
+        500.00,
+        0.00,
+        500.00,
+        525.00,
+        5
+      ]
+    ],
+    "customer": [
+      null,
+      null,
+      null,
+      null,
+      525.0
+    ]
+  },
+  {
+    "invoice": [
+      "INV-121CZS",
+      null,
+      2000.0,
+      null,
+      null,
+      2.000,
+      100.00,
+      2100.00,
+      "11 Nov 2024"
+    ],
+    "products": [
+      [
+        "SWEET BOX",
+        2.000,
+        952.38,
+        0.00,
+        952.38,
+        1000.00,
+        5
+      ]
+    ],
+    "customer": [
+      null,
+      null,
+      null,
+      null,
+      2000.0
+    ]
+  },
+  {
+    "invoice": [
+      "INV-120CZS",
+      null,
+      1000.0,
+      null,
+      null,
+      1.000,
+      50.00,
+      1050.00,
+      "11 Nov 2024"
+    ],
+    "products": [
+      [
+        "SWEET BOX",
+        1.000,
+        952.38,
+        0.00,
+        952.38,
+        1000.00,
+        5
+      ]
+    ],
+    "customer": [
+      null,
+      null,
+      null,
+      null,
+      1000.0
+    ]
+  },
+  {
+    "invoice": [
+      "INV-119CZS",
+      null,
+      3000.0,
+      null,
+      null,
+      3.000,
+      150.00,
+      3150.00,
+      "11 Nov 2024"
+    ],
+    "products": [
+      [
+        "SWEET BOX",
+        3.000,
+        952.38,
+        0.00,
+        952.38,
+        1000.00,
+        5
+      ]
+    ],
+    "customer": [
+      null,
+      null,
+      null,
+      null,
+      3000.0
+    ]
+  },
+  {
+    "invoice": [
+      "INV-118CZS",
+      null,
+      2000.0,
+      null,
+      null,
+      2.000,
+      100.00,
+      2100.00,
+      "11 Nov 2024"
+    ],
+    "products": [
+      [
+        "SWEET BOX",
+        2.000,
+        952.38,
+        0.00,
+        952.38,
+        1000.00,
+        5
+      ]
+    ],
+    "customer": [
+      null,
+      null,
+      null,
+      null,
+      2000.0
+    ]
+  },
+  {
+    "invoice": [
+      "INV-117CZS",
+      null,
+      1000.0,
+      null,
+      null,
+      1.000,
+      50.00,
+      1050.00,
+      "11 Nov 2024"
+    ],
+    "products": [
+      [
+        "SWEET BOX",
+        1.000,
+        952.38,
+        0.00,
+        952.38,
+        1000.00,
+        5
+      ]
+    ],
+    "customer": [
+      null,
+      null,
+      null,
+      null,
+      1000.0
+    ]
+  }
+]
+```
+
+ abc```json
+[
+  {
+    "invoice": [
+      "INV-134CZS",
+      null,
+      1252016.00000000,
+      null,
+      null,
+      7,
+      0,
+      1252016.00000000,
+      "11 Nov 2024"
+    ],
+    "products": [
+      [
+        "Making charges",
+        1,
+        123456.00000000,
+        0,
+        123456.00000000,
+        123456.00000000,
+        0
+      ],
+      [
+        "debit card charges ",
+        1,
+        12345.00000000,
+        0,
+        12345.00000000,
+        12345.00000000,
+        0
+      ],
+      [
+        "SWEET BOX",
+        1.000,
+        952.38,
+        0.00,
+        952.38,
+        1000.00,
+        5
+      ],
+      [
+        "Shipping Charges",
+        1,
+        60.00000000,
+        0,
+        60.00000000,
+        60.00000000,
+        0
+      ],
+      [
+        "Shipping Charges",
+        1,
+        60.00000000,
+        0,
+        60.00000000,
+        60.00000000,
+        0
+      ]
+    ],
+    "customer": [
+      null,
+      null,
+      null,
+      null,
+      1252016.00000000
+    ]
+  },
+  {
+    "invoice": [
+      "INV-133CZS",
+      null,
+      3000.00,
+      null,
+      null,
+      3,
+      0,
+      3000.00,
+      "11 Nov 2024"
+    ],
+    "products": [
+      [
+        "SWEET BOX",
+        3.000,
+        952.38,
+        0.00,
+        952.38,
+        1000.00,
+        5
+      ]
+    ],
+    "customer": [
+      null,
+      null,
+      null,
+      null,
+      3000.00
+    ]
+  },
+  {
+    "invoice": [
+      "INV-132CZS",
+      null,
+      1240781.00000000,
+      null,
+      null,
+      6,
+      0,
+      1240781.00000000,
+      "11 Nov 2024"
+    ],
+    "products": [
+      [
+        "GEMINI TEA",
+        1.000,
+        500.00,
+        0.00,
+        500.00,
+        525.00,
+        5
+      ],
+      [
+        "L ARM",
+        1.000,
+        100.00,
+        0.00,
+        100.00,
+        100.00,
+        0
+      ],
+      [
+        "Shipping Charges",
+        1,
+        60.00000000,
+        0,
+        60.00000000,
+        60.00000000,
+        0
+      ],
+      [
+        "Shipping Charges",
+        1,
+        60.00000000,
+        0,
+        60.00000000,
+        60.00000000,
+        0
+      ],
+      [
+        "Making charges",
+        1,
+        123456.00000000,
+        0,
+        123456.00000000,
+        123456.00000000,
+        0
+      ],
+      [
+        "debit card charges ",
+        1,
+        12345.00000000,
+        0,
+        12345.00000000,
+        12345.00000000,
+        0
+      ],
+      [
+        "Shipping Charges",
+        1,
+        60.00000000,
+        0,
+        60.00000000,
+        60.00000000,
+        0
+      ]
+    ],
+    "customer": [
+      null,
+      null,
+      null,
+      null,
+      1240781.00000000
+    ]
+  },
+  {
+    "invoice": [
+      "INV-131CZS",
+      null,
+      1050.00,
+      null,
+      null,
+      2,
+      0,
+      1050.00,
+      "11 Nov 2024"
+    ],
+    "products": [
+      [
+        "GEMINI TEA",
+        2.000,
+        500.00,
+        0.00,
+        500.00,
+        525.00,
+        5
+      ]
+    ],
+    "customer": [
+      null,
+      null,
+      null,
+      null,
+      1050.00
+    ]
+  },
+  {
+    "invoice": [
+      "INV-130CZS",
+      null,
+      1575.00,
+      null,
+      null,
+      3,
+      0,
+      1575.00,
+      "11 Nov 2024"
+    ],
+    "products": [
+      [
+        "GEMINI TEA",
+        3.000,
+        500.00,
+        0.00,
+        500.00,
+        525.00,
+        5
+      ]
+    ],
+    "customer": [
+      null,
+      null,
+      null,
+      null,
+      1575.00
+    ]
+  },
+  {
+    "invoice": [
+      "INV-129CZS",
+      null,
+      1240781.00000000,
+      null,
+      null,
+      7,
+      0,
+      1240781.00000000,
+      "11 Nov 2024"
+    ],
+    "products": [
+      [
+        "debit card charges ",
+        1,
+        12345.00000000,
+        0,
+        12345.00000000,
+        12345.00000000,
+        0
+      ],
+      [
+        "Shipping Charges",
+        1,
+        60.00000000,
+        0,
+        60.00000000,
+        60.00000000,
+        0
+      ],
+      [
+        "Shipping Charges",
+        1,
+        60.00000000,
+        0,
+        60.00000000,
+        60.00000000,
+        0
+      ],
+      [
+        "Making charges",
+        1,
+        123456.00000000,
+        0,
+        123456.00000000,
+        123456.00000000,
+        0
+      ],
+      [
+        "GEMINI TEA",
+        1.000,
+        500.00,
+        0.00,
+        500.00,
+        525.00,
+        5
+      ],
+      [
+        "SWEET BOX",
+        1.000,
+        952.38,
+        0.00,
+        952.38,
+        1000.00,
+        5
+      ],
+      [
+        "Shipping Charges",
+        1,
+        60.00000000,
+        0,
+        60.00000000,
+        60.00000000,
+        0
+      ]
+    ],
+    "customer": [
+      null,
+      null,
+      null,
+      null,
+      1240781.00000000
+    ]
+  },
+  {
+    "invoice": [
+      "INV-128CZS",
+      null,
+      1050.00,
+      null,
+      null,
+      2,
+      0,
+      1050.00,
+      "11 Nov 2024"
+    ],
+    "products": [
+      [
+        "GEMINI TEA",
+        2.000,
+        500.00,
+        0.00,
+        500.00,
+        525.00,
+        5
+      ]
+    ],
+    "customer": [
+      null,
+      null,
+      null,
+      null,
+      1050.00
+    ]
+  },
+  {
+    "invoice": [
+      "INV-127CZS",
+      null,
+      4000.00,
+      null,
+      null,
+      4,
+      0,
+      4000.00,
+      "11 Nov 2024"
+    ],
+    "products": [
+      [
+        "SWEET BOX",
+        4.000,
+        952.38,
+        0.00,
+        952.38,
+        1000.00,
+        5
+      ]
+    ],
+    "customer": [
+      null,
+      null,
+      null,
+      null,
+      4000.00
+    ]
+  },
+  {
+    "invoice": [
+      "INV-126CZS",
+      null,
+      1000.00,
+      null,
+      null,
+      1,
+      0,
+      1000.00,
+      "11 Nov 2024"
+    ],
+    "products": [
+      [
+        "MARATHON SERVICE",
+        1.000,
+        847.46,
+        0.00,
+        847.46,
+        1000.00,
+        18
+      ]
+    ],
+    "customer": [
+      null,
+      null,
+      null,
+      null,
+      1000.00
+    ]
+  },
+  {
+    "invoice": [
+      "INV-125CZS",
+      null,
+      4000.00,
+      null,
+      null,
+      4,
+      0,
+      4000.00,
+      "11 Nov 2024"
+    ],
+    "products": [
+      [
+        "SWEET BOX",
+        4.000,
+        952.38,
+        0.00,
+        952.38,
+        1000.00,
+        5
+      ]
+    ],
+    "customer": [
+      null,
+      null,
+      null,
+      null,
+      4000.00
+    ]
+  },
+  {
+    "invoice": [
+      "INV-124CZS",
+      null,
+      1575.00,
+      null,
+      null,
+      3,
+      0,
+      1575.00,
+      "11 Nov 2024"
+    ],
+    "products": [
+      [
+        "GEMINI TEA",
+        3.000,
+        500.00,
+        0.00,
+        500.00,
+        525.00,
+        5
+      ]
+    ],
+    "customer": [
+      null,
+      null,
+      null,
+      null,
+      1575.00
+    ]
+  },
+  {
+    "invoice": [
+      "INV-123CZS",
+      null,
+      1575.00,
+      null,
+      null,
+      3,
+      0,
+      1575.00,
+      "11 Nov 2024"
+    ],
+    "products": [
+      [
+        "GEMINI TEA",
+        3.000,
+        500.00,
+        0.00,
+        500.00,
+        525.00,
+        5
+      ]
+    ],
+    "customer": [
+      null,
+      null,
+      null,
+      null,
+      1575.00
+    ]
+  },
+  {
+    "invoice": [
+      "INV-122CZS",
+      null,
+      525.00,
+      null,
+      null,
+      1,
+      0,
+      525.00,
+      "11 Nov 2024"
+    ],
+    "products": [
+      [
+        "GEMINI TEA",
+        1.000,
+        500.00,
+        0.00,
+        500.00,
+        525.00,
+        5
+      ]
+    ],
+    "customer": [
+      null,
+      null,
+      null,
+      null,
+      525.00
+    ]
+  },
+  {
+    "invoice": [
+      "INV-121CZS",
+      null,
+      2000.00,
+      null,
+      null,
+      2,
+      0,
+      2000.00,
+      "11 Nov 2024"
+    ],
+    "products": [
+      [
+        "SWEET BOX",
+        2.000,
+        952.38,
+        0.00,
+        952.38,
+        1000.00,
+        5
+      ]
+    ],
+    "customer": [
+      null,
+      null,
+      null,
+      null,
+      2000.00
+    ]
+  },
+  {
+    "invoice": [
+      "INV-120CZS",
+      null,
+      1000.00,
+      null,
+      null,
+      1,
+      0,
+      1000.00,
+      "11 Nov 2024"
+    ],
+    "products": [
+      [
+        "SWEET BOX",
+        1.000,
+        952.38,
+        0.00,
+        952.38,
+        1000.00,
+        5
+      ]
+    ],
+    "customer": [
+      null,
+      null,
+      null,
+      null,
+      1000.00
+    ]
+  },
+  {
+    "invoice": [
+      "INV-119CZS",
+      null,
+      3000.00,
+      null,
+      null,
+      3,
+      0,
+      3000.00,
+      "11 Nov 2024"
+    ],
+    "products": [
+      [
+        "SWEET BOX",
+        3.000,
+        952.38,
+        0.00,
+        952.38,
+        1000.00,
+        5
+      ]
+    ],
+    "customer": [
+      null,
+      null,
+      null,
+      null,
+      3000.00
+    ]
+  },
+  {
+    "invoice": [
+      "INV-118CZS",
+      null,
+      2000.00,
+      null,
+      null,
+      2,
+      0,
+      2000.00,
+      "11 Nov 2024"
+    ],
+    "products": [
+      [
+        "SWEET BOX",
+        2.000,
+        952.38,
+        0.00,
+        952.38,
+        1000.00,
+        5
+      ]
+    ],
+    "customer": [
+      null,
+      null,
+      null,
+      null,
+      2000.00
+    ]
+  },
+  {
+    "invoice": [
+      "INV-117CZS",
+      null,
+      1000.00,
+      null,
+      null,
+      1,
+      0,
+      1000.00,
+      "11 Nov 2024"
+    ],
+    "products": [
+      [
+        "SWEET BOX",
+        1.000,
+        952.38,
+        0.00,
+        952.38,
+        1000.00,
+        5
+      ]
+    ],
+    "customer": [
+      null,
+      null,
+      null,
+      null,
+      1000.00
+    ]
+  }
+]
+```
+
+ abc```json
+[
+  {
+    "invoice": [
+      "INV-TEST-1526",
+      null,
+      282496.00,
+      null,
+      null,
+      10.000,
+      null,
+      null,
+      "12 Nov 2024"
+    ],
+    "products": [
+      [
+        "Shipping Charges",
+        1,
+        60.00000000,
+        0,
+        60.00000000,
+        60.00000000,
+        0
+      ],
+      [
+        "Matrix and Pillows",
+        1.000,
+        45084.75,
+        0.00,
+        45084.75,
+        53200.00,
+        18
+      ],
+      [
+        "Shipping Charges",
+        1,
+        60.00000000,
+        0,
+        60.00000000,
+        60.00000000,
+        0
+      ],
+      [
+        "Shipping Charges",
+        1,
+        60.00000000,
+        0,
+        60.00000000,
+        60.00000000,
+        0
+      ],
+      [
+        "debit card charges ",
+        1,
+        12345.00000000,
+        0,
+        12345.00000000,
+        12345.00000000,
+        0
+      ],
+      [
+        "Making charges",
+        1,
+        123456.00000000,
+        0,
+        123456.00000000,
+        123456.00000000,
+        0
+      ],
+      [
+        "YONEX ZR 100 LIGHT  Racket",
+        7.000,
+        25600.00,
+        0.00,
+        25600.00,
+        25600.00,
+        0
+      ]
+    ],
+    "customer": [
+      null,
+      null,
+      null,
+      null,
+      282496.00
+    ]
+  },
+  {
+    "invoice": [
+      "INV-149CZS",
+      null,
+      100.00,
+      null,
+      null,
+      56789.000,
+      null,
+      null,
+      "12 Nov 2024"
+    ],
+    "products": [
+      [
+        "Monster Energy",
+        56789.000,
+        84.75,
+        0.00,
+        84.75,
+        100.00,
+        18
+      ]
+    ],
+    "customer": [
+      null,
+      null,
+      null,
+      null,
+      100.00
+    ]
+  },
+  {
+    "invoice": [
+      "INV-TEST-963",
+      null,
+      106400.00,
+      null,
+      null,
+      2.000,
+      null,
+      null,
+      "12 Nov 2024"
+    ],
+    "products": [
+      [
+        "Matrix and Pillows",
+        2.000,
+        45084.75,
+        0.00,
+        45084.75,
+        53200.00,
+        18
+      ]
+    ],
+    "customer": [
+      null,
+      null,
+      null,
+      null,
+      106400.00
+    ]
+  },
+  {
+    "invoice": [
+      "INV-148CZS",
+      null,
+      143721.00,
+      null,
+      null,
+      20010.000,
+      null,
+      null,
+      "12 Nov 2024"
+    ],
+    "products": [
+      [
+        "MILK BIKIS CLASSIC CASE 120PK",
+        20.000,
+        809.52,
+        0.00,
+        809.52,
+        850.00,
+        5
+      ],
+      [
+        "Shipping Charges",
+        1,
+        60.00000000,
+        0,
+        60.00000000,
+        60.00000000,
+        0
+      ],
+      [
+        "Making charges",
+        1,
+        123456.00000000,
+        0,
+        123456.00000000,
+        123456.00000000,
+        0
+      ],
+      [
+        "debit card charges ",
+        1,
+        12345.00000000,
+        0,
+        12345.00000000,
+        12345.00000000,
+        0
+      ],
+      [
+        "TREAT BKS CASE 80PKT",
+        50.000,
+        535.71,
+        0.00,
+        535.71,
+        600.00,
+        12
+      ],
+      [
+        "Shipping Charges",
+        1,
+        60.00000000,
+        0,
+        60.00000000,
+        60.00000000,
+        0
+      ],
+      [
+        "Shipping Charges",
+        1,
+        60.00000000,
+        0,
+        60.00000000,
+        60.00000000,
+        0
+      ],
+      [
+        "NUTRI CHOICE BKS CASE",
+        25.000,
+        666.67,
+        0.00,
+        666.67,
+        700.00,
+        5
+      ],
+      [
+        "GEMS CHOCLATE POUCH",
+        1000.000,
+        4.76,
+        0.00,
+        4.76,
+        5.00,
+        5
+      ]
+    ],
+    "customer": [
+      null,
+      null,
+      null,
+      null,
+      143721.00
+    ]
+  },
+  {
+    "invoice": [
+      "INV-147CZS",
+      null,
+      1661.75,
+      null,
+      null,
+      2.000,
+      null,
+      null,
+      "12 Nov 2024"
+    ],
+    "products": [
+      [
+        "Delivery/ Shipping Charges",
+        1,
+        128.95200000,
+        0,
+        128.95200000,
+        128.95200000,
+        0
+      ],
+      [
+        "OTHER BUSINESS SERVICES",
+        1.000,
+        1432.80,
+        0.00,
+        1432.80,
+        1432.80,
+        0
+      ]
+    ],
+    "customer": [
+      null,
+      null,
+      null,
+      null,
+      1661.75
+    ]
+  },
+  {
+    "invoice": [
+      "INV-146CZS",
+      null,
+      100.00,
+      null,
+      null,
+      23456.000,
+      null,
+      null,
+      "12 Nov 2024"
+    ],
+    "products": [
+      [
+        "Monster Energy",
+        23456.000,
+        84.75,
+        0.00,
+        84.75,
+        100.00,
+        18
+      ]
+    ],
+    "customer": [
+      null,
+      null,
+      null,
+      null,
+      100.00
+    ]
+  },
+  {
+    "invoice": [
+      "INV-145CZS",
+      null,
+      100.00,
+      null,
+      null,
+      2345.000,
+      null,
+      null,
+      "12 Nov 2024"
+    ],
+    "products": [
+      [
+        "Monster Energy",
+        2345.000,
+        84.75,
+        0.00,
+        84.75,
+        100.00,
+        18
+      ]
+    ],
+    "customer": [
+      null,
+      null,
+      null,
+      null,
+      100.00
+    ]
+  },
+  {
+    "invoice": [
+      "INV-144CZS",
+      null,
+      100.00,
+      null,
+      null,
+      10.000,
+      null,
+      null,
+      "12 Nov 2024"
+    ],
+    "products": [
+      [
+        "dark chocolagte",
+        10.000,
+        84.75,
+        0.00,
+        84.75,
+        100.00,
+        18
+      ]
+    ],
+    "customer": [
+      null,
+      null,
+      null,
+      null,
+      100.00
+    ]
+  },
+  {
+    "invoice": [
+      "INV-143CZS",
+      null,
+      118.00,
+      null,
+      null,
+      1.000,
+      null,
+      null,
+      "11 Nov 2024"
+    ],
+    "products": [
+      [
+        "dark chocolagte",
+        1.000,
+        100.00,
+        0.00,
+        100.00,
+        118.00,
+        18
+      ]
+    ],
+    "customer": [
+      null,
+      null,
+      null,
+      null,
+      118.00
+    ]
+  },
+  {
+    "invoice": [
+      "INV-142CZS",
+      null,
+      84.75,
+      null,
+      null,
+      1.000,
+      null,
+      null,
+      "11 Nov 2024"
+    ],
+    "products": [
+      [
+        "dark chocolagte",
+        1.000,
+        84.75,
+        0.00,
+        84.75,
+        84.75,
+        0
+      ]
+    ],
+    "customer": [
+      null,
+      null,
+      null,
+      null,
+      84.75
+    ]
+  },
+  {
+    "invoice": [
+      "INV-141CZS",
+      null,
+      8.33,
+      null,
+      null,
+      2.000,
+      null,
+      null,
+      "11 Nov 2024"
+    ],
+    "products": [
+      [
+        "dark chocolagte",
+        2.000,
+        7.06,
+        0.00,
+        7.06,
+        8.33,
+        18
+      ]
+    ],
+    "customer": [
+      null,
+      null,
+      null,
+      null,
+      8.33
+    ]
+  },
+  {
+    "invoice": [
+      "INV-140CZS",
+      null,
+      100.00,
+      null,
+      null,
+      1000.000,
+      null,
+      null,
+      "11 Nov 2024"
+    ],
+    "products": [
+      [
+        "Monster Energy",
+        1000.000,
+        84.75,
+        0.00,
+        84.75,
+        100.00,
+        18
+      ]
+    ],
+    "customer": [
+      null,
+      null,
+      null,
+      null,
+      100.00
+    ]
+  },
+  {
+    "invoice": [
+      "INV-139CZS",
+      null,
+      2865.60,
+      null,
+      null,
+      2.000,
+      null,
+      null,
+      "11 Nov 2024"
+    ],
+    "products": [
+      [
+        "OTHER BUSINESS SERVICES",
+        2.000,
+        1432.80,
+        0.00,
+        1432.80,
+        1432.80,
+        0
+      ]
+    ],
+    "customer": [
+      null,
+      null,
+      null,
+      null,
+      2865.60
+    ]
+  },
+  {
+    "invoice": [
+      "INV-138CZS",
+      null,
+      525.00,
+      null,
+      null,
+      2.000,
+      null,
+      null,
+      "11 Nov 2024"
+    ],
+    "products": [
+      [
+        "GEMINI TEA",
+        2.000,
+        500.00,
+        0.00,
+        500.00,
+        525.00,
+        5
+      ]
+    ],
+    "customer": [
+      null,
+      null,
+      null,
+      null,
+      525.00
+    ]
+  },
+  {
+    "invoice": [
+      "INV-137CZS",
+      null,
+      168.00,
+      null,
+      null,
+      2.000,
+      null,
+      null,
+      "11 Nov 2024"
+    ],
+    "products": [
+      [
+        "BULK INVOICE",
+        1.000,
+        100.00,
+        0.00,
+        100.00,
+        118.00,
+        18
+      ],
+      [
+        "Delivery/ Shipping Charges",
+        1,
+        50.00000000,
+        0,
+        50.00000000,
+        50.00000000,
+        0
+      ]
+    ],
+    "customer": [
+      null,
+      null,
+      null,
+      null,
+      168.00
+    ]
+  },
+  {
+    "invoice": [
+      "INV-136CZS",
+      null,
+      1000.00,
+      null,
+      null,
+      1.000,
+      null,
+      null,
+      "11 Nov 2024"
+    ],
+    "products": [
+      [
+        "MIXED BUTTONS",
+        1.000,
+        847.46,
+        0.00,
+        847.46,
+        1000.00,
+        18
+      ]
+    ],
+    "customer": [
+      null,
+      null,
+      null,
+      null,
+      1000.00
+    ]
+  },
+  {
+    "invoice": [
+      "INV-135CZS",
+      null,
+      17700.00,
+      null,
+      null,
+      1.000,
+      null,
+      null,
+      "11 Nov 2024"
+    ],
+    "products": [
+      [
+        "BIRTHDAY PARTY",
+        1.000,
+        15000.00,
+        0.00,
+        15000.00,
+        17700.00,
+        18
+      ]
+    ],
+    "customer": [
+      null,
+      null,
+      null,
+      null,
+      17700.00
+    ]
+  },
+  {
+    "invoice": [
+      "INV-134CZS",
+      null,
+      585.00,
+      null,
+      null,
+      3.000,
+      null,
+      null,
+      "11 Nov 2024"
+    ],
+    "products": [
+      [
+        "Shipping Charges",
+        1,
+        60.00000000,
+        0,
+        60.00000000,
+        60.00000000,
+        0
+      ],
+      [
+        "GEMINI TEA",
+        2.000,
+        500.00,
+        0.00,
+        500.00,
+        525.00,
+        5
+      ]
+    ],
+    "customer": [
+      null,
+      null,
+      null,
+      null,
+      585.00
+    ]
+  }
+]
+```
+
+ abc

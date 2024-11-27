@@ -37,17 +37,27 @@ export const extractData = (input: any) => {
         invoiceKeys.map((key, index) => [key, data.invoice[index] || null])
       );
     
-      const products = (data.products || []).map((prodArray: string[]) =>
+      const products = data.products.length > 0 ? (data.products || []).map((prodArray: string[]) =>
         Object.fromEntries(
           productKeys.map((key, index) => [key, prodArray[index] || null])
         )
-      );
+      ) : [
+        {
+          name: null,
+          quantity: null,
+          unit_price: null,
+          discount: null,
+          price_after_discount: null,
+          price_with_tax: null,
+          tax: null
+        }
+      ]
     
       const customer = Object.fromEntries(
         customerKeys.map((key, index) => [key, data.customer[index] || null])
       );
     
-      console.log({ invoice, products, customer });
+      // console.log({ invoice, products, customer });
       return {
         invoice,
         products,
