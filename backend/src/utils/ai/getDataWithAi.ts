@@ -3,6 +3,7 @@ import { GoogleGenerativeAI } from "@google/generative-ai";
 import fs from "fs";
 import { replaceWithDefaults } from "../formatData/replaceWithDefaults";
 import { extractData } from "./extractData";
+import { MY_PROMPT } from "./myPrompt";
 
 export const getDataWithAi=async(fileInfo:{filePath:string,fileName:string,mimetype:string})=>{
 
@@ -26,7 +27,7 @@ export const getDataWithAi=async(fileInfo:{filePath:string,fileName:string,mimet
     const genAI = new GoogleGenerativeAI(process.env.GEMINI_API_KEY ?? "");
     const model = genAI.getGenerativeModel({ model: process.env.GEMINI_MODEL ?? "" });
     const result = await model.generateContent([
-      `${process.env.MY_PROMPT ?? "Analyze this image and extract data"}`,
+      MY_PROMPT ,
       {
         fileData: {
           fileUri: uploadResult.file.uri,
