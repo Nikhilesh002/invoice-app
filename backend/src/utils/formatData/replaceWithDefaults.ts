@@ -7,9 +7,9 @@ export const replaceWithDefaults = (input: any): any => {
         shop_name: data.invoice?.shop_name ?? "NA",
         shop_gstin: data.invoice?.shop_gstin ?? "NA",
         quantity: data.invoice?.quantity ? parseFloat(data.invoice.quantity) : -1,
-        tax: data.invoice?.tax ? parseFloat(data.invoice.tax) : -1,
+        tax: data.invoice?.tax ? parseFloat(data.invoice.tax) : -1, 
         total_amount: data.invoice?.total_amount ? parseFloat(data.invoice.total_amount) : -1,
-        date: data.invoice?.date && !isNaN(new Date(data.invoice.date).getTime()) ? new Date(data.invoice.date) : "NA",
+        date: data.invoice?.date ? new Date(data.invoice.date) : Date.now(),
       },
   
       products: Array.isArray(data.products)

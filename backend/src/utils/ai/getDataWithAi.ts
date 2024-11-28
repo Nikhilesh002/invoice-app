@@ -37,7 +37,7 @@ export const getDataWithAi=async(fileInfo:{filePath:string,fileName:string,mimet
     ]);
     // console.log(result.response.text());
 
-    // fs.appendFile("./tmp/dummy.txt",result.response.text()+"\n abc",err=>console.log(err));
+    fs.appendFile("./tmp/dummy.txt",result.response.text()+"\n abc",err=>console.log(err));
 
 
     // Delete the file from cloud

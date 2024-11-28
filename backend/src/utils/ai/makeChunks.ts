@@ -25,7 +25,7 @@ export const makeChunks = async (fileInfo: { filePath: string; fileName: string;
     const chunks = [];
     const sanitizedFileName = path.parse(fileName).name;
 
-    const CHUNK_SIZE = 28;
+    const CHUNK_SIZE = 40;
     // let cnt = 0;
     // Split lines into chunks of CHUNK_SIZE
     for (let i = 0; i < lines.length; i += CHUNK_SIZE) {

@@ -1,5 +1,55 @@
-export const MY_PROMPT=`Analyze the entire file and extract invoice information, ensuring to return structured invoice details in JSON format. If any attributes are missing or unavailable, explicitly assign null values in their place. Group all transactions with the same invoice, transaction number, or customer details together into one object as shown. The output must follow this exact structure:
+export const MY_PROMPT= `You are an invoice data analyst. Analyze the input document (invoice) and extract structured information into JSON format strictly adhering to the provided schema. Ensure the response is production-ready, robust, and accounts for missing or ambiguous data, while maintaining JSON validity. Group all transactions with the same invoice, transaction number, or customer details together into one object as shown.
 
+
+## Key Extraction Rules
+
+1. **Invoice Structure:**  
+   Each invoice is represented as an object containing:
+   - Invoice details
+   - Products purchased
+   - Customer details  
+
+   All extracted information must adhere to the schema provided in the example below. 
+
+2. **Mandatory JSON Compliance:**  
+   - Use null for missing data (not "null" string).  
+   - Ensure the JSON output is valid, even if certain fields are missing or ambiguous.  
+   - Do not include additional commentary or unstructured output.
+
+3. **Grouping Logic:**  
+   - Group all transactions sharing the same invoice number, transaction number, or customer details into a single object.
+
+4. **Data Assignment Rules:**
+   - For numeric fields (e.g., quantity, tax, price), replace missing values with null.
+   - For string fields (e.g., customer_name, shop_name), replace missing values with null.
+   - For invalid dates, assign null.
+
+5. **Field-by-Field Extraction Details:**
+   - **Invoice:** Extract serial number, customer name, shop details, quantities, tax, total amount, and date.
+   - **Products:** Extract product names, quantities, unit prices, discounts, price after discounts, prices with taxes, and tax values.
+   - **Customer:** Extract customer name, company, phone number, GSTIN, and total purchase amount.
+
+6. **Validation Rules:**  
+   - Handle incorrect or ambiguous data gracefully (e.g., missing fields, partial tax data).  
+   - Ensure all amounts (e.g., total_purchase_amount, price_after_discount) are properly calculated where possible.  
+   - Default values for invalid fields should be null.
+
+7. **Error Handling:**  
+   - Invalid or missing values should not break the JSON structure.
+   - If specific fields cannot be determined, assign null while ensuring the output is complete.
+
+8. **Tax Calculation:** If both CGST and SGST are present, sum them. If only IGST is present, use its value. For individual products, calculate tax proportionally based on the total tax and the product's price. If the tax is uncalculable, set tax to null.
+
+9. **Discounts:** If discount information is available, attempt to calculate missing amounts or percentages. If discounts are unavailable or ambiguous, set discount to null.
+
+10. **Total Amount:** Use the value from "Amount Payable" or bill total as the total_amount.
+
+11. **Date:** Handle invalid dates gracefully. If the date cannot be determined, assign null.
+
+12. Group all transactions with the same invoice, transaction number, or customer details together into one object as shown.
+
+13. **Output Format:**
+** Schema of the output: (Strictly Adhere to This Schema) **
 [{
   "invoice": [
     "<serial_number>",          # Invoice number, e.g., "INV-1234"
@@ -32,11 +82,9 @@ export const MY_PROMPT=`Analyze the entire file and extract invoice information,
   ]
 }]
 
--> missing values must be replaced with null not "null" string
--> If specific values cannot be found in the input, replace them with null as shown in the example.
--> Even if there are missing values, the output should still be valid JSON.
+## Example Output (Strictly Adhere to This Schema)
 
-### Sample Output (strictly as required):
+json
 [
   {
     "invoice": [
@@ -48,7 +96,7 @@ export const MY_PROMPT=`Analyze the entire file and extract invoice information,
       10,
       900,
       5900,
-      "12 Nov 2024"
+      "2024-11-12"
     ],
     "products": [
       [
@@ -88,7 +136,7 @@ export const MY_PROMPT=`Analyze the entire file and extract invoice information,
       5,
       null,
       3540,
-      "15 Nov 2024"
+      "2024-11-15"
     ],
     "products": [
       [

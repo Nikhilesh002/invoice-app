@@ -1,4 +1,4 @@
-export const retryWithBackoff = async (fn:any, retries = 3, delay = 777): Promise<any> => {
+export const retryWithBackoff = async (fn:any, retries = 3, delay = 1777): Promise<any> => {
   try {
     return await fn();
   } catch (err) {
