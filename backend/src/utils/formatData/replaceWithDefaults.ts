@@ -36,5 +36,6 @@ export const replaceWithDefaults = (input: any): any => {
     }));
   } catch (error) {
     console.log("Failed to replace with defaults", error);
+    throw error;
   }
 };

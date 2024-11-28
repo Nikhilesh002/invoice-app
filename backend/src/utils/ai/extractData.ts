@@ -67,5 +67,6 @@ export const extractData = (input: any) => {
     return extractedDataArr;
   } catch (error) {
     console.log("Failed to extract data",error);
+    throw error;
   }
 }

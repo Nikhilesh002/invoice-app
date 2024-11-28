@@ -36,7 +36,7 @@ export const getDataWithAi=async(fileInfo:{filePath:string,fileName:string,mimet
     ]);
     // console.log(result.response.text());
 
-    fs.appendFile("./tmp/dummy.txt",result.response.text()+"\n abc",err=>console.log(err));
+    // fs.appendFile("./tmp/dummy.txt",result.response.text()+"\n abc",err=>console.log(err));
 
 
     // Delete the file from cloud
@@ -46,6 +46,7 @@ export const getDataWithAi=async(fileInfo:{filePath:string,fileName:string,mimet
 
   } catch (error) {
     console.error("Failed getting data from AI", error);
+    throw error;
   }
   finally{
     fs.unlinkSync(filePath);
@@ -61,7 +62,7 @@ const formatData=async (data:string)=>{
   const requiredObj = extractData(jsonObj);
   // console.log(requiredObj)
 
-  fs.appendFile("extractedData.txt", JSON.stringify(requiredObj)+"\n abc",err=>console.log(err));
+  // fs.appendFile("extractedData.txt", JSON.stringify(requiredObj)+"\n abc",err=>console.log(err));
 
   const finalData = replaceWithDefaults(requiredObj);
   // console.log(finalData)
