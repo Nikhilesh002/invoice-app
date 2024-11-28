@@ -1,4 +1,4 @@
-export const MY_PROMPT=`Analyze the entire file and extract invoice information, ensuring to return structured invoice details in JSON format. If any attributes are missing or unavailable, explicitly assign 'null' values in their place. Group all transactions with the same invoice, transaction number, or customer details together into one object as shown. The output must follow this exact structure:
+export const MY_PROMPT=`Analyze the entire file and extract invoice information, ensuring to return structured invoice details in JSON format. If any attributes are missing or unavailable, explicitly assign null values in their place. Group all transactions with the same invoice, transaction number, or customer details together into one object as shown. The output must follow this exact structure:
 
 [{
   "invoice": [
@@ -31,8 +31,10 @@ export const MY_PROMPT=`Analyze the entire file and extract invoice information,
     "<total_purchase_amount>"   # Total purchase amount, e.g., 5000.00
   ]
 }]
-If specific values cannot be found in the input, replace them with 'null' as shown in the example.
-Even if there are missing values, the output should still be valid JSON.
+
+-> missing values must be replaced with null not "null" string
+-> If specific values cannot be found in the input, replace them with null as shown in the example.
+-> Even if there are missing values, the output should still be valid JSON.
 
 ### Sample Output (strictly as required):
 [
@@ -72,7 +74,7 @@ Even if there are missing values, the output should still be valid JSON.
       "Amit Sharma",
       "Sharma Trading Co",
       "+91-9876543210",
-      "null",
+      null,
       5000
     ]
   },

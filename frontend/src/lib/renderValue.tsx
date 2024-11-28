@@ -2,7 +2,7 @@ import dayjs from "dayjs";
 
 export const renderValue = (value: string | number | Date, { type, size=50 }: { type?: "date" | "time" | "money" ; size?: number } = {}) => {
 
-  if(value === null || value === undefined ||value === "NA" || value === -1){
+  if(value === null || value === undefined ||value === "NA" || value === "null" || value === -1){
     return <span className="text-red-500">NA</span>;
   }
 
