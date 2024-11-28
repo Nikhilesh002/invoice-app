@@ -52,7 +52,7 @@ export const getFileData = async (req:Request, res:Response) => {
     
   } catch (error) {
     console.log("Failed to get file data with AI",error);
-    res.status(400).json({success:false,message:"Something went wrong"});
+    res.status(400).json({success:false,message:"Failed to get file data with AI"});
   }
 };
 
