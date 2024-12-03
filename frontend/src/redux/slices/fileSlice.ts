@@ -89,6 +89,18 @@ const fileSlice = createSlice({
       if (state.currentBill && state.currentBill._id === action.payload.billId) {
         state.currentBill = null;
       }
+    },
+    updateNames: (state,action:PayloadAction<{fileId:string,prevName : string, updated_name : string}>)=>{
+      // action.fileId
+      const file = state.files.find(file => file._id === action.payload.fileId)
+      if(file){
+        file.bills.forEach(bill => {
+          if(action.payload.prevName === bill.customer.customer_name){
+            bill.customer.customer_name = action.payload.updated_name
+            bill.invoice.customer_name = action.payload.updated_name
+          }
+        })
+      }
     }
   }
 });
@@ -105,7 +117,8 @@ export const {
   updateProducts,
   updateCustomer,
   removeFile,
-  removeBill
+  removeBill,
+  updateNames
 } = fileSlice.actions;
 
 export default fileSlice.reducer;

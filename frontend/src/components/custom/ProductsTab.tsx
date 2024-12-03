@@ -92,7 +92,7 @@ const ProductsTab: React.FC<ProductsTabProps> = ({
 
       // Backend update
       toast.loading('Updating products...');
-      await axios.put(`${import.meta.env.VITE_BACKEND_URL}/api/file/update-bill/${billId}`, updatedBill);
+      await axios.put(`${import.meta.env.VITE_BACKEND_URL}/api/files/update-bill/${billId}`, updatedBill);
       toast.dismiss();
       setIsEditing(false);
       toast.success('Products updated successfully');

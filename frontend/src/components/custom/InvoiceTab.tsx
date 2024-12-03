@@ -57,7 +57,7 @@ const InvoiceTab: React.FC<InvoiceTabProps> = ({
 
       // Backend update
       toast.loading('Updating invoice details...');
-      await axios.put(`${import.meta.env.VITE_BACKEND_URL}/api/file/update-bill/${billId}`, updatedBill);
+      await axios.put(`${import.meta.env.VITE_BACKEND_URL}/api/files/update-bill/${billId}`, updatedBill);
       toast.dismiss();
       setIsEditing(false);
       toast.success('Invoice updated successfully');
@@ -80,7 +80,7 @@ const InvoiceTab: React.FC<InvoiceTabProps> = ({
                 {key.replace(/_/g, ' ')}
               </label>
               <Input
-                value={editedInvoice[key as keyof Invoice] || ''}
+                value={editedInvoice[key as keyof Invoice].toString() ?? ''}
                 onChange={(e) => handleInputChange(key as keyof Invoice, e.target.value)}
               />
             </div>

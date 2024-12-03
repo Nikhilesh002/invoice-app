@@ -44,9 +44,9 @@ const Files: React.FC = () => {
     const fetchFiles = async () => {
       try {
         toast.loading('Fetching files...');
-        const response = await axios.get<UserFile[]>(`${import.meta.env.VITE_BACKEND_URL}/api/file`);
+        const response = await axios.get<UserFile[]>(`${import.meta.env.VITE_BACKEND_URL}/api/files`);
         toast.dismiss();
-        if (response?.data) {
+        if (response.status === 200 && response?.data) {
           dispatch(storeFiles(response.data));
         }
       } catch (error) {
@@ -75,7 +75,7 @@ const Files: React.FC = () => {
     if (fileToDelete?._id) {
       try {
         toast.loading('Deleting file...');
-        await axios.delete(`${import.meta.env.VITE_BACKEND_URL}/api/file/delete-file/${fileToDelete._id}`);
+        await axios.delete(`${import.meta.env.VITE_BACKEND_URL}/api/files/delete-file/${fileToDelete._id}`);
         toast.dismiss();
         toast.success('File deleted successfully');
         dispatch(removeFile(fileToDelete._id));

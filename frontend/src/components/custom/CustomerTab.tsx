@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { useDispatch } from 'react-redux';
-import { updateCustomer } from '@/redux/slices/fileSlice';
+import { updateCustomer, updateNames } from '@/redux/slices/fileSlice';
 import { Input } from '../ui/input';
 import { Button } from '../ui/button';
 import { Bill, Customer } from '@/types';
@@ -48,6 +48,15 @@ const CustomerTab: React.FC<CustomerTabProps> = ({
         customer: editedCustomer,
       };
 
+      dispatch(
+        updateNames({
+          fileId,
+          prevName : currentBill.customer.customer_name,
+          updated_name : editedCustomer.customer_name
+        })
+      )
+      
+      
       // Redux update
       dispatch(
         updateCustomer({
@@ -59,7 +68,7 @@ const CustomerTab: React.FC<CustomerTabProps> = ({
 
       // Backend update
       toast.loading('Updating customer details...');
-      await axios.put(`${import.meta.env.VITE_BACKEND_URL}/api/file/update-bill/${billId}`,updatedBill);
+      await axios.put(`${import.meta.env.VITE_BACKEND_URL}/api/files/update-bill/${billId}`,updatedBill);
       setIsEditing(false);
       toast.dismiss();
       toast.success('Customer details updated successfully');

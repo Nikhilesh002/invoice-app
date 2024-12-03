@@ -6,7 +6,7 @@ import {
 } from "@/components/ui/menubar"
 import { Separator } from '@radix-ui/react-menubar';
 
-const Navigation: React.FC = () => {
+const NavBar: React.FC = () => {
   const location = useLocation();
 
   // Function to check if the current link is active
@@ -45,4 +45,4 @@ const Navigation: React.FC = () => {
   );
 };
 
-export default Navigation;
+export default NavBar;

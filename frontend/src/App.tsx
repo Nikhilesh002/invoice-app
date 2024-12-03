@@ -1,11 +1,11 @@
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import { Provider } from 'react-redux';
 import { store } from '@/redux/store';
-import Navigation from '@/components/custom/Navigation';
-import HomePage from '@/components/custom/HomePage';
+import NavBar from '@/components/custom/NavBar';
+import HomePage from '@/pages/HomePage';
 import BillDetailsPage from '@/pages/BillDetails';
 import { Toaster } from '@/components/ui/toaster';
-import FileUpload from '@/components/custom/FileUpload';
+import FileUpload from '@/pages/FileUpload';
 import Files from '@/pages/Files';
 import Bills from '@/pages/Bills';
 import { Toaster as ReactHotToaster } from 'react-hot-toast';
@@ -16,7 +16,7 @@ function App() {
       <Router>
         <div className="flex flex-col h-screen">
           <ReactHotToaster position='bottom-right' />
-          <Navigation />
+          <NavBar />
           <div className="flex-grow overflow-auto">
             <Routes>
               <Route path="/" element={<HomePage />} />

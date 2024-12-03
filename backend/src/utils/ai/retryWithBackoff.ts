@@ -2,6 +2,7 @@ export const retryWithBackoff = async (fn:any, retries = 3, delay = 1777): Promi
   try {
     return await fn();
   } catch (err) {
+    console.error(err)
     if (retries > 0) {
       console.log(`Retrying in ${delay}ms...`);
       await new Promise(resolve => setTimeout(resolve, delay));

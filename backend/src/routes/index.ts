@@ -3,6 +3,6 @@ import fileRouter from './file';
 
 const router=express.Router();
 
-router.use('/file',fileRouter)
+router.use('/files',fileRouter)
 
 export default router;

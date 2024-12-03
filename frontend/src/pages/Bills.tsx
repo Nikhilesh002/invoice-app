@@ -74,7 +74,7 @@ const Bills: React.FC = () => {
     if (billToDelete && currentFile) {
       try {
         toast.loading('Deleting bill...');
-        await axios.delete(`${import.meta.env.VITE_BACKEND_URL}/api/file/delete-bill/${billToDelete._id}`);
+        await axios.delete(`${import.meta.env.VITE_BACKEND_URL}/api/files/delete-bill/${billToDelete._id}`);
         toast.dismiss();
         toast.success('Bill deleted successfully');
         dispatch(removeBill({ fileId: currentFile._id, billId: billToDelete._id }));

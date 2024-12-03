@@ -10,7 +10,7 @@ import {
   CardDescription,
   CardHeader,
   CardTitle,
-} from "../ui/card";
+} from "../components/ui/card";
 import { toast } from 'react-hot-toast';
 
 const FileUpload: React.FC = () => {
@@ -48,7 +48,7 @@ const FileUpload: React.FC = () => {
 
       toast.dismiss();
 
-      const response = await axios.post(`${import.meta.env.VITE_BACKEND_URL}/api/file/get-ai-data`, formData, {
+      const response = await axios.post(`${import.meta.env.VITE_BACKEND_URL}/api/files/get-ai-data`, formData, {
         headers: {
           "Content-Type": "multipart/form-data",
         },
