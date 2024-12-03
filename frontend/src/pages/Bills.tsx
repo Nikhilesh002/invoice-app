@@ -6,16 +6,16 @@ import { setCurrentBill, setCurrentFile, removeBill } from '@/redux/slices/fileS
 import { Button } from '@/components/ui/button';
 import { Trash2, Search } from 'lucide-react';
 import axios from 'axios';
-import {
-  AlertDialog,
-  AlertDialogAction,
-  AlertDialogCancel,
-  AlertDialogContent,
-  AlertDialogDescription,
-  AlertDialogFooter,
-  AlertDialogHeader,
-  AlertDialogTitle,
-} from "@/components/ui/alert-dialog";
+// import {
+//   AlertDialog,
+//   AlertDialogAction,
+//   AlertDialogCancel,
+//   AlertDialogContent,
+//   AlertDialogDescription,
+//   AlertDialogFooter,
+//   AlertDialogHeader,
+//   AlertDialogTitle,
+// } from "@/components/ui/alert-dialog";
 import { Bill } from '@/types';
 import toast from 'react-hot-toast';
 import { Input } from '@/components/ui/input';
@@ -40,8 +40,8 @@ const Bills: React.FC = () => {
   const allFiles = useSelector((state: RootState) => state.files.files);
   const currentFile = allFiles?.find((file) => file?._id === fileId);
 
-  const [isDeleteDialogOpen, setIsDeleteDialogOpen] = useState(false);
-  const [billToDelete, setBillToDelete] = useState<Bill | null>(null);
+  // const [isDeleteDialogOpen, setIsDeleteDialogOpen] = useState(false);
+  // const [billToDelete, setBillToDelete] = useState<Bill | null>(null);
   const [searchTerm, setSearchTerm] = useState('');
 
   if (!currentFile) {
@@ -63,23 +63,24 @@ const Bills: React.FC = () => {
     navigate(`/file/${fileId}/${bill._id}`);
   };
 
-  const handleDeleteClick = (e: React.MouseEvent, bill: Bill) => {
-    e.stopPropagation();
-    if (!bill) return;
-    setBillToDelete(bill);
-    setIsDeleteDialogOpen(true);
-  };
+  // const handleDeleteClick = (e: React.MouseEvent, bill: Bill) => {
+  //   e.stopPropagation();
+  //   if (!bill) return;
+  //   setBillToDelete(bill);
+  //   setIsDeleteDialogOpen(true);
+  // };
 
-  const handleDeleteConfirm = async () => {
+  const handleDeleteConfirm = async (e: React.MouseEvent, billToDelete: Bill) => {
+    e.stopPropagation();
     if (billToDelete && currentFile) {
       try {
         toast.loading('Deleting bill...');
         await axios.delete(`${import.meta.env.VITE_BACKEND_URL}/api/files/delete-bill/${billToDelete._id}`);
+        dispatch(removeBill({ fileId: currentFile._id, billId: billToDelete._id }));
         toast.dismiss();
         toast.success('Bill deleted successfully');
-        dispatch(removeBill({ fileId: currentFile._id, billId: billToDelete._id }));
-        setIsDeleteDialogOpen(false);
-        setBillToDelete(null);
+        // setIsDeleteDialogOpen(false);
+        // setBillToDelete(null);
       } catch (error) {
         console.error('Error deleting bill:', error);
         toast.error('Failed to delete bill');
@@ -151,7 +152,7 @@ const Bills: React.FC = () => {
                       <Button
                         variant="destructive"
                         size="sm"
-                        onClick={(e) => handleDeleteClick(e, bill)}
+                        onClick={(e) => handleDeleteConfirm(e, bill)}
                       >
                         <Trash2 className="w-4 h-4" />
                       </Button>
@@ -166,7 +167,7 @@ const Bills: React.FC = () => {
         <p className="text-center text-gray-500">No bills available for this file.</p>
       )}
 
-      {isDeleteDialogOpen && (
+      {/* {isDeleteDialogOpen && (
         <AlertDialog open={isDeleteDialogOpen} onOpenChange={setIsDeleteDialogOpen}>
           <AlertDialogContent>
             <AlertDialogHeader>
@@ -182,7 +183,7 @@ const Bills: React.FC = () => {
             </AlertDialogFooter>
           </AlertDialogContent>
         </AlertDialog>
-      )}
+      )} */}
     </div>
   );
 };

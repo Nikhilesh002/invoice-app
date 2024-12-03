@@ -80,7 +80,7 @@ export const getFiles = async (req:Request, res:Response) => {
 export const deleteFile = async (req:Request, res:Response) => {
   try {
     const fileId = req.params.fileId;
-    await UserfileModel.findByIdAndDelete(fileId);
+    await UserfileModel.findByIdAndDelete({_id:fileId});
     res.status(200).json("File deleted");
   } catch (error) {
     console.log("Failed to delete userfile",error);
@@ -99,11 +99,11 @@ export const updateBillInFile = async (req:Request, res:Response) => {
       newBill.products.pop();
     }
     
-    await BillModel.findByIdAndUpdate(billId, newBill);
+    await BillModel.findByIdAndUpdate({_id:billId}, newBill);
     // now insert last product
     if(lastProduct._id.toString() ===""){
       delete lastProduct._id;
-      await BillModel.findByIdAndUpdate(billId, {$push:{products:lastProduct}});
+      await BillModel.findByIdAndUpdate({_id:billId}, {$push:{products:lastProduct}});
     }
     res.status(200).json({success:true,message:"Bill updated"});
   } catch (error) {
@@ -116,7 +116,8 @@ export const updateBillInFile = async (req:Request, res:Response) => {
 export const deleteBillInFile = async (req:Request, res:Response) => {
   try {
     const billId = req.params.billId;
-    await BillModel.findByIdAndDelete(billId);
+    await UserfileModel.updateMany({}, {$pull:{bills:billId}});
+    await BillModel.findByIdAndDelete({_id:billId});
     res.status(200).json("bill deleted");
   } catch (error) {
     console.log("Failed to delete bill",error);

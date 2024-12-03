@@ -37,8 +37,8 @@ const Files: React.FC = () => {
   const navigate = useNavigate();
   const reduxFiles = useSelector((state: RootState) => state.files.files);
   const [isDeleteDialogOpen, setIsDeleteDialogOpen] = useState(false);
-  const [fileToDelete, setFileToDelete] = useState<UserFile | null>(null);
   const [searchTerm, setSearchTerm] = useState('');
+  let fileToDelete : UserFile | null = null;
 
   useEffect(() => {
     const fetchFiles = async () => {
@@ -64,23 +64,15 @@ const Files: React.FC = () => {
     navigate(`/file/${file._id}`);
   };
 
-  const handleDeleteClick = (e: React.MouseEvent, file: UserFile | null) => {
+  const handleDeleteClick =async (e: React.MouseEvent, file: UserFile) => {
     e.stopPropagation();
-    if (!file) return;
-    setFileToDelete(file);
-    setIsDeleteDialogOpen(true);
-  };
-
-  const handleDeleteConfirm = async () => {
-    if (fileToDelete?._id) {
+    if (file?._id) {
       try {
         toast.loading('Deleting file...');
-        await axios.delete(`${import.meta.env.VITE_BACKEND_URL}/api/files/delete-file/${fileToDelete._id}`);
+        await axios.delete(`${import.meta.env.VITE_BACKEND_URL}/api/files/delete-file/${file._id}`);
         toast.dismiss();
         toast.success('File deleted successfully');
-        dispatch(removeFile(fileToDelete._id));
-        setIsDeleteDialogOpen(false);
-        setFileToDelete(null);
+        dispatch(removeFile(file._id));
       } catch (error) {
         console.error('Error deleting file:', error);
         toast.error('Failed to delete file');
@@ -88,6 +80,32 @@ const Files: React.FC = () => {
       finally {
         toast.dismiss();
       }
+    }
+    else {
+      console.error("File not found");
+    }
+  };
+
+  const handleDeleteConfirm = async () => {
+    if (fileToDelete?._id) {
+      try {
+        toast.loading('Deleting file...');
+        // await axios.delete(`${import.meta.env.VITE_BACKEND_URL}/api/files/delete-file/${fileToDelete._id}`);
+        toast.dismiss();
+        toast.success('File deleted successfully');
+        // dispatch(removeFile(fileToDelete._id));
+        setIsDeleteDialogOpen(false);
+        fileToDelete = null;
+      } catch (error) {
+        console.error('Error deleting file:', error);
+        toast.error('Failed to delete file');
+      }
+      finally {
+        toast.dismiss();
+      }
+    }
+    else {
+      console.log("File not found");
     }
   };
 
@@ -128,7 +146,7 @@ const Files: React.FC = () => {
                   <TableCell className="">{renderValue(new Date(file.createdAt), { type: "date"})}</TableCell>
                   <TableCell className="">{renderValue(new Date(file.createdAt), { type: "time"})}</TableCell>
                   <TableCell className='w-20'>
-                    <Button variant="destructive" onClick={(e) => handleDeleteClick(e, reduxFiles[0])}>
+                    <Button variant="destructive" onClick={(e) => handleDeleteClick(e, file)}>
                       <Trash2 className="h-4 w-4" />
                     </Button>
                   </TableCell>
