@@ -1,13 +1,13 @@
 import fs from 'fs/promises';
 import path from 'path';
-import { getDataWithAi } from '../nonExcelFiles/getDataWithAi';
 import { IFileInfo } from '../../types';
+import { handleNonExcel } from '../nonExcelFiles/handleNonExcel';
 
 export const makeChunks = async (fileInfo: IFileInfo) => {
   const { filePath, fileName, mimetype } = fileInfo;
 
   if (mimetype !== 'text/csv') {
-    return await getDataWithAi(fileInfo);
+    return await handleNonExcel(fileInfo);
   }
 
   try {
@@ -43,7 +43,7 @@ export const makeChunks = async (fileInfo: IFileInfo) => {
     // Process each chunk asynchronously using getDataWithAi
     const results = await Promise.all(
       chunks.map((chunkPath) =>
-        getDataWithAi({
+        handleNonExcel({
           filePath: chunkPath,
           fileName: path.basename(chunkPath),
           mimetype: 'text/csv',

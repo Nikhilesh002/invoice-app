@@ -39,11 +39,11 @@ export const getFileData = async (req:Request, res:Response) => {
     
   } catch (error) {
     if(error instanceof Error){
-      console.log("Failed to get file data with AI",error);
+      // console.log("Failed to get file data with AI",error);
       return res.status(403).json({success:false,message:error.message + ". Please try again, it will work"});
     }
     else{
-      console.log("Failed to get file data with AI",error);
+      // console.log("Failed to get file data with AI",error);
       return res.status(400).json({success:false,message:"Failed to get file data with AI. Please try again, it will work"});
     }
   }

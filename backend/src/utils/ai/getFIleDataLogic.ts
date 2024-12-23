@@ -1,10 +1,10 @@
 import * as fs from 'fs';
 import { XLSXtoCSV } from "../fileFormatConverter/XLSXtoCSV";
-import { handleExcel } from "./excelFiles/newMethod/handleExcel";
+import { handleExcel } from "./excelFiles/handleExcel";
 import { retryWithBackoff } from "../retryWithBackoff";
 import { IFileInfo } from "../types";
-import { getDataWithAi } from "./getDataWithAi";
-import { makeChunks } from './excelFiles/makeChunks';
+import { makeChunks } from './csvFiles/makeChunks';
+import { handleNonExcel } from './nonExcelFiles/handleNonExcel';
 
 
 
@@ -13,7 +13,7 @@ export const getFIleDataLogic = async (fileInfo : IFileInfo)=>{
   let resp;
 
   if(fileInfo.mimetype === "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet" || fileInfo.mimetype === "application/vnd.ms-excel"){
-    const newMethod = false;
+    const newMethod = true
 
     if(newMethod){     
       // handling excel files
@@ -24,7 +24,7 @@ export const getFIleDataLogic = async (fileInfo : IFileInfo)=>{
       fileInfo.fileName = fileInfo.fileName.replace(".xlsx",".csv");
       fileInfo.mimetype = "text/csv";
 
-      // handling non-excel
+      // handling like non-excel
       resp = await retryWithBackoff(()=>makeChunks(fileInfo));
     }
   }
@@ -36,7 +36,7 @@ export const getFIleDataLogic = async (fileInfo : IFileInfo)=>{
     throw new Error("File format not supported")
   }
   else{   // handling non-excel
-    resp = await retryWithBackoff(()=>getDataWithAi(fileInfo));
+    resp = await retryWithBackoff(()=>handleNonExcel(fileInfo));
   }
 
   return resp;
