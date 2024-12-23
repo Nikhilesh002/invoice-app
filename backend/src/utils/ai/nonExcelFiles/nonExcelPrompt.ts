@@ -1,5 +1,6 @@
-export const MY_PROMPT= `You are an invoice data analyst. Analyze the input document (invoice) and extract structured information into JSON format strictly adhering to the provided schema. Ensure the response is production-ready, robust, and accounts for missing or ambiguous data, while maintaining JSON validity. Group all transactions with the same invoice, transaction number, or customer details together into one object as shown.
+export const NON_EXCEL_PROMPT = `
 
+You are an invoice data analyst. Your task is to analyze the provided invoice document and extract structured information into JSON format according to the provided schema. Ensure that the output is production-ready, robust, and handles missing or ambiguous data gracefully, while maintaining JSON validity. All transactions sharing the same invoice, transaction number, or customer details should be grouped into a single object.
 
 ## Key Extraction Rules
 
@@ -82,40 +83,40 @@ export const MY_PROMPT= `You are an invoice data analyst. Analyze the input docu
   ]
 }]
 
+
 ## Example Output (Strictly Adhere to This Schema)
 
-json
 [
   {
     "invoice": [
       "INV-001IN",
       "Amit Sharma",
-      5000,
+      5000.00,
       "SuperMart Pvt Ltd",
       "27ABCDE1234F1Z5",
-      10,
-      900,
-      5900,
+      10.00,
+      900.00,
+      5900.00,
       "2024-11-12"
     ],
     "products": [
       [
         "Basmati Rice",
-        2,
-        2500,
-        0,
-        2500,
-        2950,
-        450
+        2.00,
+        2500.00,
+        0.00,
+        2500.00,
+        2950.00,
+        450.00
       ],
       [
         "Wheat Flour",
-        8,
-        250,
-        0,
-        250,
-        2950,
-        450
+        8.00,
+        250.00,
+        0.00,
+        250.00,
+        2950.00,
+        450.00
       ]
     ],
     "customer": [
@@ -123,39 +124,39 @@ json
       "Sharma Trading Co",
       "+91-9876543210",
       null,
-      5000
+      5000.00
     ]
   },
   {
     "invoice": [
       "INV-002IN",
       "Rahul Verma",
-      3000,
+      3000.00,
       "GroceryBazaar LLP",
       "29XYZAB5678C1Z9",
-      5,
+      5.00,
       null,
-      3540,
+      3540.00,
       "2024-11-15"
     ],
     "products": [
       [
         "Cooking Oil",
-        3,
-        900,
-        0,
-        900,
-        1062,
-        162
+        3.00,
+        900.00,
+        0.00,
+        900.00,
+        1062.00,
+        162.00
       ],
       [
         "Sugar",
-        2,
-        600,
-        0,
+        2.00,
+        600.00,
+        0.00,
         null,
-        708,
-        108
+        708.00,
+        108.00
       ]
     ],
     "customer": [
@@ -163,7 +164,15 @@ json
       null,
       "+91-9123456780",
       null,
-      3000
+      3000.00
     ]
   }
-]`
+]
+`
+
+
+const x =1;
+
+// export const NON_EXCEL_PROMPT = `
+// Analyze the entire file and extract invoice information and return structured invoice details in JSON format. If any attributes are missing, you must explicitly assign null values in those places. Group all transactions with the same invoice or transaction number or customer details together in to an object as shown. The output must be strictly structured as: [{"invoice":["<serial_number>","<customer_name>","<total_purchase_amount>","<shop_name>","<shop_gstin>","<quantity>","<tax>","<total_amount>","<date>"],"products":[["<name>","<quantity>","<unit_price>","<discount>","<price_after_discount>","<price_with_tax>","<tax>"]],"customer":["<customer_name>","<customer_company>","<phone_number>","<customer_gstin>","<total_purchase_amount>"]}]. I rrespective of the input, the sample output looks like [[{"invoice":["INV-146CZS",null,100,null,null,23456,null,null,"12 Nov 2024"],"products":[["Monster Energy",23456,84.75,0,84.75,100,18]],"customer":[null,null,null,null,100]},{"invoice":["INV-145CZS",null,100,null,null,2345,null,null,"12 Nov 2024"],"products":[["Monster Energy",2345,84.75,0,84.75,100,18],["Pepsi",581,48.75,0,84.1,64,18]],"customer":[null,null,null,null,100]}]]
+// `

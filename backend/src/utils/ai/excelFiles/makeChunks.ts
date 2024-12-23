@@ -1,8 +1,9 @@
 import fs from 'fs/promises';
 import path from 'path';
-import { getDataWithAi } from './getDataWithAi';
+import { getDataWithAi } from '../nonExcelFiles/getDataWithAi';
+import { IFileInfo } from '../../types';
 
-export const makeChunks = async (fileInfo: { filePath: string; fileName: string; mimetype: string }) => {
+export const makeChunks = async (fileInfo: IFileInfo) => {
   const { filePath, fileName, mimetype } = fileInfo;
 
   if (mimetype !== 'text/csv') {
@@ -26,7 +27,7 @@ export const makeChunks = async (fileInfo: { filePath: string; fileName: string;
     const sanitizedFileName = path.parse(fileName).name;
 
     const CHUNK_SIZE = 40;
-    // let cnt = 0;
+
     // Split lines into chunks of CHUNK_SIZE
     for (let i = 0; i < lines.length; i += CHUNK_SIZE) {
       const chunk = lines.slice(i, i + CHUNK_SIZE).join('\n');
@@ -37,8 +38,6 @@ export const makeChunks = async (fileInfo: { filePath: string; fileName: string;
       await fs.writeFile(chunkFilePath, `${header}\n${chunk}`);
       chunks.push(chunkFilePath);
 
-      // cnt++;
-      // if(cnt === 2) break;
     }
 
     // Process each chunk asynchronously using getDataWithAi

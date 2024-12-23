@@ -47,3 +47,10 @@ export interface UserFile {
   name: string;
   bills: Bill[];
 }
+
+
+export interface IFileInfo{
+  filePath: string;
+  fileName: string;
+  mimetype: string
+}

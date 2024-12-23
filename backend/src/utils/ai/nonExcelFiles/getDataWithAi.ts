@@ -1,10 +1,10 @@
 import { GoogleAIFileManager } from "@google/generative-ai/server";
 import { GoogleGenerativeAI } from "@google/generative-ai";
 import fs from "fs";
-import { replaceWithDefaults } from "../formatData/replaceWithDefaults";
-import { extractData } from "./nonExcelFiles/extractData";
-import { NON_EXCEL_PROMPT } from "./nonExcelFiles/nonExcelPrompt";
+import { replaceWithDefaults } from "../../formatData/replaceWithDefaults"; 
+import { NON_EXCEL_PROMPT } from "./nonExcelPrompt";
 import { generationConfig } from "./generationConfig";
+import { extractData } from "./extractData";
 
 export const getDataWithAi=async(fileInfo:{filePath:string,fileName:string,mimetype:string})=>{
 
@@ -29,7 +29,7 @@ export const getDataWithAi=async(fileInfo:{filePath:string,fileName:string,mimet
 
     const model = genAI.getGenerativeModel({
       model: process.env.GEMINI_MODEL ?? "",
-      generationConfig: generationConfig
+      // generationConfig: generationConfig
     });
 
     const result = await model.generateContent([
@@ -44,7 +44,7 @@ export const getDataWithAi=async(fileInfo:{filePath:string,fileName:string,mimet
 
     // console.log(result.response.text());
 
-    fs.appendFile("./tmp/dummy.txt",result.response.text()+"\n",err=>console.log(err));
+    fs.appendFile("./tmp/logs.txt", new Date().toLocaleString() + " From Gemini -> " + result.response.text().replace('\n', ' ') +"\n",err=>err && console.log(err));
 
 
     // Delete the file from cloud
@@ -61,12 +61,14 @@ export const getDataWithAi=async(fileInfo:{filePath:string,fileName:string,mimet
 
 
 const formatData=async (data:string, filePath:string)=>{
-  // const jsonObj = JSON.parse(data.split("json")[1].split("```")[0]);
-  const jsonObj = JSON.parse(data);
+  const jsonObj = JSON.parse(data.split("json")[1].split("```")[0]);
+  // const jsonObj = JSON.parse(data);
   // console.log(jsonObj)
 
-  // const requiredObj = extractData(jsonObj);
+  const requiredObj = extractData(jsonObj);
   // console.log(requiredObj)
+
+  // fs.appendFile("./tmp/logs.txt", new Date().toLocaleString() + " Extracted data " + JSON.stringify(requiredObj).replace('\n',' ') +"\n",err=>console.log(err));
 
   const finalData = replaceWithDefaults(jsonObj);
   // console.log(finalData)
