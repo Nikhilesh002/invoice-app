@@ -3,6 +3,7 @@ import { data } from '../utils/sample_data';
 import { UserfileModel } from '../models/userfile';
 import { BillModel } from '../models/bill';
 import { getFIleDataLogic } from "../utils/ai/getFIleDataLogic";
+import fs from 'fs';
 
 
 export const getFileData = async (req:Request, res:Response) => {
@@ -21,6 +22,7 @@ export const getFileData = async (req:Request, res:Response) => {
     console.log("fileInfo",fileInfo);
 
     const resp = await getFIleDataLogic(fileInfo);
+    // await fs.writeFile('./tmp/logs.txt',JSON.stringify(resp)+'\n',()=>{})
 
     const newBills = await BillModel.insertMany(resp);
 

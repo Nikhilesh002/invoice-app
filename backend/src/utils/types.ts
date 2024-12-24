@@ -54,3 +54,30 @@ export interface IFileInfo{
   fileName: string;
   mimetype: string
 }
+
+
+export interface IExcelRow{
+  serial_number: Number, 
+  customer_name: Number, 
+  total_purchase_amount: Number, 
+  shop_name: Number, 
+  shop_gstin: Number, 
+  quantity: Number, 
+  total_amount: Number, 
+  date: Number, 
+  name: Number, 
+  unit_price: Number, 
+  discount: Number, 
+  price_after_discount: Number, 
+  price_with_tax: Number, 
+  tax: Number, 
+  customer_company: Number, 
+  phone_number: Number, 
+  customer_gstin: Number
+}
+
+
+export interface ITxnId_Idx{
+  [key : string] : Number
+}
+

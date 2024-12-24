@@ -22,7 +22,15 @@ export const replaceWithDefaults = (input: any): any => {
             price_with_tax: product.price_with_tax ? parseFloat(product.price_with_tax) : -1,
             tax: product.tax ? parseFloat(product.tax) : -1,
           }))
-        : [],
+        : [{
+          name:"NA",
+          quantity:-1,
+          unit_price:-1,
+          discount:-1,
+          price_after_discount:-1,
+          price_with_tax:-1,
+          tax:-1,
+        }],
   
       customer: {
         customer_name: data.customer?.customer_name ?? "NA",
