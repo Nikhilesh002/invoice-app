@@ -1,4 +1,4 @@
-import * as fs from 'fs';
+import fs from 'fs';
 import { XLSXtoCSV } from "../fileFormatConverter/XLSXtoCSV";
 import { handleExcel } from "./excelFiles/handleExcel";
 import { retryWithBackoff } from "../retryWithBackoff";

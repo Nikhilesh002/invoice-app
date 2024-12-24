@@ -18,8 +18,8 @@ export const handleNonExcel=async(fileInfo:{filePath:string,fileName:string,mime
 
 
 const formatData=async (data:string, filePath:string)=>{
-  // const jsonObj = JSON.parse(data.split("json")[1].split("```")[0]);
-  const jsonObj = JSON.parse(data);
+  const jsonObj = JSON.parse(data.split("json")[1].split("```")[0]);
+  // const jsonObj = JSON.parse(data);
   // console.log(jsonObj)
 
   // const requiredObj = extractData(jsonObj);
