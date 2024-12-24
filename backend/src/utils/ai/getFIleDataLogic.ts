@@ -3,7 +3,7 @@ import { XLSXtoCSV } from "../fileFormatConverter/XLSXtoCSV";
 import { handleExcel } from "./excelFiles/handleExcel";
 import { retryWithBackoff } from "../retryWithBackoff";
 import { IFileInfo } from "../types";
-import { makeChunks } from './csvFiles/makeChunks';
+import { makeChunks } from './csvFiles/oldMethod/makeChunks';
 import { handleNonExcel } from './nonExcelFiles/handleNonExcel';
 
 

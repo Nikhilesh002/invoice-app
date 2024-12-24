@@ -1,9 +1,24 @@
-export const makeExcelPrompt = (headerRowStr: string) => `
+export const makeExcelPrompt = (worksheet: any) => {
+
+  const headerRow = worksheet.getRow(1);
+  // const sampleRow = worksheet.getRow(2);
+  
+  let headerRowStr = ""
+  // let sampleRowStr = "";
+
+  for(let i=1;i<=headerRow.cellCount;i++){
+    headerRowStr+= '  - Column' + i + ' : ' + headerRow.getCell(i).value?.toString() + ' \n'
+  }
+
+  // for(let i=1;i<=sampleRow.cellCount;i++){
+  //   sampleRowStr+= '  - Column' + i + ' : ' + sampleRow.getCell(i).value?.toString() + ' \n'
+  // }
+
+  return `
 You will be provided with the header row from an Excel sheet. Your task is to map the column names from this header row to the required schema. If a column from the schema is missing in the header row, map it to null.
 
 # Given header row =
 ${headerRowStr}
-
 
 ## Instructions:
 1. **Analyze the header row**: Carefully review the column names provided in the header row.
@@ -63,4 +78,4 @@ Your output must be a JSON object in the following format:
 
 Ensure that the mapping is precise. If a column name in the header doesn't match the required schema, return null for that field.
 `
-;
+}

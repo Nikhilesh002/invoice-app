@@ -3,7 +3,6 @@ import { GoogleGenerativeAI } from "@google/generative-ai";
 import { NON_EXCEL_PROMPT } from './nonExcelFiles/nonExcelPrompt';
 
 
-const genAI = new GoogleGenerativeAI(process.env.GEMINI_API_KEY ?? "");
 
 export const geminiFile = async(fileInfo:{filePath:string,fileName:string,mimetype:string}): Promise<string> =>{
 
@@ -23,6 +22,7 @@ export const geminiFile = async(fileInfo:{filePath:string,fileName:string,mimety
     `Uploaded file ${uploadResult.file.displayName} as: ${uploadResult.file.uri}`,
   );
 
+  const genAI = new GoogleGenerativeAI(process.env.GEMINI_API_KEY ?? "");
   const model = genAI.getGenerativeModel({
     model: process.env.GEMINI_BIG_MODEL ?? ""
   });
@@ -48,6 +48,7 @@ export const geminiFile = async(fileInfo:{filePath:string,fileName:string,mimety
 
 
 export const geminiText = async (prompt:string)=>{
+  const genAI = new GoogleGenerativeAI(process.env.GEMINI_API_KEY ?? "");
   const model = genAI.getGenerativeModel({
     model: process.env.GEMINI_MINI_MODEL ?? ""
   });
