@@ -1,7 +1,7 @@
-import { IFileInfo, ITxnId_Idx } from "../../types";
+import { IFileInfo, ITxnId_Idx } from "../../../types";
 import ExcelJS from 'exceljs'
-import { makeExcelPrompt } from "./excelPrompt";
-import { geminiText } from "../askGemini";
+import { geminiText } from "../../askGemini";
+import { makeExcelPrompt } from "../makeSheetPrompt/makeExcelPrompt";
 
 // https://github.com/exceljs/exceljs?tab=readme-ov-file#formula-value
 

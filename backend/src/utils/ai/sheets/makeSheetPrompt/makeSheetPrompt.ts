@@ -1,18 +1,4 @@
-export const makeExcelPrompt = (worksheet: any) => {
-
-  const headerRow = worksheet.getRow(1);
-  // const sampleRow = worksheet.getRow(2);
-  
-  let headerRowStr = ""
-  // let sampleRowStr = "";
-
-  for(let i=1;i<=headerRow.cellCount;i++){
-    headerRowStr+= '  - Column' + i + ' : ' + headerRow.getCell(i).value?.toString() + ' \n'
-  }
-
-  // for(let i=1;i<=sampleRow.cellCount;i++){
-  //   sampleRowStr+= '  - Column' + i + ' : ' + sampleRow.getCell(i).value?.toString() + ' \n'
-  // }
+export const makeSheetPrompt = (headerRowStr : string) => {
 
   return `
 You will be provided with the header row from an Excel sheet. Your task is to map the column names from this header row to the required schema. If a column from the schema is missing in the header row, map it to null.

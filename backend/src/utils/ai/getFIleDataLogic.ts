@@ -1,9 +1,9 @@
 import fs from 'fs';
 import { XLSXtoCSV } from "../fileFormatConverter/XLSXtoCSV";
-import { handleExcel } from "./excelFiles/handleExcel";
+import { handleExcel } from "./sheets/excelFiles/handleExcel";
 import { retryWithBackoff } from "../retryWithBackoff";
 import { IFileInfo } from "../types";
-import { makeChunks } from './csvFiles/oldMethod/makeChunks';
+import { makeChunks } from './sheets/csvFiles/oldMethod/makeChunks';
 import { handleNonExcel } from './nonExcelFiles/handleNonExcel';
 
 

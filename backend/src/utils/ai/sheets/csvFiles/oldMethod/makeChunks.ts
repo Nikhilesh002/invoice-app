@@ -1,7 +1,7 @@
 import fs from 'fs/promises';
 import path from 'path';
-import { handleNonExcel } from '../../nonExcelFiles/handleNonExcel';
-import { IFileInfo } from '../../../types';
+import { handleNonExcel } from '../../../nonExcelFiles/handleNonExcel';
+import { IFileInfo } from '../../../../types';
 
 export const makeChunks = async (fileInfo: IFileInfo) => {
   const { filePath, fileName, mimetype } = fileInfo;
