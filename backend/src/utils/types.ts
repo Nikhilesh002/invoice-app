@@ -57,27 +57,27 @@ export interface IFileInfo{
 
 
 export interface IExcelRow{
-  serial_number: Number, 
-  customer_name: Number, 
-  total_purchase_amount: Number, 
-  shop_name: Number, 
-  shop_gstin: Number, 
-  quantity: Number, 
-  total_amount: Number, 
-  date: Number, 
-  name: Number, 
-  unit_price: Number, 
-  discount: Number, 
-  price_after_discount: Number, 
-  price_with_tax: Number, 
-  tax: Number, 
-  customer_company: Number, 
-  phone_number: Number, 
-  customer_gstin: Number
+  serial_number: number, 
+  customer_name: number, 
+  total_purchase_amount: number, 
+  shop_name: number, 
+  shop_gstin: number, 
+  quantity: number, 
+  total_amount: number, 
+  date: number, 
+  name: number, 
+  unit_price: number, 
+  discount: number, 
+  price_after_discount: number, 
+  price_with_tax: number, 
+  tax: number, 
+  customer_company: number, 
+  phone_number: number, 
+  customer_gstin: number
 }
 
 
 export interface ITxnId_Idx{
-  [key : string] : Number
+  [key : string] : number
 }
 
