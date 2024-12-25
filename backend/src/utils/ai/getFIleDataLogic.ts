@@ -5,6 +5,7 @@ import { retryWithBackoff } from "../retryWithBackoff";
 import { IFileInfo } from "../types";
 import { makeChunks } from './sheets/csvFiles/oldMethod/makeChunks';
 import { handleNonExcel } from './nonExcelFiles/handleNonExcel';
+import { handleCsv } from './sheets/csvFiles/handleCsv';
 
 
 
@@ -29,7 +30,14 @@ export const getFIleDataLogic = async (fileInfo : IFileInfo)=>{
     }
   }
   else if(fileInfo.mimetype==="text/csv"){
-    resp = await retryWithBackoff(()=> makeChunks(fileInfo));
+    const newMethod = true
+
+    if(newMethod){
+      resp = await retryWithBackoff(()=>handleCsv(fileInfo));
+    }
+    else{
+      resp = await retryWithBackoff(()=> makeChunks(fileInfo));
+    }
   }
   else if((!fileInfo.mimetype.includes("pdf")) && (!fileInfo.mimetype.includes("image"))){
     fs.unlinkSync(fileInfo.filePath);

@@ -15,5 +15,8 @@ export const makeExcelPrompt = (worksheet: any)=>{
   // for(let i=1;i<=sampleRow.cellCount;i++){
   //   sampleRowStr+= '  - Column' + i + ' : ' + sampleRow.getCell(i).value?.toString() + ' \n'
   // }
+
+  console.log(headerRowStr)
+
   return makeSheetPrompt(headerRowStr);
 }
