@@ -9,5 +9,7 @@ export const makeCsvPrompt = (headerRow:string) =>{
     headerRowStr += " - Column" + ind + " : " + colName + "\n"
   })
 
+  console.log(headerRowStr)
+
   return makeSheetPrompt(headerRowStr);
 }

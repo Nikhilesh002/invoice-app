@@ -60,11 +60,12 @@ const extractExcelData = (maxRowCount:number, worksheet:any, schemaMapping : any
     const temp:any ={}
 
     Object.entries(schemaMapping).forEach(([key,value])=>{
-      if(value){
-        temp[key] = worksheet.getRow(i).getCell(value).value
+      const row = worksheet.getRow(i);
+      if(value===null || row.getCell(value).value===''){
+        temp[key] = null;
       }
       else{
-        temp[key] = null;
+        temp[key] = row.getCell(value).value;
       }
     })
 

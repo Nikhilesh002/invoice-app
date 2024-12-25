@@ -30,7 +30,12 @@ const extractSheetData = (lines:string[],lastRowInd:number,SchemaMapping:any)=>{
 
     const sheetRowData = lines[i].split(',');
     Object.entries(SchemaMapping).forEach(([key,value]:any)=>{
-      temp[key] = sheetRowData[value-1];
+      if(value===null || sheetRowData[value]===""){
+        temp[key] = null
+      }
+      else{
+        temp[key] = sheetRowData[value];
+      }
     })
     
     sheetData.push(temp);

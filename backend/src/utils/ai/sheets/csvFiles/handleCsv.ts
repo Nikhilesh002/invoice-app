@@ -7,11 +7,10 @@ import { formatData } from "./formatData";
 
 
 export const handleCsv = async (fileInfo:IFileInfo)=>{
-  const { filePath, fileName, mimetype } = fileInfo;
 
   try {
     // Read the file content
-    const data = await fs.readFile(filePath, 'utf8');
+    const data = await fs.readFile(fileInfo.filePath, 'utf8');
     const lines = data.split('\n');
 
     // Handle empty files
@@ -28,9 +27,8 @@ export const handleCsv = async (fileInfo:IFileInfo)=>{
 
     // then each row, make req file ds
     const formattedData = formatData(SchemaMapping,lines);
-    console.log(formattedData);
 
-    return [];
+    return formattedData;
   } catch (error) {
     console.error('Error in makeChunks:', error);
     throw error;
