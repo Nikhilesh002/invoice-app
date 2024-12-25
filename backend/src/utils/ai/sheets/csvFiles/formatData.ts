@@ -1,17 +1,42 @@
+import { ITxnId_Idx } from "../../../types";
+import { groupTransactions } from "../groupTransactions";
 
 
 export const formatData= (SchemaMapping:any,lines:string[])=>{
   // Extract header, its first ele
   const header = lines[0];
   lines.shift();  // remove ele at 0 index
-  
+
   const colsCnt = getColsCnt(header);
-    const lastRowInd = getLastRowInd(lines,colsCnt);
+  const lastRowInd = getLastRowInd(lines,colsCnt);
 
-    for(let i=0;i<=lastRowInd;i++){
-      const row = lines[i].split(',');
+  // extract data from lines
+  const sheetData = extractSheetData(lines,lastRowInd,SchemaMapping);
 
-    }
+  // group then based on txn id
+  const groupedData = groupTransactions(sheetData)
+
+  return groupedData;
+}
+
+
+
+
+const extractSheetData = (lines:string[],lastRowInd:number,SchemaMapping:any)=>{
+  const sheetData = [];
+
+  for(let i=0;i<=lastRowInd;i++){
+    const temp : any = {}
+
+    const sheetRowData = lines[i].split(',');
+    Object.entries(SchemaMapping).forEach(([key,value]:any)=>{
+      temp[key] = sheetRowData[value-1];
+    })
+    
+    sheetData.push(temp);
+  }
+
+  return sheetData;
 }
 
 
